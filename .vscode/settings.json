@@ -1,0 +1,16 @@
+{
+    "java.home": "/usr/lib/jvm/jdk-23.0.1-oracle-x64", // Ajuste para o caminho do seu JDK
+    "java.project.sourcePaths": ["src/main/java"], // Diretório de código-fonte principal no padrão Maven
+    "java.project.test.sourcePaths": ["src/test/java"], // Diretório de código-fonte de testes no padrão Maven
+    "java.project.outputPath": "target/classes", // Diretório de saída padrão do Maven
+    "java.project.referencedLibraries": [
+        "target/dependency/*.jar"
+    ],
+    "java.testClass": [
+        "controller.TarefasControllerTest" // Classe de teste a ser executada
+    ],
+    "java.testMethod": [
+        "controller.TarefasControllerTest#testPostTarefa", // Método de teste específico
+        "controller.TarefasControllerTest#testConcluirTarefa" // Outro método de teste
+    ],
+}
