@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="10" failures="0" name="TarefasControllerTest" time="0.089" errors="0" skipped="0">
+  <properties>
+    <property name="jansi.mode" value="force"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="23.0.1+11-39"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-23.0.1-oracle-x64/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/mrjabes/Documentos/ProjetosGithub/Sistema_de_Gerenciamento_de_Tarefas"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/mrjabes/Documentos/ProjetosGithub/Sistema_de_Gerenciamento_de_Tarefas"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="java.runtime.version" value="23.0.1+11-39"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="67.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.8.0-58-generic"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/home/mrjabes"/>
+    <property name="user.timezone" value="America/Bahia"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="23"/>
+    <property name="user.name" value="mrjabes"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -f /home/mrjabes/Documentos/ProjetosGithub/Sistema_de_Gerenciamento_de_Tarefas/pom.xml"/>
+    <property name="java.home" value="/usr/lib/jvm/jdk-23.0.1-oracle-x64"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="23.0.1"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+  </properties>
+  <testcase classname="TarefasControllerTest" name="testGetTarefas" time="0.073"/>
+  <testcase classname="TarefasControllerTest" name="testConcluirTarefa" time="0"/>
+  <testcase classname="TarefasControllerTest" name="testPostTarefaFalha" time="0.002"/>
+  <testcase classname="TarefasControllerTest" name="testGetTarefaById" time="0.001"/>
+  <testcase classname="TarefasControllerTest" name="testGetTarefaByIdInvalido" time="0.009"/>
+  <testcase classname="TarefasControllerTest" name="testPostTarefa" time="0"/>
+  <testcase classname="TarefasControllerTest" name="testAtualizarTarefaInvalida" time="0.001"/>
+  <testcase classname="TarefasControllerTest" name="testRemoverTarefaInvalida" time="0.001"/>
+  <testcase classname="TarefasControllerTest" name="testAtualizarTarefa" time="0.001"/>
+  <testcase classname="TarefasControllerTest" name="testRemoverTarefa" time="0.001"/>
+</testsuite>
