@@ -69,7 +69,7 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="sistema-de-gerenciamento-de-tarefas-v-15">Sistema de Gerenciamento de Tarefas (V 1.5) </h1>
+<h1 id="sistema-de-gerenciamento-de-tarefas-v-17">Sistema de Gerenciamento de Tarefas (V 1.7) </h1>
 <table>
 <thead>
 <tr>
@@ -99,15 +99,27 @@
 <td>Jabes Cajazeira</td>
 </tr>
 <tr>
-<td><strong>22/04/2025</strong></td>
+<td><strong>18/04/2025</strong></td>
 <td>04</td>
-<td><code>- Adição da Camada de Testes e Elaboração dos Testes com Maven e o Junit como Dependência Principal</code></td>
+<td><code>- Construção inicial da Documentação do Sistema</code></td>
+<td>Jabes Cajazeira</td>
+</tr>
+<tr>
+<td><strong>20/04/2025</strong></td>
+<td>05</td>
+<td><code>- Implementação do Padrão de Projeto: Proxy - de Proteção </code></td>
+<td>Jabes Cajazeira</td>
+</tr>
+<tr>
+<td><strong>22/04/2025</strong></td>
+<td>06</td>
+<td><code>- Adição da Camada de Testes, Elaboração, Ajustes e Execução dos Testes com Maven e o Junit como Dependência Principal</code></td>
 <td>Jabes Cajazeira</td>
 </tr>
 <tr>
 <td><strong>24/04/2025</strong></td>
-<td><strong>05</strong></td>
-<td><code>- Construção inicial da Documentação do Sistema </code></td>
+<td><strong>07</strong></td>
+<td><code>-  Revisão da documentação, execução dos testes </code></td>
 <td>Jabes Cajazeira</td>
 </tr>
 </tbody>
@@ -205,7 +217,7 @@ Camada responsável pela gestão das entidades do sistema, sejam elas persistent
 <p><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <p>Garantir que uma classe tenha somente uma instância e fornecer um ponto global de acesso para a mesma.</p>
 <h5 id="motivação">Motivação </h5>
-<p>Considerando a visualização aquiterural em Layred Arquiteture citada anteriormente, é preciso que em cada camada adjacente a atual, adquira UMA UNICA INSTANCIA da camada que será utilizada para realizar a sua responsabilidade. Em Frameworks comuns, isso é feito de forma declarativa usando a anotação <strong>@Autowired</strong> - apos a delaração da camada, essa anotação injeta uma instancia da qual foi solicitada, ou simplismente sendo instanciada a partir do construtor ou criando uma constante da camada (Spring Boot) e no Quarkus nós temos a utilizaçao do <strong>@Singleton</strong>. No cenário atual - simulando a visualização, o padrão singleton se adequaria perfeitamente, uma vez que, nós garantimos haja injeção de uma unica instancia a qual será acessada pelo repositorio atual. Assim tal logica é aplicada para as camadas adjacentes.</p>
+<p>Considerando a visualização aquiterural em Layred Arquiteture citada anteriormente, é preciso que em cada camada adjacente a atual, adquira <strong>UMA UNICA INSTANCIA</strong> da camada que será utilizada para realizar a sua responsabilidade. Em Frameworks comuns, isso é feito de forma declarativa usando a anotação <strong>@Autowired</strong> - apos a delaração da camada, essa anotação injeta uma instancia da qual foi solicitada, ou simplismente sendo instanciada a partir do construtor ou criando uma constante da camada <strong>(Spring Boot)</strong> e no <strong>Quarkus</strong> nós temos a utilizaçao da anotação <strong>@Singleton</strong>. No cenário atual - simulando a visualização, o padrão singleton se adequaria perfeitamente, uma vez que, nós garantimos haja injeção de uma unica instancia a qual será acessada pelo repositorio atual. Assim tal logica é aplicada para as camadas adjacentes.</p>
 <h5 id="estrutura">Estrutura </h5>
 <h2 id="praticas-aplicadas">Praticas Aplicadas </h2>
 <ul>
@@ -219,6 +231,7 @@ Camada responsável pela gestão das entidades do sistema, sejam elas persistent
 <li>Junit 4.13.2</li>
 <li>Maven</li>
 </ul>
+<h2 id="como-executar">Como Executar </h2>
 <h2 id="referencias">Referencias: </h2>
 <hr class="footnotes-sep">
 <section class="footnotes">

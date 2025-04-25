@@ -3,7 +3,7 @@ export_on_save:
   html: true
 ---
 
-# Sistema de Gerenciamento de Tarefas (V 1.5)
+# Sistema de Gerenciamento de Tarefas (V 1.7)
 
 
 | Data       | Versão   | Alteração | Autor / Revisor
@@ -11,8 +11,10 @@ export_on_save:
 |**25/10/2024**  |    01    | `- Idealização do Exercicio` |  Jabes Cajazeira  
 |**01/04/2025**  |    02    | `- Definição e Aplicação de Padrões de Arquitetura` |  Jabes Cajazeira
 |**06/04/2025**  |    03    | `- Aplicação de Padrões De Projeto ás regras de Negócio` | Jabes Cajazeira 
-|**22/04/2025**  |    04   | `- Adição da Camada de Testes e Elaboração dos Testes com Maven e o Junit como Dependência Principal`  | Jabes Cajazeira 
-| **24/04/2025** |  **05** | `- Construção inicial da Documentação do Sistema ` | Jabes Cajazeira
+|**18/04/2025**  |    04    | `- Construção inicial da Documentação do Sistema` | Jabes Cajazeira
+|**20/04/2025**  |    05    | `- Implementação do Padrão de Projeto: Proxy - de Proteção ` | Jabes Cajazeira
+|**22/04/2025**  |    06   | `- Adição da Camada de Testes, Elaboração, Ajustes e Execução dos Testes com Maven e o Junit como Dependência Principal`  | Jabes Cajazeira 
+| **24/04/2025** |  **07** | `-  Revisão da documentação, execução dos testes ` | Jabes Cajazeira
 
 ---
 
@@ -106,7 +108,7 @@ Garantir que uma classe tenha somente uma instância e fornecer um ponto global 
 
 ##### Motivação 
 
-Considerando a visualização aquiterural em Layred Arquiteture citada anteriormente, é preciso que em cada camada adjacente a atual, adquira UMA UNICA INSTANCIA da camada que será utilizada para realizar a sua responsabilidade. Em Frameworks comuns, isso é feito de forma declarativa usando a anotação **@Autowired** - apos a delaração da camada, essa anotação injeta uma instancia da qual foi solicitada, ou simplismente sendo instanciada a partir do construtor ou criando uma constante da camada (Spring Boot) e no Quarkus nós temos a utilizaçao do **@Singleton**. No cenário atual - simulando a visualização, o padrão singleton se adequaria perfeitamente, uma vez que, nós garantimos haja injeção de uma unica instancia a qual será acessada pelo repositorio atual. Assim tal logica é aplicada para as camadas adjacentes.
+Considerando a visualização aquiterural em Layred Arquiteture citada anteriormente, é preciso que em cada camada adjacente a atual, adquira **UMA UNICA INSTANCIA** da camada que será utilizada para realizar a sua responsabilidade. Em Frameworks comuns, isso é feito de forma declarativa usando a anotação **@Autowired** - apos a delaração da camada, essa anotação injeta uma instancia da qual foi solicitada, ou simplismente sendo instanciada a partir do construtor ou criando uma constante da camada **(Spring Boot)** e no **Quarkus** nós temos a utilizaçao da anotação **@Singleton**. No cenário atual - simulando a visualização, o padrão singleton se adequaria perfeitamente, uma vez que, nós garantimos haja injeção de uma unica instancia a qual será acessada pelo repositorio atual. Assim tal logica é aplicada para as camadas adjacentes.
 
 
 ##### Estrutura
@@ -124,7 +126,7 @@ Considerando a visualização aquiterural em Layred Arquiteture citada anteriorm
 - Junit 4.13.2
 - Maven
 
-
+## Como Executar
 
 ## Referencias:
 
