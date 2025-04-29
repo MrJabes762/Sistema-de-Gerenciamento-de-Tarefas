@@ -2,13 +2,15 @@ package data;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+
 import model.Tarefa;
 
 /**
  * Repositório de tarefas que atua como um singleton. Este repositório é
  * responsável por armazenar e gerenciar as tarefas.
  */
-public class TarefasRepository {
+public class TarefasRepository implements Repository<Tarefa>{
 
     private static TarefasRepository instance;
     private Map<Integer, Tarefa> tarefas;
@@ -27,12 +29,14 @@ public class TarefasRepository {
         }
         return instance;
     }
-
+    
+    @Override
     public String adicionarTarefa(Tarefa tarefa) {
         getTarefas().put(tarefa.getIdlocal(), tarefa);
         return getTarefasCadastradas();
     }
-
+    
+    @Override
     public String getTarefasCadastradas() {
         StringBuilder sb = new StringBuilder("Tarefas cadastradas:\n");
         for (Tarefa tarefa : getTarefas().values()) {
@@ -46,17 +50,17 @@ public class TarefasRepository {
         }
         return sb.toString();
     }
-
+    
     public String removerTarefa(Tarefa tarefa) {
         getTarefas().remove(tarefa.getIdlocal());
         return getTarefasCadastradas();
     }
-
+    
     public String atualizarTarefa(Tarefa tarefa) {
         adicionarTarefa(tarefa);
         return getTarefasCadastradas();
     }
-
+    @Override
     public Tarefa getTarefaPorId(int id) {
         return getTarefas().get(id);
     }
@@ -68,4 +72,6 @@ public class TarefasRepository {
     private void setTarefas(Map<Integer, Tarefa> tarefas) {
         this.tarefas = tarefas;
     }
+
+    
 }

@@ -9,7 +9,7 @@ import model.Tarefa;
  * como adicionar, remover, atualizar e listar tarefas.
  */
 
-public class TarefasService {
+public class TarefasService implements Service<Tarefa> {
     private static TarefasService instance;
     private static TarefasRepository instanceRepository;
     private static TarefaProxySecurityValidationService tarefaProxySecurityValidationService;
@@ -29,25 +29,31 @@ public class TarefasService {
         }
         return instance;
     }
+    @Override
     public String adicionarTarefa(Tarefa tarefa) throws IllegalArgumentException {
         getTarefaProxySecurityValidationService().adicionarTarefa(tarefa);
         return getInstanceRepository().adicionarTarefa(tarefa);
     }
+    @Override
     public String removerTarefa(Tarefa tarefa) throws IllegalArgumentException {
         getTarefaProxySecurityValidationService().removerTarefa(tarefa);
         return getInstanceRepository().removerTarefa(tarefa);
     }
+    @Override
     public String atualizarTarefa(Tarefa tarefa) throws IllegalArgumentException {
         getTarefaProxySecurityValidationService().atualizarTarefa(tarefa);
         return getInstanceRepository().atualizarTarefa(tarefa);
     }
+    @Override
     public String listarTarefas() {
         return getInstanceRepository().getTarefasCadastradas();
     }
+    @Override
     public Tarefa getTarefaPorId(int id) throws IllegalArgumentException{
         getTarefaProxySecurityValidationService().getTarefaPorId(id);
         return getInstanceRepository().getTarefaPorId(id);
     }
+    @Override
     public String concluirTarefa(Tarefa tarefa) throws IllegalArgumentException {
         getTarefaProxySecurityValidationService().concluirTarefa(tarefa);
         Tarefa tarefaExistente = getInstanceRepository().getTarefaPorId(tarefa.getIdlocal());

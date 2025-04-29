@@ -9,7 +9,7 @@ import service.TarefasService;
  * Este controlador é responsável por gerenciar as operações relacionadas às tarefas,
  * como adicionar, remover, atualizar e listar tarefas.
  */
-public class TarefasController {
+public class TarefasController implements Controller<Tarefa> {
     private static TarefasController instance;
     private static TarefasService intanceService;
 
@@ -26,21 +26,27 @@ public class TarefasController {
         }
         return instance;
     }
+    @Override
     public String postTarefa(Tarefa tarefa) throws IllegalArgumentException {
         return getIntanceService().adicionarTarefa(tarefa);
     }
+    @Override
     public String deleteTarefa(Tarefa tarefa) throws IllegalArgumentException {
         return getIntanceService().removerTarefa(tarefa);
     }
+    @Override
     public String putTarefa(Tarefa tarefa) throws IllegalArgumentException{
         return getIntanceService().atualizarTarefa(tarefa);
     }
+    @Override
     public String getlistTarefas() {
         return getIntanceService().listarTarefas();
     }
+    @Override
     public String concluirTarefa(Tarefa tarefa) throws IllegalArgumentException {
         return getIntanceService().concluirTarefa(tarefa);
     }
+    @Override
     public Tarefa findById(int id) throws IllegalArgumentException {
         return getIntanceService().getTarefaPorId(id);
     }
