@@ -10,13 +10,10 @@ skinparam line ortho
 !include estruturasUmls/java/service/estruturaTarefaProxy.puml
 
 Roteiro --> TarefasController :  Instancia e delega
-
 TarefasController --> TarefasService : delega
-
 TarefasService --> Tarefa : manipula
 TarefasService ..> TarefaProxySecurityValidationService : valida
 TarefasService --> TarefasRepository : delega
-
 TarefaProxySecurityValidationService ..> TarefasRepository : acessa
 TarefaProxySecurityValidationService --> Tarefa : valida
 
