@@ -69,7 +69,60 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="sistema-de-gerenciamento-de-tarefas-v-17">Sistema de Gerenciamento de Tarefas (V 1.7) </h1>
+<h1 id="sistema-de-gerenciamento-de-tarefas-v-18">Sistema de Gerenciamento de Tarefas (V 1.8) </h1>
+<hr>
+<h2 id="indice">Indice </h2>
+<ul>
+<li><a href="#sistema-de-gerenciamento-de-tarefas-v-18">Sistema de Gerenciamento de Tarefas (V 1.8)</a>
+<ul>
+<li><a href="#indice">Indice</a></li>
+<li><a href="#quadro-de-versionamento">Quadro de Versionamento</a></li>
+<li><a href="#-29042025---08----revis%C3%A3o-da-documenta%C3%A7%C3%A3o-revis%C3%A3o-de-arquitetura--jabes-cajazeira">| <strong>29/04/2025</strong> |  <strong>08</strong> | <code>- Revisão da documentação, Revisão de Arquitetura</code> | Jabes Cajazeira</a></li>
+<li><a href="#descri%C3%A7%C3%A3o">Descrição</a></li>
+<li><a href="#objetivo">Objetivo</a></li>
+<li><a href="#funcionalidades">Funcionalidades</a></li>
+<li><a href="#descri%C3%A7%C3%A3o-do-processo">Descrição do Processo</a>
+<ul>
+<li><a href="#estrutura-do-reposit%C3%B3rio">Estrutura Do Repositório</a></li>
+<li><a href="#arquitertura">Arquitertura</a>
+<ul>
+<li><a href="#layred-arquiteture-arquitetura-em-camadas">Layred Arquiteture (Arquitetura Em Camadas)</a>
+<ul>
+<li><a href="#intera%C3%A7%C3%A3o-entre-as-camadas"><strong>Interação entre as Camadas</strong></a>
+<ul>
+<li><a href="#uml">UML</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#padr%C3%B5es-de-projetos">Padrões de Projetos</a>
+<ul>
+<li><a href="#criacionais">Criacionais</a>
+<ul>
+<li><a href="#singleton">Singleton</a>
+<ul>
+<li><a href="#inten%C3%A7%C3%A3o">Intenção</a></li>
+<li><a href="#motiva%C3%A7%C3%A3o">Motivação</a></li>
+<li><a href="#estrutura">Estrutura</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#praticas-aplicadas">Praticas Aplicadas</a></li>
+<li><a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a></li>
+<li><a href="#como-executar">Como Executar</a></li>
+<li><a href="#referencias">Referencias:</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="quadro-de-versionamento">Quadro de Versionamento </h2>
 <table>
 <thead>
 <tr>
@@ -118,13 +171,21 @@
 </tr>
 <tr>
 <td><strong>24/04/2025</strong></td>
-<td><strong>07</strong></td>
+<td>07</td>
 <td><code>-  Revisão da documentação, execução dos testes </code></td>
+<td>Jabes Cajazeira</td>
+</tr>
+<tr>
+<td><strong>29/04/2025</strong></td>
+<td><strong>08</strong></td>
+<td><code>- Revisão da documentação, Revisão de Arquitetura</code></td>
 <td>Jabes Cajazeira</td>
 </tr>
 </tbody>
 </table>
 <hr>
+<p><a href="#indice">Voltar ao Indice</a></p>
+<h2 id="descrição">Descrição </h2>
 <p>O Sistema de Gerenciamento de Tarefas, partiu de um simples exercicio de estudo dos artificios e técnicas do Paradigma Orientado a Objetos, para uma ampliação a nivel Sistema, contendo:</p>
 <ul>
 <li>Design Orientado a Objetos.</li>
@@ -132,9 +193,13 @@
 <li>Aplicação de Padrões de Projeto orientados a regra de negócio.</li>
 <li>Aplicação de Testes Unitários de Componentes.</li>
 </ul>
+<hr>
+<p><a href="#indice">Voltar ao Indice</a></p>
 <h2 id="objetivo">Objetivo </h2>
 <p>O Objetivo derivado dessa Idealização, é visualizar uma possivel abstração de como na prática conceitos orientados a objetos são enxergados no backend das aplicações web, as quais estão implicitas nos frameworks desta natureza.</p>
 <p>Para tal estudo, usaremos como referência, Spring Boot e Quarkus - Frameworks Web Modernos experimentados pelo autor,os quais são utilizados na construções de Aplicações, API's REST, assim como, demais própositos inerentes as tecnologias, fornecendo serviços de: Criptografia, Autenticação, Conexão com banco de dados e técnicas, tecnologias, bibliotecas que se adequam as regras de négocio.</p>
+<p><a href="#indice">Voltar ao Indice</a></p>
+<hr>
 <h2 id="funcionalidades">Funcionalidades </h2>
 <ul>
 <li>Adicionar Tarefas.</li>
@@ -144,9 +209,9 @@
 <li>Deletar Tarefas.</li>
 </ul>
 <p>Podemos inferir com base nas funcionalidades descritas que, a modelagem em sua excencia é um CRUD básico, o qual esses frameworks,<br>
-implementam de forma atõmica tecnicas robustas que se integram e gerenciam recursos computacionais.</p>
-<p>//alem as funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tal implementação pode ser aplicavel de forma mais enxuta, o objetivo é visualizar formas de aplica-los (quando justificaveis) de modo a conferir: Robustez, eficiencia, otimização de recurso e aderência aos principios SOLID - evidendiando principalmente o ERP (Principio da Responsabilidade Única) . Nesse cenário, é requisito do sistema, gerir tarefas a partir das seguintes funcionalidades: //</p>
+implementam de forma atõmica tecnicas robustas que se integram e gerenciam recursos computacionais. Alem as funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tal implementação pode ser aplicavel de forma mais enxuta, o objetivo é visualizar formas de aplica-los (quando justificaveis) de modo a conferir:Robustez, eficiencia, otimização de recurso, Maestria no dominio á excencia do padrão e aderência aos principios SOLID - evidendiando principalmente o ERP (Principio da Responsabilidade Única) . Nesse cenário, é requisito do sistema, gerir tarefas a partir das seguintes funcionalidades: //</p>
 <hr>
+<p><a href="#indice">Voltar ao Indice</a></p>
 <h2 id="descrição-do-processo">Descrição do Processo </h2>
 <h3 id="estrutura-do-repositório">Estrutura Do Repositório </h3>
 <table>
@@ -180,28 +245,33 @@ implementam de forma atõmica tecnicas robustas que se integram e gerenciam recu
 </tbody>
 </table>
 <h3 id="arquitertura">Arquitertura </h3>
-<h4 id="layred-arquiteture">Layred Arquiteture </h4>
-<p>A arquitetura do sistema segue o padrão <strong>Layered Architecture</strong>, que é uma extensão do <strong>MVC (Model-View-Controller)</strong>. Nesse contexto, o sistema foi dividido em 4 camadas principais, cada uma com responsabilidades bem definidas:</p>
+<h4 id="layred-arquiteture-arquitetura-em-camadas">Layred Arquiteture (Arquitetura Em Camadas) </h4>
+<p>A arquitetura do sistema segue o padrão <strong>Layered Architecture</strong>, que é uma extensão do <strong>MVC (Model-View-Controller)</strong>.</p>
+<p><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+O modelo contém todo o conteúdo e a lógica de processamento especícos à aplicação. A visão contém todas as funções especícas à interface e possibilita a apresentação do conteúdo e lógica de processamento exigido pelo usuário. O controlador gerencia o acesso ao modelo e à visão e coordena o uxo de dados entre eles.</p>
+<p>Nesse contexto, o sistema foi dividido em 4 camadas principais, cada uma com responsabilidades bem definidas:</p>
 <ul>
 <li>
 <p><strong>Controller</strong>:<br>
 Esta camada é a principal porta de entrada para a realização das funcionalidades. Ela é responsável por receber as requisições (considerando aplicações web ou outros tipos de interface) e direcioná-las para os processamentos específicos. No projeto, o <code>TarefasController.java</code> atua como um <strong>Front Controller</strong>, centralizando as operações e delegando a lógica de negócios para a camada de serviço.</p>
 </li>
 <li>
-<p><strong>Service (Service Layer)</strong>:<br>
-Esta camada contém toda a lógica de negócios do sistema. É considerada a "alma" da regra de negócio, onde são descritas de forma imperativa todas as ações e funcionalidades. No projeto, o <code>TarefasService.java</code> centraliza operações como adicionar, atualizar, listar e concluir tarefas.<br>
+<p><strong>Service (Service Layer)</strong>:</p>
+<p>Esta camada contém toda a lógica de negócios do sistema,<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup> [...] fornecem  serviços utilitários e funções de software de aplicação [...]. É considerada a "alma" da regra de negócio, onde são descritas de forma imperativa todas as ações e funcionalidades. No projeto, o <code>TarefasService.java</code> centraliza operações como adicionar, atualizar, listar e concluir tarefas.<br>
 O uso do <strong>Service Layer</strong> desacopla a lógica de negócios da camada de controle, promovendo reutilização e manutenibilidade.</p>
 </li>
 <li>
-<p><strong>Data (Repository Pattern)</strong>:<br>
-Camada responsável pelo contato direto com os dados. Ela gerencia a persistência e recuperação de informações, seja em memória, arquivos ou banco de dados. No projeto, isso é representado pelo <code>TarefasRepository.java</code>, que implementa o <strong>Repository Pattern</strong>.<br>
-Esse padrão abstrai os detalhes de acesso aos dados, permitindo que o restante do sistema interaja com os dados de forma desacoplada.</p>
+<p><strong>Data (Repository Pattern)</strong>:</p>
+<p>Camada responsável pelo contato direto com os dados. Ela gerencia a persistência e recuperação de informações, seja em memória, arquivos ou banco de dados. No projeto, isso é implicito pelo <code>TarefasRepository.java</code>, que implementa o <strong>Repository Pattern</strong>.</p>
+<p><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> (Adaptado)</p>
+<p>Esse padrão abstrai os detalhes de acesso aos dados, permitindo que o restante do sistema interaja com os dados de forma desacoplada.</p>
 </li>
 <li>
 <p><strong>Model</strong>:<br>
 Camada responsável pela gestão das entidades do sistema, sejam elas persistentes ou não. Além disso, o <strong>Model</strong> pode encapsular as regras de validação e garantir a integridade dos dados. No projeto, a classe <code>Tarefa.java</code> é um exemplo dessa camada, contendo validações como título e descrição obrigatórios.</p>
 </li>
 </ul>
+<p>Alem disso, cada camada (exceto a model) utiliza o artificio Generics adicionado no Java 5 que consiste em <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> (Adaptado) [...] Um tipo genérico é uma classe ou interface que é parametrizada sobre tipos. Utilizamos suportes angulares (&lt;&gt;) para especificar o parâmetro de tipo. [...]</p>
 <h5 id="interação-entre-as-camadas"><strong>Interação entre as Camadas</strong> </h5>
 <p>A interação entre as camadas segue os princípios do <strong>MVC</strong> e do <strong>Layered Architecture</strong>:</p>
 <ol>
@@ -209,34 +279,49 @@ Camada responsável pela gestão das entidades do sistema, sejam elas persistent
 <li>O <strong>Service</strong> utiliza o <strong>Repository</strong> para acessar ou persistir informações e o <strong>Model</strong> para manipular as entidades.</li>
 <li>O <strong>Repository</strong> abstrai os detalhes de armazenamento, permitindo que o restante do sistema permaneça desacoplado da implementação específica de persistência.</li>
 </ol>
+<h6 id="uml">UML </h6>
+<p><img src="out/estruturasUmls/arquitetura/arquitetura/arquitetura.png" alt="Arquitetura"></p>
+<p><a href="#indice">Voltar ao Indice</a></p>
 <h2 id="padrões-de-projetos">Padrões de Projetos </h2>
 <p>De acordo as funcionalidades, a nivel granular, podemos enxergar um CRUD Simples do qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto. (front- controller (fachada - inpicito), singleton, Multiton, flyweight, Builder)</p>
 <h3 id="criacionais">Criacionais </h3>
 <h4 id="singleton">Singleton </h4>
 <h5 id="intenção">Intenção </h5>
-<p><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
 <p>Garantir que uma classe tenha somente uma instância e fornecer um ponto global de acesso para a mesma.</p>
 <h5 id="motivação">Motivação </h5>
-<p>Considerando a visualização aquiterural em Layred Arquiteture citada anteriormente, é preciso que em cada camada adjacente a atual, adquira <strong>UMA UNICA INSTANCIA</strong> da camada que será utilizada para realizar a sua responsabilidade. Em Frameworks comuns, isso é feito de forma declarativa usando a anotação <strong>@Autowired</strong> - apos a delaração da camada, essa anotação injeta uma instancia da qual foi solicitada, ou simplismente sendo instanciada a partir do construtor ou criando uma constante da camada <strong>(Spring Boot)</strong> e no <strong>Quarkus</strong> nós temos a utilizaçao da anotação <strong>@Singleton</strong>. No cenário atual - simulando a visualização, o padrão singleton se adequaria perfeitamente, uma vez que, nós garantimos haja injeção de uma unica instancia a qual será acessada pelo repositorio atual. Assim tal logica é aplicada para as camadas adjacentes.</p>
+<p>Considerando a visualização aquiterural em Layred Arquiteture citada anteriormente, é preciso que em cada camada adjacente a atual, adquira <strong>UMA UNICA INSTANCIA</strong> da camada que será utilizada para realizar a sua responsabilidade. Em Frameworks comuns, isso é feito de forma declarativa usando a anotação <strong>@Autowired</strong> - apos a delaração da camada, essa anotação injeta uma instancia da qual foi solicitada, ou simplismente sendo instanciada a partir do construtor ou criando uma constante da camada <strong>(Spring Boot)</strong> e no <strong>Quarkus</strong> nós temos a utilizaçao da anotação <strong>@Singleton</strong> com o <strong>Inject</strong> . No cenário atual - simulando a visualização, o padrão singleton se adequaria perfeitamente, uma vez que, nós garantimos haja injeção de uma unica instancia a qual será acessada pelo repositorio atual. Assim tal logica é aplicada para as camadas adjacentes.</p>
 <h5 id="estrutura">Estrutura </h5>
+<p><a href="#indice">Voltar ao Indice</a></p>
+<hr>
 <h2 id="praticas-aplicadas">Praticas Aplicadas </h2>
 <ul>
 <li>Solid</li>
 <li>Dry</li>
 <li>Testes Unitários de componentes com Junit</li>
 </ul>
+<hr>
 <h2 id="tecnologias-utilizadas">Tecnologias Utilizadas </h2>
 <ul>
 <li>Java 23</li>
 <li>Junit 4.13.2</li>
 <li>Maven</li>
 </ul>
+<p><a href="#indice">Voltar ao Indice</a></p>
+<hr>
 <h2 id="como-executar">Como Executar </h2>
+<hr>
 <h2 id="referencias">Referencias: </h2>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>GAMMA, Erich. et al. Padrões de projetos: Soluções reutilizáveis de software orientados a objetos Bookman editora, 2009. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>PRESSMAN, Roger S.; MAXIM, Bruce R. Engenharia de software: uma abordagem profissional [recurso eletrônico]. 9. ed. Porto Alegre: AMGH, 2021. E-pub. Tradução de Francisco Araújo da Costa. Revisão técnica de Reginaldo Arakaki, Julio Arakaki, Renato Manzan de Andrade. ISBN 978-65-5804-011-8. Editado também como livro impresso em 2021. <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>BERGMAN, Per-Erik. Repository Design Pattern. Medium, 20 abr. 2017. Disponível em: <a href="https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30%E2%80%8B">https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30​</a>. Acesso em: 29 abr. 2025. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>KUMAR, Pankaj. Java Generics Explained: Benefits, Examples, and Best Practice. DigitalOcean, 2022. Disponível em: <a href="https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface">https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface</a>. Acesso em: 29 abr. 2025. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>GAMMA, Erich. et al. Padrões de projetos: Soluções reutilizáveis de software orientados a objetos Bookman editora, 2009. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
