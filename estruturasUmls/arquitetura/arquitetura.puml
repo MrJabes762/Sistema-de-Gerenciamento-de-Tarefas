@@ -1,0 +1,29 @@
+@startuml
+
+skinparam line ortho
+
+!include estruturasUmls/java/controller/estruturaTarefasController.puml
+!include estruturasUmls/java/model/estruturaTarefa.puml
+!include estruturasUmls/java/data/estruturaTarefasRepository.puml
+!include estruturasUmls/java/service/estruturaTarefaService.puml
+!include estruturasUmls/java/controller/estruturaRoteiro.puml
+!include estruturasUmls/java/service/estruturaTarefaProxy.puml
+
+Roteiro --> TarefasController :  Instancia e delega
+
+TarefasController --> TarefasService : delega
+
+TarefasService --> Tarefa : manipula
+TarefasService ..> TarefaProxySecurityValidationService : valida
+TarefasService --> TarefasRepository : delega
+
+TarefaProxySecurityValidationService ..> TarefasRepository : acessa
+TarefaProxySecurityValidationService --> Tarefa : valida
+
+note left of Roteiro
+    A classe Roteiro simula um Client.
+    Ela instancia o controller e chama os métodos dele.
+        - Instancia tarefas
+    O controller é o ponto de entrada do sistema (Facade).
+end note
+@enduml
