@@ -1,0 +1,24 @@
+@startuml
+
+skinparam lineType ortho
+
+class TarefasService <<Service Layer>> <<Singleton>> <<Proxy>> {
+    - instance: TarefasService
+    - instanceRepository: TarefasRepository
+    - tarefaProxySecurityValidationService: TarefaProxySecurityValidationService
+    --
+    - TarefasService()
+    + getInstance(): TarefasService
+    + adicionarTarefa(tarefa: Tarefa): String
+    + removerTarefa(tarefa: Tarefa): String
+    + atualizarTarefa(tarefa: Tarefa): String
+    + listarTarefas(): String
+    + getTarefaPorId(id: int): Tarefa
+    + concluirTarefa(tarefa: Tarefa): String
+    - getInstanceRepository(): TarefasRepository
+    - setInstanceRepository(instanceRepository: TarefasRepository)
+    - getTarefaProxySecurityValidationService(): TarefaProxySecurityValidationService
+    - setTarefaProxySecurityValidationService(s: TarefaProxySecurityValidationService)
+}
+
+@enduml

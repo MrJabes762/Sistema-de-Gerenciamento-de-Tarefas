@@ -1,0 +1,20 @@
+@startuml
+
+skinparam lineType ortho
+
+class TarefaProxySecurityValidationService {
+    - instance: TarefaProxySecurityValidationService
+    - instanceRepository: TarefasRepository
+    --
+    - TarefaProxySecurityValidationService()
+    + getInstance(): TarefaProxySecurityValidationService
+    - validacaoDeCampos(tarefa: Tarefa)
+    + adicionarTarefa(tarefa: Tarefa)
+    + removerTarefa(tarefa: Tarefa)
+    + atualizarTarefa(tarefa: Tarefa)
+    + concluirTarefa(tarefa: Tarefa)
+    + getTarefaPorId(id: int)
+    - getInstanceRepository(): TarefasRepository
+}
+
+@enduml

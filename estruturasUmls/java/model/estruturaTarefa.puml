@@ -1,0 +1,32 @@
+@startuml
+
+skinparam lineType ortho
+
+class Tarefa {
+    - idGlobal: int <<static>>
+    - idlocal: int
+    - titulo: String
+    - descricao: String
+    - dataCriacao: String
+    - prioridade: Prioridade
+    - concluida: boolean
+    --
+    + Tarefa(titulo: String, descricao: String, prioridade: Prioridade)
+    + getData(): String
+    - setData(): void
+    + getDescricao(): String
+    + setDescricao(descricao: String): void
+    + getTitulo(): String
+    + setTitulo(titulo: String): void
+    + getIdlocal(): int
+    - setIdlocal(idlocal: int): void
+    + isConcluida(): boolean
+    + setConcluida(concluida: boolean): void
+    + getDataCriacao(): String
+    + toString(): String
+    + getPrioridade(): Prioridade
+    + setPrioridade(prioridade: Prioridade): void
+    + getIdGlobal(): int <<static>>
+}
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+
+skinparam line ortho
+
+class TarefasController <<Front Controller>> <<Facade>> <<Singleton>>  {
+    - static instance : TarefasController
+    - static instanceService : TarefasService
+    --
+    - TarefasController()
+    + static getInstance() : TarefasController
+    + postTarefa(tarefa : Tarefa) : String
+    + deleteTarefa(tarefa : Tarefa) : String
+    + putTarefa(tarefa : Tarefa) : String
+    + getlistTarefas() : String
+    + concluirTarefa(tarefa : Tarefa) : String
+    + findById(id : int) : Tarefa
+    --
+    - static getInstanceService() : TarefasService
+    - static setInstanceService(service : TarefasService) : void
+}
+
+@enduml

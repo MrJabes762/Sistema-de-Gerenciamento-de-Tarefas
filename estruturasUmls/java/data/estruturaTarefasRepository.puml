@@ -1,0 +1,19 @@
+@startuml
+
+skinparam line ortho
+
+class TarefasRepository <<repositoryPattern>> <<Singleton>> <<Builder>> {
+    - static instance: TarefasRepository
+    - tarefas: Map<Integer, Tarefa>
+    - TarefasRepository()
+    + static getInstance() : TarefasRepository
+    + adicionarTarefa(tarefa: Tarefa) : String
+    + removerTarefa(tarefa: Tarefa) : String
+    + atualizarTarefa(tarefa: Tarefa) : String
+    + getTarefaPorId(id: int) : Tarefa
+    + getTarefasCadastradas() : String
+    - getTarefas() : Map<Integer, Tarefa>
+    - setTarefas(tarefas: Map<Integer, Tarefa>) : void
+}
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+
+skinparam line ortho
+interface Repository<T> {
+    + adicionarTarefa(tarefa : T) : String
+    + removerTarefa(tarefa : T) : String
+    + atualizarTarefa(tarefa : T) : String
+    + getTarefaPorId(id : int) : T
+    + getTarefasCadastradas() : String
+}
+@enduml

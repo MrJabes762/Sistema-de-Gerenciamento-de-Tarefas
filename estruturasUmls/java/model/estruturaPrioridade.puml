@@ -1,0 +1,15 @@
+@startuml
+
+skinparam lineType ortho
+
+enum Prioridade {
+    URGENTE
+    ALTA
+    MEDIA
+    BAIXA
+    --
+    - prioridade: int
+    + getPrioridade(): int
+}
+
+@enduml

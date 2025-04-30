@@ -1,0 +1,15 @@
+@startuml
+
+skinparam line ortho
+
+interface Controller<T> {
+    + postTarefa(T entidade): String
+    + deleteTarefa(T entidade): String
+    + putTarefa(T entidade): String
+    + getlistaTarefa(): String
+    + concluirTarefa(T entidade): String
+    + findById(id : int): T
+}
+
+
+@enduml

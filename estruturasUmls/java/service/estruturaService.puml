@@ -1,0 +1,14 @@
+@startuml
+
+skinparam lineType ortho
+
+interface Service<T> {
+    + adicionarTarefa(tarefa: T): String
+    + removerTarefa(tarefa: T): String
+    + atualizarTarefa(tarefa: T): String
+    + getTarefaPorId(id: int): T
+    + listarTarefas(): String
+    + concluirTarefa(tarefa: T): String
+}
+
+@enduml
