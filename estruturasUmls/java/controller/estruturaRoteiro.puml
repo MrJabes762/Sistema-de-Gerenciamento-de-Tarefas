@@ -8,8 +8,4 @@ class Roteiro {
     + main(args: String[]): void
 }
 
-Roteiro --> TarefasController : utiliza como front controller
-Roteiro --> Tarefa : instancia tarefas
-Tarefa --> Prioridade : usa enum
-
 @enduml
