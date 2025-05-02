@@ -152,11 +152,12 @@ A interação entre as camadas segue os princípios do **MVC** e do **Layered Ar
 
 ## Padrões de Projetos  
 
-Conforme as funcionalidades, a nivel granular, podemos enxergar um CRUD Simples o qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto. (front- controller (fachada - inpicito), singleton, Multiton, flyweight, Builder)
+Conforme as funcionalidades, a nivel granular, podemos enxergar um CRUD Simples o qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto. (front- controller (fachada - inpicito), flyweight)
 
 ### Criacionais 
 
- - [Singleton](PadroesDeProjeto/Singleton.md)
+ 1. [Singleton](PadroesDeProjeto/Singleton.md)
+ 2. [Multiton](PadroesDeProjeto/Multiton.md)
 
 
 [Voltar ao Indice](#indice)
@@ -165,15 +166,23 @@ Conforme as funcionalidades, a nivel granular, podemos enxergar um CRUD Simples 
 
 ## Praticas Aplicadas 
 
--  Solid
--  Dry
+-  SOLID 
+   - Responsabilidade Única (SRP)
+   - Principio Aberto Fechado (OCP)
+   - Principio de Segregação de Interfaces (ISP)
+   - Principio de Inversão de Dependencia (DIP)
+-  DRY
+   -  Modularização e Reutilização 
+   -  Refatoração Continua (em caso de duplicação).
 -  Testes Unitários de componentes com Junit
+   -  Teste do Controller com os Endpoints
 
 ---
 
 ## Tecnologias Utilizadas 
 
 - Java 23
+- Java SE 11
 - Junit 4.13.2
 - Maven
 
