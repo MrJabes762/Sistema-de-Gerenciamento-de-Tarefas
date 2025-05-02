@@ -1,0 +1,12 @@
+@startuml
+
+skinparam line ortho
+
+!include estruturasUmls/java/model/estruturaPrioridade.puml
+!include estruturasUmls/java/model/estruturaTarefa.puml
+!include estruturasUmls/java/controller/estruturaRoteiro.puml
+
+Tarefa *-- Prioridade
+Roteiro --> Tarefa: Instancia Tarefas atribuindo as instancias de prioridades 
+
+@enduml
