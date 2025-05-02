@@ -3,16 +3,16 @@ export_on_save:
   html: true
 ---
 
-# Sistema de Gerenciamento de Tarefas (V 1.8)
+# Sistema de Gerenciamento de Tarefas (V 1.9)
 
 ---
 
 ## Indice
 
-- [Sistema de Gerenciamento de Tarefas (V 1.8)](#sistema-de-gerenciamento-de-tarefas-v-18)
+- [Sistema de Gerenciamento de Tarefas (V 1.9)](#sistema-de-gerenciamento-de-tarefas-v-19)
   - [Indice](#indice)
   - [Quadro de Versionamento](#quadro-de-versionamento)
-  - [| **29/04/2025** |  **08** | `- Revisão da documentação, Revisão de Arquitetura` | Jabes Cajazeira](#-29042025---08----revisão-da-documentação-revisão-de-arquitetura--jabes-cajazeira)
+  - [| **01/05/2025** | **09** | `Revisão da Documentação / Arquitetura `| Jabes Cajazeira](#-01052025--09--revisão-da-documentação--arquitetura--jabes-cajazeira)
   - [Descrição](#descrição)
   - [Objetivo](#objetivo)
   - [Funcionalidades](#funcionalidades)
@@ -24,10 +24,6 @@ export_on_save:
           - [UML](#uml)
   - [Padrões de Projetos](#padrões-de-projetos)
     - [Criacionais](#criacionais)
-      - [Singleton](#singleton)
-        - [Intenção](#intenção)
-        - [Motivação](#motivação)
-        - [Estrutura](#estrutura)
   - [Praticas Aplicadas](#praticas-aplicadas)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
   - [Como Executar](#como-executar)
@@ -47,7 +43,8 @@ export_on_save:
 |**20/04/2025**  |    05    | `- Implementação do Padrão de Projeto: Proxy - de Proteção ` | Jabes Cajazeira
 |**22/04/2025**  |    06   | `- Adição da Camada de Testes, Elaboração, Ajustes e Execução dos Testes com Maven e o Junit como Dependência Principal`  | Jabes Cajazeira 
 | **24/04/2025** |  07 | `-  Revisão da documentação, execução dos testes ` | Jabes Cajazeira
-| **29/04/2025** |  **08** | `- Revisão da documentação, Revisão de Arquitetura` | Jabes Cajazeira
+| **29/04/2025** |  08 | `- Revisão da documentação, Revisão de Arquitetura` | Jabes Cajazeira
+| **01/05/2025** | **09** | `Revisão da Documentação / Arquitetura `| Jabes Cajazeira
 ---
 
 [Voltar ao Indice](#indice)
@@ -77,17 +74,19 @@ Para tal estudo, usaremos como referência, Spring Boot e Quarkus - Frameworks W
 
 ## Funcionalidades
 
+
+Podemos inferir com base nas funcionalidades descritas que, a modelagem em sua excencia é um CRUD (Create, Read, Update, Delete) básico, o qual esses frameworks,
+implementam de forma atõmica e verbosa tecnicas que se integram e gerenciam recursos computacionais. Alem as funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tais implementações podem ser aplicaveis de forma mais enxuta (em Código Bruto), o objetivo é visualizar formas de aplica-los (quando justificaveis) de modo a conferir: Robustez, Eficiencia, Otimização de recursos, Maestria no dominio á excencia do Padrão orientado ao problema e aderência aos principios SOLID - evidendiando principalmente o Principio da Responsabilidade Única (SRP) em que cada classe possui apenas uma razão para existir . Nesse cenário, é requisito do sistema, gerir tarefas a partir das seguintes funcionalidades:
+
 - Adicionar Tarefas.
 - Listar tarefas.
 - Concluir Tarefas.
 - Atualizar taferas.
 - Deletar Tarefas.
 
-Podemos inferir com base nas funcionalidades descritas que, a modelagem em sua excencia é um CRUD básico, o qual esses frameworks,
-implementam de forma atõmica tecnicas robustas que se integram e gerenciam recursos computacionais. Alem as funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tal implementação pode ser aplicavel de forma mais enxuta, o objetivo é visualizar formas de aplica-los (quando justificaveis) de modo a conferir:Robustez, eficiencia, otimização de recurso, Maestria no dominio á excencia do padrão e aderência aos principios SOLID - evidendiando principalmente o ERP (Principio da Responsabilidade Única) . Nesse cenário, é requisito do sistema, gerir tarefas a partir das seguintes funcionalidades: //
+[Voltar ao Indice](#indice)
 
 ---
-[Voltar ao Indice](#indice)
 
 ## Descrição do Processo 
 
@@ -98,7 +97,7 @@ implementam de forma atõmica tecnicas robustas que se integram e gerenciam recu
 |----------|----------|
 | `src/main/java/controller`  |   **Contem Controllers Responsaveis Centralizar as Requisições do Sistema**    |
 | `src/main/java/data`  |   **Contem Repository's Reponsáveis pela Gerencia dos Dados**    | 
-| `src/main/java/model`  |   **Contem Entidades que representam Objetos do Mundo Real**    | 
+| `src/main/java/model`  |   **Contem Entidades que representam Abstrações de Objetos do Mundo Real**    | 
 | `src/main/java/service`  |    **Contem Serviços com Regras de Négócio Aplicadas ao Cenário**    |
 | `src/test/java`  | **Contem Testes Unitários realizados com os componentes do sistema**  |
 
@@ -111,6 +110,7 @@ implementam de forma atõmica tecnicas robustas que se integram e gerenciam recu
 A arquitetura do sistema segue o padrão **Layered Architecture**, que é uma extensão do **MVC (Model-View-Controller)**.
 
 [^Pressman2021]
+[^GAMMA]
 O modelo contém todo o conteúdo e a lógica de processamento especícos à aplicação. A visão contém todas as funções especícas à interface e possibilita a apresentação do conteúdo e lógica de processamento exigido pelo usuário. O controlador gerencia o acesso ao modelo e à visão e coordena o uxo de dados entre eles. 
 
 Nesse contexto, o sistema foi dividido em 4 camadas principais, cada uma com responsabilidades bem definidas:
@@ -134,7 +134,7 @@ Nesse contexto, o sistema foi dividido em 4 camadas principais, cada uma com res
   Camada responsável pela gestão das entidades do sistema, sejam elas persistentes ou não. Além disso, o **Model** pode encapsular as regras de validação e garantir a integridade dos dados. No projeto, a classe `Tarefa.java` é um exemplo dessa camada, contendo validações como título e descrição obrigatórios.
 
 
-Alem disso, cada camada (exceto a model) utiliza o artificio Generics adicionado no Java 5 que consiste em [^KUMAR] (Adaptado) [...] Um tipo genérico é uma classe ou interface que é parametrizada sobre tipos. Utilizamos suportes angulares (<>) para especificar o parâmetro de tipo. [...]
+Alem disso, cada camada (exceto a model) utiliza o artificio Generics adicionado no Java 5 que consiste em [^KUMAR] (Adaptado) um tipo genérico de classe ou interface que é parametrizada sobre tipos. Utilizamos suportes angulares (<>) para especificar o parâmetro de tipo. [...]. Dessa forma, no sistema em questão os contratos explicito nas interfaces das respectivas camadas podem implementados em futuras classes, evidenciando Boas Práticas do Principio de Inversão de Dependencia (DIP) - devido a pratica do uso de interfaces e Principio de Segregação de Interfaces (ISP), em que, nos temos uma segregação de interfaces, cada camada possui a sua em vez de uma contendo a abstração de todas. E por fim, o Principio Aberto Fechado (OCP) - nesse caso, as classes são abertas para extensão reutilzando ou não outros metodos para futuras implementações e fechado para modificações ao que ja possui.
 
 
 ##### **Interação entre as Camadas**
@@ -152,25 +152,12 @@ A interação entre as camadas segue os princípios do **MVC** e do **Layered Ar
 
 ## Padrões de Projetos  
 
-De acordo as funcionalidades, a nivel granular, podemos enxergar um CRUD Simples do qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto. (front- controller (fachada - inpicito), singleton, Multiton, flyweight, Builder)
+Conforme as funcionalidades, a nivel granular, podemos enxergar um CRUD Simples o qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto. (front- controller (fachada - inpicito), singleton, Multiton, flyweight, Builder)
 
 ### Criacionais 
 
-#### Singleton  
+ - [Singleton](PadroesDeProjeto/Singleton.md)
 
-
-##### Intenção
-
-[^GAMMA]
-
-Garantir que uma classe tenha somente uma instância e fornecer um ponto global de acesso para a mesma.
-
-##### Motivação 
-
-Considerando a visualização aquiterural em Layred Arquiteture citada anteriormente, é preciso que em cada camada adjacente a atual, adquira **UMA UNICA INSTANCIA** da camada que será utilizada para realizar a sua responsabilidade. Em Frameworks comuns, isso é feito de forma declarativa usando a anotação **@Autowired** - apos a delaração da camada, essa anotação injeta uma instancia da qual foi solicitada, ou simplismente sendo instanciada a partir do construtor ou criando uma constante da camada **(Spring Boot)** e no **Quarkus** nós temos a utilizaçao da anotação **@Singleton** com o **Inject** . No cenário atual - simulando a visualização, o padrão singleton se adequaria perfeitamente, uma vez que, nós garantimos haja injeção de uma unica instancia a qual será acessada pelo repositorio atual. Assim tal logica é aplicada para as camadas adjacentes.
-
-
-##### Estrutura
 
 [Voltar ao Indice](#indice)
 
