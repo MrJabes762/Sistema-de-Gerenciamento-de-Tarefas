@@ -2,7 +2,7 @@
 
 skinparam lineType ortho
 
-class TarefaProxySecurityValidationService {
+class TarefaProxySecurityValidationService <<Service Layer>> <<Proxy>> <<Singleton>>{
     - instance: TarefaProxySecurityValidationService
     - instanceRepository: TarefasRepository
     --

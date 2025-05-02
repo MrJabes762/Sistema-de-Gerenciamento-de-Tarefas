@@ -2,8 +2,8 @@
 
 skinparam line ortho
 
-class TarefasRepository <<repositoryPattern>> <<Singleton>> <<Builder>> {
-    - static instance: TarefasRepository
+class TarefasRepository <<Repository Pattern>> <<Singleton>> <<Builder>> {
+    - instance: TarefasRepository
     - tarefas: Map<Integer, Tarefa>
     - TarefasRepository()
     + static getInstance() : TarefasRepository

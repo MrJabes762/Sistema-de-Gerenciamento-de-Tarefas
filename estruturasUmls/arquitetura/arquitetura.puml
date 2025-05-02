@@ -12,15 +12,22 @@ skinparam line ortho
 Roteiro --> TarefasController :  Instancia e delega
 TarefasController --> TarefasService : delega
 TarefasService --> Tarefa : manipula
-TarefasService ..> TarefaProxySecurityValidationService : valida
-TarefasService --> TarefasRepository : delega
-TarefaProxySecurityValidationService ..> TarefasRepository : acessa
+TarefasService ..> TarefaProxySecurityValidationService : Delega validação
+TarefasService --> TarefasRepository : Delega (Após validação no Proxy)
+TarefaProxySecurityValidationService ..> TarefasRepository :  Acessa e valida
 TarefaProxySecurityValidationService --> Tarefa : valida
 
+TarefasRepository --> TarefasService : Retorna o resultado do banco
+TarefasService --> TarefasController : Processa (se necessario) e retorna
+TarefasController --> Roteiro : Retorna ao client a Resposta
 note left of Roteiro
-    A classe Roteiro simula um Client.
-    Ela instancia o controller e chama os métodos dele.
-        - Instancia tarefas
-    O controller é o ponto de entrada do sistema (Facade).
+    1- A classe Roteiro simula um Client.
+    2- Instancia tarefas
+    3- Ela instancia o controller e chama os métodos (ou Endpoints) dele.
+    4- O controller instancia o Service e delega a execução do método.
+    5- O Service instancia o Repository e delega a execução do método.
+    6- O Repository manipula a classe Tarefa e retorna o resultado.
+    7- O Service processa o resultado e retorna ao controller.
+    8- O controller processa o resultado e Retorna o Response ao client.
 end note
 @enduml
