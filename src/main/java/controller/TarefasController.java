@@ -5,7 +5,7 @@ import service.TarefasService;
 
 
 /**
- * Controlador de tarefas que atua como um front controller e singleton.
+ * Controlador de tarefas que atua como um front controller e um façade com singleton.
  * Este controlador é responsável por gerenciar as operações relacionadas às tarefas,
  * como adicionar, remover, atualizar e listar tarefas.
  */
