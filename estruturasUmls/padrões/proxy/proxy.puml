@@ -1,0 +1,16 @@
+@startuml
+
+skinparam line ortho
+
+!include estruturasUmls/java/model/estruturaTarefa.puml
+!include estruturasUmls/java/data/estruturaTarefasRepository.puml
+!include estruturasUmls/java/service/estruturaTarefaService.puml
+!include estruturasUmls/java/service/estruturaTarefaProxy.puml
+
+
+TarefasService --> TarefaProxySecurityValidationService : Delega validação
+TarefaProxySecurityValidationService ..> TarefasRepository :  Acessa e  valida existencia
+TarefaProxySecurityValidationService --> TarefasService : Retorna o fluxo após validação
+TarefaProxySecurityValidationService --> Tarefa : valida
+
+@enduml
