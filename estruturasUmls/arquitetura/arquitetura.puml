@@ -12,9 +12,10 @@ skinparam line ortho
 Roteiro --> TarefasController :  Instancia e delega
 TarefasController --> TarefasService : delega
 TarefasService --> Tarefa : manipula
-TarefasService ..> TarefaProxySecurityValidationService : Delega validação
-TarefasService --> TarefasRepository : Delega (Após validação no Proxy)
-TarefaProxySecurityValidationService ..> TarefasRepository :  Acessa e valida
+TarefasService --> TarefaProxySecurityValidationService : Delega validação
+TarefaProxySecurityValidationService ..> TarefasRepository :  Acessa e  valida existencia
+TarefaProxySecurityValidationService --> TarefasService : Retorna o fluxo após validação
+TarefasService --> TarefasRepository : delega
 TarefaProxySecurityValidationService --> Tarefa : valida
 
 TarefasRepository --> TarefasService : Retorna o resultado do banco
