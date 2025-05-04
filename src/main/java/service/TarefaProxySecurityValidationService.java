@@ -5,6 +5,22 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import model.Tarefa;
 
+/**
+ * A classe TarefaProxySecurityValidationService é um exemplo da aplicação do padrão de projeto estrutural Proxy.
+ * Ele é aplicado para que antes de realizar qualquer solicitação, passe por uma validação de segurança.
+ * 
+ * Tal Classe se comporta tambem como um serviço alem de um padrão de projeto.
+ * 
+ * O TarefasService passa a responsabilidade para ele, O controller que o instancia não sabe da existencia dele, 
+ * 
+ * E tambem há a aplicação o Singleton, isso garante que haja apenas 
+ * uma instância do proxy no mesmo pacote.
+ * Nessa casse terá apenas a lógica validação das requisições, assim como, 
+ * demais validações antes de executar as operações.
+ * 
+ * Toda a logica operacional da solcitação é de responsabiidade da classe TarefasService.
+ */
+
 class TarefaProxySecurityValidationService {
     private static TarefaProxySecurityValidationService instance;
     private static TarefasRepository instanceRepository;
