@@ -1,0 +1,15 @@
+@startuml
+
+skinparam line ortho
+
+!include estruturasUmls/arquitetura/arquitetura.puml
+!include estruturasUmls/java/controller/estruturaController<T>.puml
+!include estruturasUmls/java/data/estruturaRepositry.puml
+!include estruturasUmls/java/model/estruturaPrioridade.puml
+!include estruturasUmls/java/service/estruturaService.puml
+
+Prioridade --* Tarefa
+TarefasService ..|> Service
+TarefasController ..|> Controller
+TarefasRepository ..|> Repository
+@enduml
