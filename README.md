@@ -160,7 +160,7 @@ A interação entre as camadas segue os princípios do **MVC** e do **Layered Ar
 
 ###### UML 
 
-![Arquitetura](../../out/estruturasUmls/arquitetura/arquitetura/arquitetura.png)
+![Arquitetura](out/estruturasUmls/arquitetura/arquitetura/arquitetura.png)
 
 [Voltar ao Índice](#índice)  
 
