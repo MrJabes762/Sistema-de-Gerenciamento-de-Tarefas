@@ -926,13 +926,15 @@
       <strong>Front-Controller</strong>. No contexto em questão, A camada <code>TarefasController</code>se comporta como
       um façade ,uma vez que, ela recebe as solicitações e delega a camada de serviço para tratar melhor as diferentes
       requisições com validação, acesso ao banco e manipulações, os quais são subsistemas - com responsabilidades Únicas
-      gerenciados pelo serviço.</p>
+      gerenciados pelo serviço.
+    </p>
     <hr>
     <h2 id="estrutura">Estrutura </h2>
-    <p><img src="/out/estruturasUmls/padr%C3%B5es/fa%C3%A7ade/facade/facade.png" alt="EstruturaFacade"></p>
-    <h3 id="codigo">Codigo </h3>
-    <h2>
-      <pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-package">package</span> <span class="token namespace">controller</span><span class="token punctuation">;</span>
+    <p><img src="../../out/estruturasUmls/padr%C3%B5es/fa%C3%A7ade/facade/facade.png" alt="EstruturaFacade"></p>
+    <hr>
+    <h3 id="código">Código </h3>
+    <p></p>
+    <pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-package">package</span> <span class="token namespace">controller</span><span class="token punctuation">;</span>
 
 <span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">model<span class="token punctuation">.</span></span><span class="token class-name">Tarefa</span></span><span class="token punctuation">;</span>
 <span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">service<span class="token punctuation">.</span></span><span class="token class-name">TarefasService</span></span><span class="token punctuation">;</span>
@@ -994,7 +996,8 @@
 <span class="token punctuation">}</span>
 
 </code></pre>
-    </h2>
+    <p></p>
+    <hr>
     <h2 id="participantes">Participantes </h2>
     <p><sup class="footnote-ref"><a href="#fn1" id="fnref1:2">[1:2]</a></sup> (Adaptado)</p>
     <ul>
@@ -1020,9 +1023,9 @@
       organiza a entrada de requisições e reduz o atrito entre as camadas.</p>
     <p>Ao delegar responsabilidades específicas para serviços e repositórios especializados, a fachada mantém o
       princípio da separação de interesses e possibilita uma arquitetura mais coesa e robusta.</p>
-    <p>A Inplementação reforça o princípio de encapsulamento arquitetural, onde cada camada exerce seu papel com mínima
+    <p>A Implementação reforça o princípio de encapsulamento arquitetural, onde cada camada exerce seu papel com mínima
       dependência contextual. Isso torna o sistema escalável, testável.</p>
-    <p><li><a href="../../index.html"> Voltar Principal</a></li></p>
+    <p><a href="../../index.html">Voltar Principal</a></p>
     <hr>
     <h2 id="referências">Referências: </h2>
     <hr class="footnotes-sep">

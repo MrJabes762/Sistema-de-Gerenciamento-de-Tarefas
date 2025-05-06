@@ -916,17 +916,19 @@
       Garantir que uma classe tenha somente uma instância e fornecer um ponto global de acesso para a mesma.</p>
     <hr>
     <h2 id="motivação">Motivação </h2>
-    <p>Considerando a visualização arquitetural em Layred Arquiteture citada anteriormente, é preciso que às camada
-      adjacentes à atual, adquira <strong>UMA UNICA INSTÂNCIA</strong> da camada que será utilizada para realizar a sua
+    <p>Considerando a visualização arquitetural em Layered Architecture citada anteriormente, é preciso que às camada
+      adjacentes à atual, adquira <strong>UMA ÚNICA INSTÂNCIA</strong> da camada que será utilizada para realizar a sua
       responsabilidade.</p>
     <p>Em Frameworks comuns, isso é feito de forma declarativa usando a anotação <strong>@Autowired</strong> - apos a
       declaração da camada, essa anotação injeta uma instancia correspondente ou simplesmente sendo instanciada a partir
-      do construtor ou criando uma constante da camada <strong>(Spring Boot)</strong> e no <strong>Quarkus</strong> nós
-      temos a utilizaçao da anotação <strong>@Singleton</strong> com o <strong>@Inject</strong>.</p>
+      do construtor ou criando uma constante da camada <strong>Spring Boot</strong> e <strong>@Service</strong> - Para a
+      declaração de um serviço injetável.</p>
+    <p>Já no <strong>Quarkus</strong> nós temos a utilização da anotação <strong>@Singleton</strong> com o
+      <strong>@Inject</strong>.</p>
     <p>No cenário atual — ao simular essa visualização arquitetural — o padrão Singleton se encaixa perfeitamente, pois
       garante que apenas uma única instância seja injetada e acessada pelo repositório correspondente - o Singleton é
-      construido e a injeção no cenário atual, é realizado pelo metodo privado setInstance(). Assim tal logica é
-      aplicada para as camadas adjacentes, resultando em um <strong>Singleton em cascata</strong> ou uma <strong>Àrvore
+      construído e a injeção no cenário atual, é realizada pelo método privado setInstance(). Assim tal logica é
+      aplicada para às camada adjacentes, resultando em um <strong>Singleton em cascata</strong> ou uma <strong>Árvore
         de Singletons</strong> - uma camada instancia a outra.</p>
     <hr>
     <h2 id="estrutura">Estrutura </h2>
@@ -934,7 +936,7 @@
     <p><img src="/out/estruturasUmls/java/service/estruturaTarefaService/estruturaTarefaService.png"
         alt="EstruturaSingletonService"></p>
     <hr>
-    <h3 id="codigo">Codigo: </h3>
+    <h3 id="código">Código: </h3>
     <p></p>
     <pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-package">package</span> <span class="token namespace">service</span><span class="token punctuation">;</span>
 
@@ -1019,17 +1021,15 @@
     <hr>
     <h2 id="participantes">Participantes </h2>
     <ul>
-      <li>Os clientes / classe acessam uma unica instancia pela operação <code>getInstance()</code> do Tarefa Service,
-        assim como, nela tambem possui a instancia de outras camadas que gerenciam serviços.</li>
+      <li>Os clientes / classe acessam uma única instancia pela operação <code>getInstance()</code> do Tarefa Service,
+        assim como, nela também possui a instancia de outras camadas que gerenciam serviços.</li>
     </ul>
     <hr>
     <h2 id="conclusão">Conclusão </h2>
     <p>O padrão Singleton, quando bem empregado, não apenas evita instâncias redundantes como estrutura a comunicação
       entre camadas com previsibilidade e economia de recursos. Em sistemas onde o controle de instância é vital — como
       em arquiteturas em camadas — o Singleton atua como guardião da unicidade e da ordem.</p>
-    <p>
-      <li><a href="../../index.html"> Voltar Principal</a></li>
-
+    <p><a href="../../index.html">Voltar Principal</a></p>
     <h2 id="referências">Referências: </h2>
     <hr class="footnotes-sep">
     <section class="footnotes">

@@ -915,15 +915,18 @@
     <p><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
       Permitir a criação de uma quantidade limitada de instâncias de determinada classe e fornecer um modo para
       recuperá-las.</p>
+    <hr>
     <h2 id="motivação">Motivação </h2>
     <p>Tendo em vista que, o Multiton é uma variação do Singleton e que o Enum do Java se comporta como um Multiton, no
       contexto do sistema, ele ainda possui uma relação fraca com o mesmo, no sentido de que, é aplicável, porém a razão
       atribuída a ele é a representação de instâncias únicas da classe Prioridade (Alta, Média, Baixa e Urgente) o que
-      justifica, mas é possivel fundamentar um pouco mais a aplicabilidade, de modo a conferir, exatidão da
+      justifica, mas é possível fundamentar um pouco mais a aplicabilidade, de modo a conferir, exatidão da
       implementação. O acesso é centralizado e consistente, evitando duplicidade e facilitando a manutenção.</p>
+    <hr>
     <h2 id="estrutura">Estrutura </h2>
-    <p><img src="/out/estruturasUmls/padr%C3%B5es/multiton/multiton/multiton.png" alt="EstruturaMultiton"></p>
-    <h3 id="codigo">Codigo </h3>
+    <p><img src="../../out/estruturasUmls/padr%C3%B5es/multiton/multiton/multiton.png" alt="EstruturaMultiton"></p>
+    <hr>
+    <h3 id="código">Código </h3>
     <p></p>
     <pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-package">package</span> <span class="token namespace">model</span><span class="token punctuation">;</span>
 
@@ -952,20 +955,18 @@
 
 </code></pre>
     <p></p>
+    <hr>
     <h2 id="participantes">Participantes </h2>
     <ol>
-      <li><strong>Multiton:</strong> <code>(Prioridade)</code>
-        <ul>
-          <li>ém instâncias únicas para cada Prioridade das
-            Tarefas;</li>
-        </ul>
-      </li>
+      <li><strong>Multiton:</strong> <code>(Prioridade)</code> -&gt; mantém instâncias únicas para cada Prioridade das
+        Tarefas;</li>
       <li><strong>Client:</strong> <code>(Roteiro)</code>
         <ul>
           <li>O Roteiro chama as instâncias em tempo de execução para atribuir as tarefas.</li>
         </ul>
       </li>
     </ol>
+    <hr>
     <h2 id="conclusão">Conclusão </h2>
     <p>O padrão Multiton, embora não seja formalmente descrito pelo GoF, surge como uma solução eficaz quando é
       necessário controlar e centralizar múltiplas instâncias únicas, representando conceitos fixos, porém distintos —
@@ -977,8 +978,8 @@
       e uma lógica de acesso compartilhada e segura.</p>
     <p>Assim, o Multiton se estabelece como uma variação prática do Singleton, alinhado ao espírito da engenharia de
       software moderna: preciso, reutilizável e semanticamente expressivo.</p>
-    <p>
-      <li><a href="../../index.html"> Voltar Principal</a></li>
+    <p><a href="../../index.html">Voltar Principal</a></p>
+    <hr>
     <h2 id="referências">Referências: </h2>
     <hr class="footnotes-sep">
     <section class="footnotes">
