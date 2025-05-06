@@ -19,15 +19,22 @@ public class TarefasControllerTest {
     @Test
     public void testPostTarefa() {
         Tarefa tarefa = new Tarefa("Tarefa1", "Teste", Prioridade.ALTA);
-        controller.postTarefa(tarefa);
-        assertEquals("Tarefa1", controller.findById(1).getTitulo());
+        String resultado = controller.postTarefa(tarefa);
+
+        // Verifica se a saída do método contém a tarefa recém cadastrada
+        assertTrue(resultado.contains("Tarefa1"));
+
+        // Busca pela tarefa e verifica se ela foi armazenada corretamente
+        Tarefa tarefaSalva = controller.findById(tarefa.getIdlocal());
+        assertNotNull(tarefaSalva); // Verifica se a tarefa existe
+        assertEquals("Tarefa1", tarefaSalva.getTitulo()); // Verifica se o título corresponde
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testPostTarefaFalha() {
         // Tenta criar uma tarefa com título e descrição inválidos
         Tarefa tarefa = new Tarefa("", "", Prioridade.ALTA);
-        controller.postTarefa(tarefa);
+        controller.postTarefa(tarefa); // Espera-se que uma IllegalArgumentException seja lançada
     }
 
     @Test
@@ -61,7 +68,7 @@ public class TarefasControllerTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testGetTarefaByIdInvalido() {
-        controller.findById(999);
+        controller.findById(999); // Espera-se que a tarefa com ID 999 não exista
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -75,7 +82,7 @@ public class TarefasControllerTest {
     @Test(expected = IllegalArgumentException.class)
     public void testRemoverTarefaInvalida() {
         Tarefa tarefa = new Tarefa("Tarefa1", "Teste", Prioridade.ALTA);
-        controller.deleteTarefa(tarefa);
+        controller.deleteTarefa(tarefa); // Tenta deletar uma tarefa que não foi cadastrada
     }
 
     @Test
@@ -90,6 +97,6 @@ public class TarefasControllerTest {
     @Test(expected = IllegalArgumentException.class)
     public void testAtualizarTarefaInvalida() {
         Tarefa tarefa = new Tarefa("Tarefa1", "Teste", Prioridade.ALTA);
-        controller.putTarefa(tarefa);
+        controller.putTarefa(tarefa); // Tenta atualizar uma tarefa que não foi cadastrada
     }
 }
