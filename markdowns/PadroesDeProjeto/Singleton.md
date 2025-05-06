@@ -25,13 +25,13 @@ No cenário atual — ao simular essa visualização arquitetural — o padrão 
 
 **Exemplo Tarefa Service**
 
-![EstruturaSingletonService](/out/estruturasUmls/java/service/estruturaTarefaService/estruturaTarefaService.png)
+![EstruturaSingletonService](../../out/estruturasUmls/java/service/estruturaTarefaService/estruturaTarefaService.png)
 
 ---
 
 ### Código:
 
-[CodigoTarefaService](/src/main/java/service/TarefasService.java)
+[CodigoTarefaService](../../src/main/java/service/TarefasService.java)
 
 ---
 

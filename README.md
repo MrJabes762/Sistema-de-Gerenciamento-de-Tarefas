@@ -184,7 +184,7 @@ Em suma, o sistema em questão implementa de forma incisiva os padrões citados,
 
 #### Código de Evidencia:
 
-[CodigoRoteiro](../../src/main/java/controller/Roteiro.java)
+[CodigoRoteiro](/src/main/java/controller/Roteiro.java)
 
 [Voltar ao Indice](#índice)
 
