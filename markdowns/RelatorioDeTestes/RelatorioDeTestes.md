@@ -38,6 +38,7 @@
   - [CT11 - Conjunto de Testes para o Controller de Tarefas `(TarefasControllerTest)`](#ct11---conjunto-de-testes-para-o-controller-de-tarefas-tarefascontrollertest)
     - [Evidências:](#evidências-10)
     - [Barema:](#barema-10)
+  - [Voltar Principal](#voltar-principal)
 
 ---
 
@@ -281,5 +282,5 @@
 | **Comentário**            | `O conjunto de testes executou com sucesso todas as funcionalidades do controlador de tarefas, verificando desde a criação, atualização e remoção até o tratamento de falhas.` |
 | **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
 | **Sugestão de Melhorias** | `Nenhuma.`                                                            |
-
+[Voltar Principal](../../README.md)
 ---
