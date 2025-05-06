@@ -1,316 +1,1228 @@
-<!DOCTYPE html><html><head>
-      <title>index</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
-      
-      
-      
-      
-      
-      <style>
-      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
-.markdown-preview.markdown-preview p,
-.markdown-preview.markdown-preview li,
-.markdown-preview.markdown-preview dd {
-  text-align: justify;
-  hyphens: auto;
-}
-.markdown-preview.markdown-preview body {
-  counter-reset: figures;
-  counter-reset: tables;
-}
-.markdown-preview.markdown-preview figure {
-  counter-increment: figures;
-  text-align: center;
-}
-.markdown-preview.markdown-preview figcaption {
-  font-style: normal;
-  font-weight: bold;
-  display: inherit;
-  text-align: center;
-  font-size: 90%;
-}
-.markdown-preview.markdown-preview figcaption:before {
-  content: 'Figura ' counter(figures) ' - ';
-}
-.markdown-preview.markdown-preview table {
-  counter-increment: tables;
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
-.markdown-preview.markdown-preview table > caption {
-  font-style: normal;
-  font-weight: bold;
-  caption-side: top;
-  text-align: center;
-  font-size: 90%;
-  background: none;
-  border-bottom: none;
-  color: #172b4d;
-}
-.markdown-preview.markdown-preview table > caption:before {
-  content: 'Tabela ' counter(tables) ' - ';
-}
+<!DOCTYPE html>
+<html>
 
-      </style>
-      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function () {
-    // your code here
-  });
-</script></head><body for="html-export">
-    
-    
-      <div class="crossnote markdown-preview  ">
-      
-<h1 id="sistema-de-gerenciamento-de-tarefas-v-110">Sistema de Gerenciamento de Tarefas (V 1.10) </h1>
-<hr>
-<h2 id="índice">Índice </h2>
-<ul>
-<li><a href="#sistema-de-gerenciamento-de-tarefas-v-110">Sistema de Gerenciamento de Tarefas (V 1.10)</a>
-<ul>
-<li><a href="#%C3%ADndice">Índice</a></li>
-<li><a href="#quadro-de-versionamento">Quadro de Versionamento</a></li>
-<li><a href="#06052025-10revis%C3%A3o-da-documenta%C3%A7%C3%A3o-principal-revis%C3%A3o-de-c%C3%B3digo-documenta%C3%A7%C3%A3o-dos-padr%C3%B5es-documenta%C3%A7%C3%A3o-dos-casos-de-teste--jabes-cajazeira">|<strong>06/05/2025</strong>| <strong>10</strong>|<code>Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste</code> | Jabes Cajazeira</a></li>
-<li><a href="#descri%C3%A7%C3%A3o">Descrição</a></li>
-<li><a href="#objetivo">Objetivo</a></li>
-<li><a href="#funcionalidades">Funcionalidades</a></li>
-<li><a href="#descri%C3%A7%C3%A3o-do-processo">Descrição do Processo</a>
-<ul>
-<li><a href="#estrutura-do-reposit%C3%B3rio">Estrutura Do Repositório</a></li>
-<li><a href="#arquitetura">Arquitetura</a>
-<ul>
-<li><a href="#layered-arquiteture-arquitetura-em-camadas">Layered Arquiteture (Arquitetura Em Camadas)</a>
-<ul>
-<li><a href="#intera%C3%A7%C3%A3o-entre-as-camadas"><strong>Interação entre as Camadas</strong></a>
-<ul>
-<li><a href="#uml">UML</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#padr%C3%B5es-de-projetos">Padrões de Projetos</a>
-<ul>
-<li><a href="#criacionais">Criacionais</a></li>
-<li><a href="#estruturais">Estruturais</a></li>
-<li><a href="#considera%C3%A7%C3%B5es-t%C3%A9cnicas">Considerações Técnicas</a>
-<ul>
-<li><a href="#c%C3%B3digo-de-evidencia">Código de Evidencia:</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#praticas-aplicadas">Praticas Aplicadas</a></li>
-<li><a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a></li>
-<li><a href="#como-executar">Como Executar</a></li>
-<li><a href="#casos-de-testes">Casos De Testes</a></li>
-<li><a href="#relat%C3%B3rios-de-casos-de-testes-executados">Relatórios de Casos de Testes Executados</a></li>
-<li><a href="#referencias">Referencias:</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="quadro-de-versionamento">Quadro de Versionamento </h2>
-<table>
-<thead>
-<tr>
-<th>Data</th>
-<th>Versão</th>
-<th>Alteração</th>
-<th>Autor / Revisor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>25/10/2024</strong></td>
-<td>01</td>
-<td><code>- Idealização do Exercício</code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>01/04/2025</strong></td>
-<td>02</td>
-<td><code>- Definição e Aplicação de Padrões de Arquitetura</code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>06/04/2025</strong></td>
-<td>03</td>
-<td><code>- Aplicação de Padrões De Projeto ás regras de Negócio</code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>18/04/2025</strong></td>
-<td>04</td>
-<td><code>- Construção inicial da Documentação do Sistema</code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>20/04/2025</strong></td>
-<td>05</td>
-<td><code>- Implementação do Padrão de Projeto: Proxy - de Proteção </code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>22/04/2025</strong></td>
-<td>06</td>
-<td><code>- Adição da Camada de Testes, Elaboração, Ajustes e Execução dos Testes com Maven e o Junit como Dependência Principal</code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>24/04/2025</strong></td>
-<td>07</td>
-<td><code>-  Revisão da documentação, execução dos testes </code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>29/04/2025</strong></td>
-<td>08</td>
-<td><code>- Revisão da documentação, Revisão de Arquitetura</code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>01/05/2025</strong></td>
-<td>09</td>
-<td><code>Revisão da Documentação / Arquitetura </code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-<tr>
-<td><strong>06/05/2025</strong></td>
-<td><strong>10</strong></td>
-<td><code>Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste</code></td>
-<td>Jabes Cajazeira</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
-<h2 id="descrição">Descrição </h2>
-<p>O Sistema de Gerenciamento de Tarefas, partiu de um simples exercício de estudo dos artifícios e técnicas do Paradigma Orientado a Objetos, para uma ampliação a nível Sistema, contendo:</p>
-<ul>
-<li>Design Orientado a Objetos.</li>
-<li>Aplicação de Padrões Arquiteturais orientados a projeção do Sistema.</li>
-<li>Aplicação de Padrões de Projeto orientados a regra de negócio.</li>
-<li>Aplicação de Testes Unitários de Componentes.</li>
-</ul>
-<hr>
-<p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
-<h2 id="objetivo">Objetivo </h2>
-<p>O Objetivo derivado dessa Idealização, é visualizar uma possível abstração de como na prática conceitos orientados a objetos são enxergados no backend das aplicações web, as quais estão implícitas nos frameworks desta natureza.</p>
-<p>Para tal estudo, usaremos como referência, Spring Boot e Quarkus - Frameworks Web Modernos experimentados pelo autor,os quais são utilizados na construções de Aplicações, API's REST, assim como, demais propósitos inerentes as tecnologias, fornecendo serviços de: Criptografia, Autenticação, Conexão com banco de dados e técnicas, tecnologias, bibliotecas que se adequam as regras de negocio.</p>
-<p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
-<hr>
-<h2 id="funcionalidades">Funcionalidades </h2>
-<p>Podemos inferir com base nas funcionalidades descritas que, a modelagem em sua essência é um CRUD (Create, Read, Update, Delete) básico, o qual esses frameworks,<br>
-implementam de forma atômica e verbosa técnicas que se integram e gerenciam recursos computacionais. Além as funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tais implementações podem ser aplicáveis de forma mais enxuta (em Código Bruto), o objetivo é visualizar formas de aplica-los (quando justificáveis) de modo a conferir: Robustez, Eficiência, Otimização de recursos, Maestria no domínio á essência do Padrão orientado ao problema e aderência aos princípios SOLID - evidenciando principalmente o Principio da Responsabilidade Única (SRP) em que cada classe possui apenas uma razão para existir . Nesse cenário, é requisito do sistema, gerir tarefas a partir das seguintes funcionalidades:</p>
-<ul>
-<li>Adicionar Tarefas.</li>
-<li>Listar tarefas.</li>
-<li>Concluir Tarefas.</li>
-<li>Atualizar tarefas.</li>
-<li>Deletar Tarefas.</li>
-</ul>
-<p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
-<hr>
-<h2 id="descrição-do-processo">Descrição do Processo </h2>
-<h3 id="estrutura-do-repositório">Estrutura Do Repositório </h3>
-<table>
-<thead>
-<tr>
-<th>Diretório</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>src/main/java/controller</code></td>
-<td><strong>Contem Controllers Responsáveis Centralizar as Requisições do Sistema</strong></td>
-</tr>
-<tr>
-<td><code>src/main/java/data</code></td>
-<td><strong>Contem Repository's Repensáveis pela Gerencia dos Dados</strong></td>
-</tr>
-<tr>
-<td><code>src/main/java/model</code></td>
-<td><strong>Contem Entidades que representam Abstrações de Objetos do Mundo Real</strong></td>
-</tr>
-<tr>
-<td><code>src/main/java/service</code></td>
-<td><strong>Contem Serviços com Regras de Negócio Aplicadas ao Cenário</strong></td>
-</tr>
-<tr>
-<td><code>src/test/java</code></td>
-<td><strong>Contem Testes Unitários realizados com os componentes do sistema</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="arquitetura">Arquitetura </h3>
-<h4 id="layered-arquiteture-arquitetura-em-camadas">Layered Arquiteture (Arquitetura Em Camadas) </h4>
-<p>A arquitetura do sistema segue o padrão <strong>Layered Architecture</strong>, que é uma extensão do <strong>MVC (Model-View-Controller)</strong>.</p>
-<p><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
-<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
-O modelo contém todo o conteúdo e a lógica de processamento específicos à aplicação. A visão contém todas as funções específicas à interface e possibilita a apresentação do conteúdo e lógica de processamento exigido pelo usuário. O controlador gerencia o acesso ao modelo e à visão e coordena o uxo de dados entre eles.</p>
-<p>Nesse contexto, o sistema foi dividido em 4 camadas principais, cada uma com responsabilidades bem definidas:</p>
-<ul>
-<li>
-<p><strong>Controller (Front Controller Pattern)</strong>:</p>
-<p><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
-O padrão de design do Front Controller visa fornecer um ponto de entrada centralizado para lidar com todas as solicitações da Web recebidas. Esse padrão garante roteamento e gerenciamento de solicitações consistentes e eficientes em uma aplicação web Java.</p>
-<p>No projeto, o <code>TarefasController.java</code> atua como um <strong>Front Controller</strong>, centralizando as operações e delegando a lógica de negócios para a camada de serviço.</p>
-</li>
-<li>
-<p><strong>Service (Service Layer Pattern)</strong>:</p>
-<p>Esta camada contém toda a lógica de negócios do sistema,<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup> [...] fornecem  serviços utilitários e funções de software de aplicação [...]. É considerada a "alma" da regra de negócio, onde são descritas de forma imperativa todas as ações e funcionalidades. No projeto, o <code>TarefasService.java</code> centraliza operações como adicionar, atualizar, listar e concluir tarefas.<br>
-O uso do <strong>Service Layer</strong> desacopla a lógica de negócios da camada de controle, promovendo reutilização e manutenibilidade.</p>
-</li>
-<li>
-<p><strong>Data (Repository Pattern)</strong>:</p>
-<p>Camada responsável pelo contato direto com os dados. Ela gerencia a persistência e recuperação de informações, seja em memória, arquivos ou banco de dados. No projeto, isso é implícito pelo <code>TarefasRepository.java</code>, que implementa o <strong>Repository Pattern</strong>.</p>
-<p><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> (Adaptado)</p>
-<p>Esse padrão abstrai os detalhes de acesso aos dados, permitindo que o restante do sistema interaja com os dados de forma desacoplada.</p>
-</li>
-<li>
-<p><strong>Model</strong>:<br>
-Camada responsável pela gestão das entidades do sistema, sejam elas persistentes ou não. Além disso, o <strong>Model</strong> pode encapsular as regras de validação e garantir a integridade dos dados. No projeto, a classe <code>Tarefa.java</code> é um exemplo dessa camada, contendo validações como título e descrição obrigatórios.</p>
-</li>
-</ul>
-<p>Além disso, cada camada (exceto a model) utiliza o artificio Generics adicionado no Java 5 que consiste em <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> (Adaptado) um tipo genérico de classe ou interface que é parametrizada sobre tipos. Utilizamos suportes angulares (&lt;&gt;) para especificar o parâmetro de tipo. [...]. Dessa forma, no sistema em questão os contratos explicito nas interfaces das respectivas camadas podem implementados em futuras classes, evidenciando Boas Práticas do Principio de Inversão de Dependência (DIP) - devido a pratica do uso de interfaces e Principio de Segregação de Interfaces (ISP), em que, nos temos uma segregação de interfaces, cada camada possui a sua em vez de uma contendo a abstração de todas. E por fim, o Principio Aberto Fechado (OCP) - nesse caso, as classes são abertas para extensão reutilizando ou não outros métodos para futuras implementações e fechado para modificações ao que ja possui.</p>
-<h5 id="interação-entre-as-camadas"><strong>Interação entre as Camadas</strong> </h5>
-<p>A interação entre as camadas segue os princípios do <strong>MVC</strong> e do <strong>Layered Architecture</strong>:</p>
-<ol>
-<li>O <strong>Controller</strong> recebe as requisições e delega a lógica de negócios para o <strong>Service</strong>.</li>
-<li>O <strong>Service</strong> utiliza o <strong>Repository</strong> para acessar ou persistir informações e o <strong>Model</strong> para manipular as entidades.</li>
-<li>O <strong>Repository</strong> abstrai os detalhes de armazenamento, permitindo que o restante do sistema permaneça desacoplado da implementação específica de persistência.</li>
-</ol>
-<h6 id="uml">UML </h6>
-<p><img src="out/estruturasUmls/arquitetura/arquitetura/arquitetura.png" alt="Arquitetura"></p>
-<p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
-<h2 id="padrões-de-projetos">Padrões de Projetos </h2>
-<p>Conforme as funcionalidades, a nível granular, podemos enxergar um CRUD Simples o qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto. (front- controller (fachada - implícito), flyweight)</p>
-<h3 id="criacionais">Criacionais </h3>
-<ol>
-<li><a href="markdowns/PadroesDeProjeto/Singleton.md">Singleton</a></li>
-<li><a href="markdowns/PadroesDeProjeto/Multiton.md">Multiton</a></li>
-</ol>
-<h3 id="estruturais">Estruturais </h3>
-<ol>
-<li><a href="markdowns/PadroesDeProjeto/Fa%C3%A7ade.md">Façade</a></li>
-<li><a href="markdowns/PadroesDeProjeto/Proxy.md">Proxy</a></li>
-</ol>
-<h3 id="considerações-técnicas">Considerações Técnicas </h3>
-<p>Em suma, o sistema em questão implementa de forma incisiva os padrões citados, entretanto, a menção ao flyweight no Client (Roteiro) é meramente simbólica, uma vez que, a simulação contempla parcialmente os seus princípios, evidenciando a pratica de otimização de memoria ao compartilhar a <code>String tipopessoal: "Pessoal"</code> (na representatividade de uma característica intrínseca que é comum a vários objetos) com as tarefas instanciadas, mas, para ser considerada uma implementação mais eficaz, é preciso também estabelecer os participantes, assim como, o corpo da técnica. Sendo assim, há justificativa para tanto, é possível que em futuras versões seja acrescentada uma fundamentação adequada.</p>
-<h4 id="código-de-evidencia">Código de Evidencia: </h4>
-<p></p><pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-package">package</span> <span class="token namespace">controller</span><span class="token punctuation">;</span>
+<head>
+  <title>index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+
+
+
+
+
+  <style>
+    code[class*=language-],
+    pre[class*=language-] {
+      color: #333;
+      background: 0 0;
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.4;
+      -moz-tab-size: 8;
+      -o-tab-size: 8;
+      tab-size: 8;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none
+    }
+
+    pre[class*=language-] {
+      padding: .8em;
+      overflow: auto;
+      border-radius: 3px;
+      background: #f5f5f5
+    }
+
+    :not(pre)>code[class*=language-] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+      background: #f5f5f5
+    }
+
+    .token.blockquote,
+    .token.comment {
+      color: #969896
+    }
+
+    .token.cdata {
+      color: #183691
+    }
+
+    .token.doctype,
+    .token.macro.property,
+    .token.punctuation,
+    .token.variable {
+      color: #333
+    }
+
+    .token.builtin,
+    .token.important,
+    .token.keyword,
+    .token.operator,
+    .token.rule {
+      color: #a71d5d
+    }
+
+    .token.attr-value,
+    .token.regex,
+    .token.string,
+    .token.url {
+      color: #183691
+    }
+
+    .token.atrule,
+    .token.boolean,
+    .token.code,
+    .token.command,
+    .token.constant,
+    .token.entity,
+    .token.number,
+    .token.property,
+    .token.symbol {
+      color: #0086b3
+    }
+
+    .token.prolog,
+    .token.selector,
+    .token.tag {
+      color: #63a35c
+    }
+
+    .token.attr-name,
+    .token.class,
+    .token.class-name,
+    .token.function,
+    .token.id,
+    .token.namespace,
+    .token.pseudo-class,
+    .token.pseudo-element,
+    .token.url-reference .token.variable {
+      color: #795da3
+    }
+
+    .token.entity {
+      cursor: help
+    }
+
+    .token.title,
+    .token.title .token.punctuation {
+      font-weight: 700;
+      color: #1d3e81
+    }
+
+    .token.list {
+      color: #ed6a43
+    }
+
+    .token.inserted {
+      background-color: #eaffea;
+      color: #55a532
+    }
+
+    .token.deleted {
+      background-color: #ffecec;
+      color: #bd2c00
+    }
+
+    .token.bold {
+      font-weight: 700
+    }
+
+    .token.italic {
+      font-style: italic
+    }
+
+    .language-json .token.property {
+      color: #183691
+    }
+
+    .language-markup .token.tag .token.punctuation {
+      color: #333
+    }
+
+    .language-css .token.function,
+    code.language-css {
+      color: #0086b3
+    }
+
+    .language-yaml .token.atrule {
+      color: #63a35c
+    }
+
+    code.language-yaml {
+      color: #183691
+    }
+
+    .language-ruby .token.function {
+      color: #333
+    }
+
+    .language-markdown .token.url {
+      color: #795da3
+    }
+
+    .language-makefile .token.symbol {
+      color: #795da3
+    }
+
+    .language-makefile .token.variable {
+      color: #183691
+    }
+
+    .language-makefile .token.builtin {
+      color: #0086b3
+    }
+
+    .language-bash .token.keyword {
+      color: #0086b3
+    }
+
+    pre[data-line] {
+      position: relative;
+      padding: 1em 0 1em 3em
+    }
+
+    pre[data-line] .line-highlight-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      display: block;
+      width: 100%
+    }
+
+    pre[data-line] .line-highlight {
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: inherit 0;
+      margin-top: 1em;
+      background: hsla(24, 20%, 50%, .08);
+      background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+      pointer-events: none;
+      line-height: inherit;
+      white-space: pre
+    }
+
+    pre[data-line] .line-highlight:before,
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-start);
+      position: absolute;
+      top: .4em;
+      left: .6em;
+      min-width: 1em;
+      padding: 0 .5em;
+      background-color: hsla(24, 20%, 50%, .4);
+      color: #f4f1ef;
+      font: bold 65%/1.5 sans-serif;
+      text-align: center;
+      vertical-align: .3em;
+      border-radius: 999px;
+      text-shadow: none;
+      box-shadow: 0 1px #fff
+    }
+
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-end);
+      top: auto;
+      bottom: .4em
+    }
+
+    html body {
+      font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow: initial;
+      box-sizing: border-box;
+      word-wrap: break-word
+    }
+
+    html body>:first-child {
+      margin-top: 0
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5,
+    html body h6 {
+      line-height: 1.2;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      color: #000
+    }
+
+    html body h1 {
+      font-size: 2.25em;
+      font-weight: 300;
+      padding-bottom: .3em
+    }
+
+    html body h2 {
+      font-size: 1.75em;
+      font-weight: 400;
+      padding-bottom: .3em
+    }
+
+    html body h3 {
+      font-size: 1.5em;
+      font-weight: 500
+    }
+
+    html body h4 {
+      font-size: 1.25em;
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1.1em;
+      font-weight: 600
+    }
+
+    html body h6 {
+      font-size: 1em;
+      font-weight: 600
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5 {
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1em
+    }
+
+    html body h6 {
+      color: #5c5c5c
+    }
+
+    html body strong {
+      color: #000
+    }
+
+    html body del {
+      color: #5c5c5c
+    }
+
+    html body a:not([href]) {
+      color: inherit;
+      text-decoration: none
+    }
+
+    html body a {
+      color: #08c;
+      text-decoration: none
+    }
+
+    html body a:hover {
+      color: #00a3f5;
+      text-decoration: none
+    }
+
+    html body img {
+      max-width: 100%
+    }
+
+    html body>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      word-wrap: break-word
+    }
+
+    html body>ol,
+    html body>ul {
+      margin-bottom: 16px
+    }
+
+    html body ol,
+    html body ul {
+      padding-left: 2em
+    }
+
+    html body ol.no-list,
+    html body ul.no-list {
+      padding: 0;
+      list-style-type: none
+    }
+
+    html body ol ol,
+    html body ol ul,
+    html body ul ol,
+    html body ul ul {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body li {
+      margin-bottom: 0
+    }
+
+    html body li.task-list-item {
+      list-style: none
+    }
+
+    html body li>p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body .task-list-item-checkbox {
+      margin: 0 .2em .25em -1.8em;
+      vertical-align: middle
+    }
+
+    html body .task-list-item-checkbox:hover {
+      cursor: pointer
+    }
+
+    html body blockquote {
+      margin: 16px 0;
+      font-size: inherit;
+      padding: 0 15px;
+      color: #5c5c5c;
+      background-color: #f0f0f0;
+      border-left: 4px solid #d6d6d6
+    }
+
+    html body blockquote>:first-child {
+      margin-top: 0
+    }
+
+    html body blockquote>:last-child {
+      margin-bottom: 0
+    }
+
+    html body hr {
+      height: 4px;
+      margin: 32px 0;
+      background-color: #d6d6d6;
+      border: 0 none
+    }
+
+    html body table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all
+    }
+
+    html body table th {
+      font-weight: 700;
+      color: #000
+    }
+
+    html body table td,
+    html body table th {
+      border: 1px solid #d6d6d6;
+      padding: 6px 13px
+    }
+
+    html body dl {
+      padding: 0
+    }
+
+    html body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 700
+    }
+
+    html body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px
+    }
+
+    html body code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: .85em;
+      color: #000;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      padding: .2em 0
+    }
+
+    html body code::after,
+    html body code::before {
+      letter-spacing: -.2em;
+      content: '\00a0'
+    }
+
+    html body pre>code {
+      padding: 0;
+      margin: 0;
+      word-break: normal;
+      white-space: pre;
+      background: 0 0;
+      border: 0
+    }
+
+    html body .highlight {
+      margin-bottom: 16px
+    }
+
+    html body .highlight pre,
+    html body pre {
+      padding: 1em;
+      overflow: auto;
+      line-height: 1.45;
+      border: #d6d6d6;
+      border-radius: 3px
+    }
+
+    html body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal
+    }
+
+    html body pre code,
+    html body pre tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0
+    }
+
+    html body pre code:after,
+    html body pre code:before,
+    html body pre tt:after,
+    html body pre tt:before {
+      content: normal
+    }
+
+    html body blockquote,
+    html body dl,
+    html body ol,
+    html body p,
+    html body pre,
+    html body ul {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    html body kbd {
+      color: #000;
+      border: 1px solid #d6d6d6;
+      border-bottom: 2px solid #c7c7c7;
+      padding: 2px 4px;
+      background-color: #f0f0f0;
+      border-radius: 3px
+    }
+
+    @media print {
+      html body {
+        background-color: #fff
+      }
+
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: #000;
+        page-break-after: avoid
+      }
+
+      html body blockquote {
+        color: #5c5c5c
+      }
+
+      html body pre {
+        page-break-inside: avoid
+      }
+
+      html body table {
+        display: table
+      }
+
+      html body img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%
+      }
+
+      html body code,
+      html body pre {
+        word-wrap: break-word;
+        white-space: pre
+      }
+    }
+
+    .markdown-preview {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box
+    }
+
+    .markdown-preview ul {
+      list-style: disc
+    }
+
+    .markdown-preview ul ul {
+      list-style: circle
+    }
+
+    .markdown-preview ul ul ul {
+      list-style: square
+    }
+
+    .markdown-preview ol {
+      list-style: decimal
+    }
+
+    .markdown-preview ol ol,
+    .markdown-preview ul ol {
+      list-style-type: lower-roman
+    }
+
+    .markdown-preview ol ol ol,
+    .markdown-preview ol ul ol,
+    .markdown-preview ul ol ol,
+    .markdown-preview ul ul ol {
+      list-style-type: lower-alpha
+    }
+
+    .markdown-preview .newpage,
+    .markdown-preview .pagebreak {
+      page-break-before: always
+    }
+
+    .markdown-preview pre.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    .markdown-preview pre.line-numbers>code {
+      position: relative
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 1em;
+      font-size: 100%;
+      left: 0;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    .markdown-preview .mathjax-exps .MathJax_Display {
+      text-align: center !important
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .status {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+      margin-bottom: 16px
+    }
+
+    .markdown-preview .md-toc {
+      padding: 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    .scrollbar-style::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: auto
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+      position: relative;
+      top: 0;
+      min-height: 100vh
+    }
+
+    @media screen and (min-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em calc(50% - 457px + 2em)
+      }
+    }
+
+    @media screen and (max-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        font-size: 14px !important;
+        padding: 1em
+      }
+    }
+
+    @media print {
+      html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+        display: none
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      font-size: 28px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 99;
+      width: 32px;
+      text-align: center;
+      opacity: .4
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+      opacity: 1
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      padding: 32px 0 48px 0;
+      font-size: 14px;
+      box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: inherit
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+      width: 8px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+      text-decoration: none
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+      padding: 0 16px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+      left: 300px;
+      width: calc(100% - 300px);
+      padding: 2em calc(50% - 457px - 300px / 2);
+      margin: 0;
+      box-sizing: border-box
+    }
+
+    @media screen and (max-width:1274px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        width: 100%
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+      display: none
+    }
+
+    /* Please visit the URL below for more information: */
+    /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+    /* Please visit the URL below for more information: */
+    /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+    .markdown-preview.markdown-preview p,
+    .markdown-preview.markdown-preview li,
+    .markdown-preview.markdown-preview dd {
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .markdown-preview.markdown-preview body {
+      counter-reset: figures;
+      counter-reset: tables;
+    }
+
+    .markdown-preview.markdown-preview figure {
+      counter-increment: figures;
+      text-align: center;
+    }
+
+    .markdown-preview.markdown-preview figcaption {
+      font-style: normal;
+      font-weight: bold;
+      display: inherit;
+      text-align: center;
+      font-size: 90%;
+    }
+
+    .markdown-preview.markdown-preview figcaption:before {
+      content: 'Figura ' counter(figures) ' - ';
+    }
+
+    .markdown-preview.markdown-preview table {
+      counter-increment: tables;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .markdown-preview.markdown-preview table>caption {
+      font-style: normal;
+      font-weight: bold;
+      caption-side: top;
+      text-align: center;
+      font-size: 90%;
+      background: none;
+      border-bottom: none;
+      color: #172b4d;
+    }
+
+    .markdown-preview.markdown-preview table>caption:before {
+      content: 'Tabela ' counter(tables) ' - ';
+    }
+  </style>
+  <!-- The content below will be included at the end of the <head> element. -->
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      // your code here
+    });
+  </script>
+</head>
+
+<body for="html-export">
+
+
+  <div class="crossnote markdown-preview  ">
+
+    <h1 id="sistema-de-gerenciamento-de-tarefas-v-110">Sistema de Gerenciamento de Tarefas (V 1.10) </h1>
+    <hr>
+    <h2 id="índice">Índice </h2>
+    <ul>
+      <li><a href="#sistema-de-gerenciamento-de-tarefas-v-110">Sistema de Gerenciamento de Tarefas (V 1.10)</a>
+        <ul>
+          <li><a href="#%C3%ADndice">Índice</a></li>
+          <li><a href="#quadro-de-versionamento">Quadro de Versionamento</a></li>
+          <li><a
+              href="#06052025-10--revis%C3%A3o-da-documenta%C3%A7%C3%A3o-principal-revis%C3%A3o-de-c%C3%B3digo-documenta%C3%A7%C3%A3o-dos-padr%C3%B5es-documenta%C3%A7%C3%A3o-dos-casos-de-teste-documenta%C3%A7%C3%A3o-do-relat%C3%B3rio-de-testes--jabes-cajazeira-">|<strong>06/05/2025</strong>|
+              <strong>10</strong>|<code>- Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes</code>
+              | Jabes Cajazeira |</a></li>
+          <li><a href="#descri%C3%A7%C3%A3o">Descrição</a></li>
+          <li><a href="#objetivo">Objetivo</a></li>
+          <li><a href="#funcionalidades">Funcionalidades</a></li>
+          <li><a href="#descri%C3%A7%C3%A3o-do-processo">Descrição do Processo</a>
+            <ul>
+              <li><a href="#estrutura-do-reposit%C3%B3rio">Estrutura Do Repositório</a></li>
+              <li><a href="#arquitetura">Arquitetura</a>
+                <ul>
+                  <li><a href="#layered-arquiteture-arquitetura-em-camadas">Layered Arquiteture (Arquitetura Em
+                      Camadas)</a>
+                    <ul>
+                      <li><a href="#intera%C3%A7%C3%A3o-entre-as-camadas"><strong>Interação entre as
+                            Camadas</strong></a>
+                        <ul>
+                          <li><a href="#uml">UML</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#padr%C3%B5es-de-projetos">Padrões de Projetos</a>
+            <ul>
+              <li><a href="#criacionais">Criacionais</a></li>
+              <li><a href="#estruturais">Estruturais</a></li>
+              <li><a href="#considera%C3%A7%C3%B5es-t%C3%A9cnicas">Considerações Técnicas</a>
+                <ul>
+                  <li><a href="#c%C3%B3digo-de-evidencia">Código de Evidencia:</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#praticas-aplicadas">Praticas Aplicadas</a></li>
+          <li><a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a></li>
+          <li><a href="#como-executar">Como Executar</a>
+            <ul>
+              <li><a href="#clonar-o-reposit%C3%B3rio">Clonar o Repositório</a></li>
+              <li><a href="#compilar-o-projeto">Compilar o Projeto</a></li>
+              <li><a href="#executar">Executar</a></li>
+              <li><a href="#rodar-testes">Rodar Testes</a></li>
+            </ul>
+          </li>
+          <li><a href="#casos-de-testes">Casos De Testes</a></li>
+          <li><a href="#relat%C3%B3rios-de-casos-de-testes-executados">Relatórios de Casos de Testes Executados</a></li>
+          <li><a href="#considera%C3%A7%C3%B5es-t%C3%A9cnicas-finais">Considerações Técnicas Finais</a></li>
+          <li><a href="#referencias">Referencias:</a></li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <h2 id="quadro-de-versionamento">Quadro de Versionamento </h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Versão</th>
+          <th>Alteração</th>
+          <th>Autor / Revisor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>25/10/2024</strong></td>
+          <td>01</td>
+          <td><code>- Idealização do Exercício</code></td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>01/04/2025</strong></td>
+          <td>02</td>
+          <td><code>- Definição e Aplicação de Padrões de Arquitetura</code></td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>06/04/2025</strong></td>
+          <td>03</td>
+          <td><code>- Aplicação de Padrões De Projeto ás regras de Negócio</code></td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>18/04/2025</strong></td>
+          <td>04</td>
+          <td><code>- Construção inicial da Documentação do Sistema</code></td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>20/04/2025</strong></td>
+          <td>05</td>
+          <td><code>- Implementação do Padrão de Projeto: Proxy - de Proteção </code></td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>22/04/2025</strong></td>
+          <td>06</td>
+          <td>
+            <code>- Adição da Camada de Testes, Elaboração, Ajustes e Execução dos Testes com Maven e o Junit como Dependência Principal</code>
+          </td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>24/04/2025</strong></td>
+          <td>07</td>
+          <td><code>-  Revisão da documentação, execução dos testes </code></td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>29/04/2025</strong></td>
+          <td>08</td>
+          <td><code>- Revisão da documentação, Revisão de Arquitetura</code></td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>01/05/2025</strong></td>
+          <td>09</td>
+          <td><code>- Revisão da Documentação / Arquitetura </code></td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td><strong>06/05/2025</strong></td>
+          <td><strong>10</strong></td>
+          <td>
+            <code>- Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes</code>
+          </td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
+    <h2 id="descrição">Descrição </h2>
+    <p>O Sistema de Gerenciamento de Tarefas, partiu de um simples exercício de estudo dos artifícios e técnicas do
+      Paradigma Orientado a Objetos, para uma ampliação a nível Sistema, contendo:</p>
+    <ul>
+      <li>Design Orientado a Objetos.</li>
+      <li>Aplicação de Padrões Arquiteturais orientados a projeção do Sistema.</li>
+      <li>Aplicação de Padrões de Projeto orientados a regra de negócio.</li>
+      <li>Aplicação de Testes Unitários de Componentes.</li>
+    </ul>
+    <hr>
+    <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
+    <h2 id="objetivo">Objetivo </h2>
+    <p>O Objetivo derivado dessa Idealização, é visualizar uma possível abstração de como na prática conceitos
+      orientados a objetos são enxergados no backend das aplicações web, as quais estão implícitas nos frameworks desta
+      natureza.</p>
+    <p>Para tal estudo, usaremos como referência, Spring Boot e Quarkus - Frameworks Web Modernos experimentados pelo
+      autor,os quais são utilizados na construções de Aplicações, API's REST, assim como, demais propósitos inerentes as
+      tecnologias, fornecendo serviços de: Criptografia, Autenticação, Conexão com banco de dados e técnicas,
+      tecnologias, bibliotecas que se adequam as regras de negocio.</p>
+    <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
+    <hr>
+    <h2 id="funcionalidades">Funcionalidades </h2>
+    <p>Podemos inferir com base nas funcionalidades descritas que, a modelagem em sua essência é um CRUD (Create, Read,
+      Update, Delete) básico, o qual esses frameworks,<br>
+      implementam de forma atômica e verbosa técnicas que se integram e gerenciam recursos computacionais. Além as
+      funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tais implementações podem ser
+      aplicáveis de forma mais enxuta (em Código Bruto), o objetivo é visualizar formas de aplica-los (quando
+      justificáveis) de modo a conferir: Robustez, Eficiência, Otimização de recursos, Maestria no domínio á essência do
+      Padrão orientado ao problema e aderência aos princípios SOLID - evidenciando principalmente o Principio da
+      Responsabilidade Única (SRP) em que cada classe possui apenas uma razão para existir . Nesse cenário, é requisito
+      do sistema, gerir tarefas a partir das seguintes funcionalidades:</p>
+    <ul>
+      <li>Adicionar Tarefas.</li>
+      <li>Listar tarefas.</li>
+      <li>Concluir Tarefas.</li>
+      <li>Atualizar tarefas.</li>
+      <li>Deletar Tarefas.</li>
+    </ul>
+    <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
+    <hr>
+    <h2 id="descrição-do-processo">Descrição do Processo </h2>
+    <h3 id="estrutura-do-repositório">Estrutura Do Repositório </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Diretório</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>src/main/java/controller</code></td>
+          <td><strong>Contem Controllers Responsáveis Centralizar as Requisições do Sistema</strong></td>
+        </tr>
+        <tr>
+          <td><code>src/main/java/data</code></td>
+          <td><strong>Contem Repository's Repensáveis pela Gerencia dos Dados</strong></td>
+        </tr>
+        <tr>
+          <td><code>src/main/java/model</code></td>
+          <td><strong>Contem Entidades que representam Abstrações de Objetos do Mundo Real</strong></td>
+        </tr>
+        <tr>
+          <td><code>src/main/java/service</code></td>
+          <td><strong>Contem Serviços com Regras de Negócio Aplicadas ao Cenário</strong></td>
+        </tr>
+        <tr>
+          <td><code>src/test/java</code></td>
+          <td><strong>Contem Testes Unitários realizados com os componentes do sistema</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="arquitetura">Arquitetura </h3>
+    <h4 id="layered-arquiteture-arquitetura-em-camadas">Layered Arquiteture (Arquitetura Em Camadas) </h4>
+    <p>A arquitetura do sistema segue o padrão <strong>Layered Architecture</strong>, que é uma extensão do <strong>MVC
+        (Model-View-Controller)</strong>.</p>
+    <p><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+      <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
+      O modelo contém todo o conteúdo e a lógica de processamento específicos à aplicação. A visão contém todas as
+      funções específicas à interface e possibilita a apresentação do conteúdo e lógica de processamento exigido pelo
+      usuário. O controlador gerencia o acesso ao modelo e à visão e coordena o uxo de dados entre eles.
+    </p>
+    <p>Nesse contexto, o sistema foi dividido em 4 camadas principais, cada uma com responsabilidades bem definidas:</p>
+    <ul>
+      <li>
+        <p><strong>Controller (Front Controller Pattern)</strong>:</p>
+        <p><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+          O padrão de design do Front Controller visa fornecer um ponto de entrada centralizado para lidar com todas as
+          solicitações da Web recebidas. Esse padrão garante roteamento e gerenciamento de solicitações consistentes e
+          eficientes em uma aplicação web Java.</p>
+        <p>No projeto, o <code>TarefasController.java</code> atua como um <strong>Front Controller</strong>,
+          centralizando as operações e delegando a lógica de negócios para a camada de serviço.</p>
+      </li>
+      <li>
+        <p><strong>Service (Service Layer Pattern)</strong>:</p>
+        <p>Esta camada contém toda a lógica de negócios do sistema,<sup class="footnote-ref"><a href="#fn1"
+              id="fnref1:1">[1:1]</a></sup> [...] fornecem serviços utilitários e funções de software de aplicação
+          [...]. É considerada a "alma" da regra de negócio, onde são descritas de forma imperativa todas as ações e
+          funcionalidades. No projeto, o <code>TarefasService.java</code> centraliza operações como adicionar,
+          atualizar, listar e concluir tarefas.<br>
+          O uso do <strong>Service Layer</strong> desacopla a lógica de negócios da camada de controle, promovendo
+          reutilização e manutenibilidade.</p>
+      </li>
+      <li>
+        <p><strong>Data (Repository Pattern)</strong>:</p>
+        <p>Camada responsável pelo contato direto com os dados. Ela gerencia a persistência e recuperação de
+          informações, seja em memória, arquivos ou banco de dados. No projeto, isso é implícito pelo
+          <code>TarefasRepository.java</code>, que implementa o <strong>Repository Pattern</strong>.</p>
+        <p><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> (Adaptado)</p>
+        <p>Esse padrão abstrai os detalhes de acesso aos dados, permitindo que o restante do sistema interaja com os
+          dados de forma desacoplada.</p>
+      </li>
+      <li>
+        <p><strong>Model</strong>:<br>
+          Camada responsável pela gestão das entidades do sistema, sejam elas persistentes ou não. Além disso, o
+          <strong>Model</strong> pode encapsular as regras de validação e garantir a integridade dos dados. No projeto,
+          a classe <code>Tarefa.java</code> é um exemplo dessa camada, contendo validações como título e descrição
+          obrigatórios.</p>
+      </li>
+    </ul>
+    <p>Além disso, cada camada (exceto a model) utiliza o artificio Generics adicionado no Java 5 que consiste em <sup
+        class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> (Adaptado) um tipo genérico de classe ou interface
+      que é parametrizada sobre tipos. Utilizamos suportes angulares (&lt;&gt;) para especificar o parâmetro de tipo.
+      [...]. Dessa forma, no sistema em questão os contratos explicito nas interfaces das respectivas camadas podem
+      implementados em futuras classes, evidenciando Boas Práticas do Principio de Inversão de Dependência (DIP) -
+      devido a pratica do uso de interfaces e Principio de Segregação de Interfaces (ISP), em que, nos temos uma
+      segregação de interfaces, cada camada possui a sua em vez de uma contendo a abstração de todas. E por fim, o
+      Principio Aberto Fechado (OCP) - nesse caso, as classes são abertas para extensão reutilizando ou não outros
+      métodos para futuras implementações e fechado para modificações ao que ja possui.</p>
+    <h5 id="interação-entre-as-camadas"><strong>Interação entre as Camadas</strong> </h5>
+    <p>A interação entre as camadas segue os princípios do <strong>MVC</strong> e do <strong>Layered
+        Architecture</strong>:</p>
+    <ol>
+      <li>O <strong>Controller</strong> recebe as requisições e delega a lógica de negócios para o
+        <strong>Service</strong>.</li>
+      <li>O <strong>Service</strong> utiliza o <strong>Repository</strong> para acessar ou persistir informações e o
+        <strong>Model</strong> para manipular as entidades.</li>
+      <li>O <strong>Repository</strong> abstrai os detalhes de armazenamento, permitindo que o restante do sistema
+        permaneça desacoplado da implementação específica de persistência.</li>
+    </ol>
+    <h6 id="uml">UML </h6>
+    <p><img src="out/estruturasUmls/arquitetura/arquitetura/arquitetura.png" alt="Arquitetura"></p>
+    <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
+    <h2 id="padrões-de-projetos">Padrões de Projetos </h2>
+    <p>Conforme as funcionalidades, a nível granular, podemos enxergar um CRUD Simples o qual a maioria dos frameworks
+      como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador
+      que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos
+      frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto. (front- controller
+      (fachada - implícito), flyweight)</p>
+    <h3 id="criacionais">Criacionais </h3>
+    <ol>
+      <li><a href="resources/static/Singleton.html">Singleton</a></li>
+      <li><a href="resources/static/Multiton.html">Multiton</a></li>
+    </ol>
+    <h3 id="estruturais">Estruturais </h3>
+    <ol>
+      <li><a href="resources/static/Façade.html">Façade</a></li>
+      <li><a href="resources/static/Proxy.html">Proxy</a></li>
+    </ol>
+    <h3 id="considerações-técnicas">Considerações Técnicas </h3>
+    <p>Em suma, o sistema em questão implementa de forma incisiva os padrões citados, entretanto, a menção ao flyweight
+      no Client (Roteiro) é meramente simbólica, uma vez que, a simulação contempla parcialmente os seus princípios,
+      evidenciando a pratica de otimização de memoria ao compartilhar a <code>String tipopessoal: "Pessoal"</code> (na
+      representatividade de uma característica intrínseca que é comum a vários objetos) com as tarefas instanciadas,
+      mas, para ser considerada uma implementação mais eficaz, é preciso também estabelecer os participantes, assim
+      como, o corpo da técnica. Sendo assim, há justificativa para tanto, é possível que em futuras versões seja
+      acrescentada uma fundamentação adequada.</p>
+    <h4 id="código-de-evidencia">Código de Evidencia: </h4>
+    <p></p>
+    <pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-package">package</span> <span class="token namespace">controller</span><span class="token punctuation">;</span>
 <span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">model<span class="token punctuation">.</span></span><span class="token class-name">Prioridade</span></span><span class="token punctuation">;</span>
 <span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">model<span class="token punctuation">.</span></span><span class="token class-name">Tarefa</span></span><span class="token punctuation">;</span>
 
@@ -360,79 +1272,125 @@ Camada responsável pela gestão das entidades do sistema, sejam elas persistent
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-</code></pre><p></p>
-<p><a href="#%C3%ADndice">Voltar ao Indice</a></p>
-<hr>
-<h2 id="praticas-aplicadas">Praticas Aplicadas </h2>
-<ul>
-<li>SOLID
-<ul>
-<li>Responsabilidade Única (SRP)</li>
-<li>Principio Aberto Fechado (OCP)</li>
-<li>Principio de Segregação de Interfaces (ISP)</li>
-<li>Principio de Inversão de Dependência (DIP)</li>
-</ul>
-</li>
-<li>DRY
-<ul>
-<li>Modularização e Reutilização.</li>
-<li>Sustentabilidade do Código.</li>
-<li>Refatoração Continua (em caso de duplicação).</li>
-</ul>
-</li>
-<li>Testes Unitários de componentes com Junit
-<ul>
-<li>Teste do Controller com os Endpoints</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="tecnologias-utilizadas">Tecnologias Utilizadas </h2>
-<ul>
-<li>Java 23</li>
-<li>Java SE 11</li>
-<li>Junit 4.13.2</li>
-<li>Maven</li>
-</ul>
-<p><a href="#%C3%ADndice">Voltar ao Indice</a></p>
-<hr>
-<h2 id="como-executar">Como Executar </h2>
-<hr>
-<h2 id="casos-de-testes">Casos De Testes </h2>
-<ul>
-<li><a href="markdowns/CasosDeTeste/CasosDeTeste.md">CasosDeTeste</a></li>
-</ul>
-<hr>
-<h2 id="relatórios-de-casos-de-testes-executados">Relatórios de Casos de Testes Executados </h2>
-<ul>
-<li><a href="markdowns/CasosDeTeste/CasosDeTeste.md">RelatoriosDeTestes</a></li>
-</ul>
-<hr>
-<h2 id="referencias">Referencias: </h2>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>PRESSMAN, Roger S.; MAXIM, Bruce R. Engenharia de software: uma abordagem profissional [recurso eletrônico]. 9. ed. Porto Alegre: AMGH, 2021. E-pub. Tradução de Francisco Araújo da Costa. Revisão técnica de Reginaldo Arakaki, Julio Arakaki, Renato Manzan de Andrade. ISBN 978-65-5804-011-8. Editado também como livro impresso em 2021. <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>GAMMA, Erich. et al. Padrões de projetos: Soluções reutilizáveis de software orientados a objetos Bookman editora, 2009. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>Java Design Patterns. (n.d.). Front Controller. Disponível em: <a href="https://java-design-patterns.com/patterns/front-controller/">https://java-design-patterns.com/patterns/front-controller/</a>. Acessado em: 02 mai. 2025. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p>BERGMAN, Per-Erik. Repository Design Pattern. Medium, 20 abr. 2017. Disponível em: <a href="https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30%E2%80%8B">https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30​</a>. Acesso em: 29 abr. 2025. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p>KUMAR, Pankaj. Java Generics Explained: Benefits, Examples, and Best Practice. DigitalOcean, 2022. Disponível em: <a href="https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface">https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface</a>. Acesso em: 29 abr. 2025. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+</code></pre>
+    <p></p>
+    <p><a href="#%C3%ADndice">Voltar ao Indice</a></p>
+    <hr>
+    <h2 id="praticas-aplicadas">Praticas Aplicadas </h2>
+    <ul>
+      <li>SOLID
+        <ul>
+          <li>Responsabilidade Única (SRP)</li>
+          <li>Principio Aberto Fechado (OCP)</li>
+          <li>Principio de Segregação de Interfaces (ISP)</li>
+          <li>Principio de Inversão de Dependência (DIP)</li>
+        </ul>
+      </li>
+      <li>DRY
+        <ul>
+          <li>Modularização e Reutilização.</li>
+          <li>Sustentabilidade do Código.</li>
+          <li>Refatoração Continua (em caso de duplicação).</li>
+        </ul>
+      </li>
+      <li>Testes Unitários de componentes com Junit
+        <ul>
+          <li>Teste do Controller com os Endpoints</li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <h2 id="tecnologias-utilizadas">Tecnologias Utilizadas </h2>
+    <ul>
+      <li>Java 23</li>
+      <li>Java SE 11</li>
+      <li>Junit 4.13.2</li>
+      <li>Maven</li>
+    </ul>
+    <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
+    <hr>
+    <h2 id="como-executar">Como Executar </h2>
+    <h3 id="clonar-o-repositório">Clonar o Repositório </h3>
+    <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">git</span> clone https://github.com/MrJabes762/Sistema-de-Gerenciamento-de-Tarefas.git
+<span class="token builtin class-name">cd</span> Sistema-de-Gerenciamento-de-Tarefas
+</code></pre>
+    <h3 id="compilar-o-projeto">Compilar o Projeto </h3>
+    <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>mvn clean compile
+</code></pre>
+    <h3 id="executar">Executar </h3>
+    <p>Pode criar mum classe que interaja com a aplicação ou interagir pelo Client Roteiro</p>
+    <h3 id="rodar-testes">Rodar Testes </h3>
+    <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>mvn <span class="token builtin class-name">test</span>
+</code></pre>
+    <hr>
+    <h2 id="casos-de-testes">Casos De Testes </h2>
+    <ul>
+      <li><a href="resources/static/CasosDeTeste.html">CasosDeTeste</a></li>
+    </ul>
+    <hr>
+    <h2 id="relatórios-de-casos-de-testes-executados">Relatórios de Casos de Testes Executados </h2>
+    <ul>
+      <li><a href="resources/static/RelatorioDeTestes.html">RelatóriosDeTestes</a></li>
+    </ul>
+    <hr>
+    <h2 id="considerações-técnicas-finais">Considerações Técnicas Finais </h2>
+    <p>A Abstração desenvolvida neste projeto contem os estudos arquiteturais e de padrões de projetos aplicados as
+      regras de negócio das mais variadas aplicações web, RestAPIS, APIS e dentre outras modalidades.</p>
+    <p>Vale a pena ressaltar que, trata-se de uma visualização deste cenário, que corrobora maestria no domínio básico
+      da essência destas aplicações.</p>
+    <p>Tais implementações podem ser aplicadas em complacência ao funcionamento dos frameworks, sendo úteis em caso de:
+    </p>
+    <ul>
+      <li>Maior controle da aplicação;</li>
+      <li>Implementações e Adaptações em que, a regra de negócio não dependa de especificidade das bibliotecas dos
+        frameworks, visto que, são implementações orgânicas e a qualidade delas são evidenciadas nos Casos, bem como, Relatório de Testes.</li>
+      <li>Clareza (Coesão e Coerência) Arquitetural.</li>
+    </ul>
+    <hr>
+    <h2 id="referencias">Referencias: </h2>
+    <hr class="footnotes-sep">
+    <section class="footnotes">
+      <ol class="footnotes-list">
+        <li id="fn1" class="footnote-item">
+          <p>PRESSMAN, Roger S.; MAXIM, Bruce R. Engenharia de software: uma abordagem profissional [recurso
+            eletrônico]. 9. ed. Porto Alegre: AMGH, 2021. E-pub. Tradução de Francisco Araújo da Costa. Revisão técnica
+            de Reginaldo Arakaki, Julio Arakaki, Renato Manzan de Andrade. ISBN 978-65-5804-011-8. Editado também como
+            livro impresso em 2021. <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1"
+              class="footnote-backref">↩︎</a></p>
+        </li>
+        <li id="fn2" class="footnote-item">
+          <p>GAMMA, Erich. et al. Padrões de projetos: Soluções reutilizáveis de software orientados a objetos Bookman
+            editora, 2009. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+        </li>
+        <li id="fn3" class="footnote-item">
+          <p>Java Design Patterns. (n.d.). Front Controller. Disponível em: <a
+              href="https://java-design-patterns.com/patterns/front-controller/">https://java-design-patterns.com/patterns/front-controller/</a>.
+            Acessado em: 02 mai. 2025. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+        </li>
+        <li id="fn4" class="footnote-item">
+          <p>BERGMAN, Per-Erik. Repository Design Pattern. Medium, 20 abr. 2017. Disponível em: <a
+              href="https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30%E2%80%8B">https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30​</a>.
+            Acesso em: 29 abr. 2025. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+        </li>
+        <li id="fn5" class="footnote-item">
+          <p>KUMAR, Pankaj. Java Generics Explained: Benefits, Examples, and Best Practice. DigitalOcean, 2022.
+            Disponível em: <a
+              href="https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface">https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface</a>.
+            Acesso em: 29 abr. 2025. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+        </li>
+      </ol>
+    </section>
 
-      </div>
-      
-      
-    
-    
-    
-    
-    
-    
-  
-    </body></html>
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

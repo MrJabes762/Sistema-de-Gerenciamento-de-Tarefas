@@ -1,7 +1,3 @@
----
-export_on_save:
-  html: true
----
 
 # Sistema de Gerenciamento de Tarefas (V 1.10)
 
@@ -12,7 +8,7 @@ export_on_save:
 - [Sistema de Gerenciamento de Tarefas (V 1.10)](#sistema-de-gerenciamento-de-tarefas-v-110)
   - [Índice](#índice)
   - [Quadro de Versionamento](#quadro-de-versionamento)
-  - [|**06/05/2025**| **10**|`Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste` | Jabes Cajazeira](#06052025-10revisão-da-documentação-principal-revisão-de-código-documentação-dos-padrões-documentação-dos-casos-de-teste--jabes-cajazeira)
+  - [|**06/05/2025**| **10**|`- Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes` | Jabes Cajazeira |](#06052025-10--revisão-da-documentação-principal-revisão-de-código-documentação-dos-padrões-documentação-dos-casos-de-teste-documentação-do-relatório-de-testes--jabes-cajazeira-)
   - [Descrição](#descrição)
   - [Objetivo](#objetivo)
   - [Funcionalidades](#funcionalidades)
@@ -30,8 +26,13 @@ export_on_save:
   - [Praticas Aplicadas](#praticas-aplicadas)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
   - [Como Executar](#como-executar)
+    - [Clonar o Repositório](#clonar-o-repositório)
+    - [Compilar o Projeto](#compilar-o-projeto)
+    - [Executar](#executar)
+    - [Rodar Testes](#rodar-testes)
   - [Casos De Testes](#casos-de-testes)
   - [Relatórios de Casos de Testes Executados](#relatórios-de-casos-de-testes-executados)
+  - [Considerações Técnicas Finais](#considerações-técnicas-finais)
   - [Referencias:](#referencias)
 
 
@@ -49,8 +50,8 @@ export_on_save:
 |**22/04/2025**  |    06   | `- Adição da Camada de Testes, Elaboração, Ajustes e Execução dos Testes com Maven e o Junit como Dependência Principal`  | Jabes Cajazeira 
 | **24/04/2025** |  07 | `-  Revisão da documentação, execução dos testes ` | Jabes Cajazeira
 | **29/04/2025** |  08 | `- Revisão da documentação, Revisão de Arquitetura` | Jabes Cajazeira
-| **01/05/2025** | 09 | `Revisão da Documentação / Arquitetura `| Jabes Cajazeira
-|**06/05/2025**| **10**|`Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste` | Jabes Cajazeira
+| **01/05/2025** | 09 | `- Revisão da Documentação / Arquitetura `| Jabes Cajazeira
+|**06/05/2025**| **10**|`- Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes` | Jabes Cajazeira |
 ---
 
 [Voltar ao Índice](#índice)
@@ -210,11 +211,34 @@ Em suma, o sistema em questão implementa de forma incisiva os padrões citados,
 - Junit 4.13.2
 - Maven
 
-[Voltar ao Indice](#índice)
+[Voltar ao Índice](#índice)
 
 --- 
+
 ## Como Executar
 
+### Clonar o Repositório
+
+```bash
+git clone https://github.com/MrJabes762/Sistema-de-Gerenciamento-de-Tarefas.git
+cd Sistema-de-Gerenciamento-de-Tarefas
+```
+
+### Compilar o Projeto
+
+```bash
+mvn clean compile
+```
+
+### Executar 
+
+Pode criar mum classe que interaja com a aplicação ou interagir pelo Client Roteiro
+ 
+### Rodar Testes
+
+```bash
+mvn test
+```
 
 ---
 
@@ -225,7 +249,21 @@ Em suma, o sistema em questão implementa de forma incisiva os padrões citados,
 
 ## Relatórios de Casos de Testes Executados
 
- -  [RelatoriosDeTestes](markdowns/CasosDeTeste/CasosDeTeste.md)
+ -  [RelatóriosDeTestes](markdowns/RelatorioDeTestes/RelatorioDeTestes.md)
+
+---
+
+## Considerações Técnicas Finais  
+
+A Abstração desenvolvida neste projeto contem os estudos arquiteturais e de padrões de projetos aplicados as regras de negócio das mais variadas aplicações web, RestAPIS, APIS e dentre outras modalidades.
+
+Vale a pena ressaltar que, trata-se de uma visualização deste cenário, que corrobora maestria no domínio básico da essência destas aplicações. 
+
+Tais implementações podem ser aplicadas em complacência ao funcionamento dos frameworks, sendo úteis em caso de:
+
+- Maior controle da aplicação;
+- Implementações e Adaptações em que, a regra de negócio não dependa de especificidade das bibliotecas dos frameworks, visto que, são implementações orgânicas e a qualidade delas são evidenciadas nos Casos, bem como, Relatório de Testes.
+- Clareza (Coesão e Coerência) Arquitetural.
 
 ---
 
