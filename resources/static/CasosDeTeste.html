@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CasosDeTeste</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+
+
+
+
+
+    <style>
+        code[class*=language-],
+        pre[class*=language-] {
+            color: #333;
+            background: 0 0;
+            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 1.4;
+            -moz-tab-size: 8;
+            -o-tab-size: 8;
+            tab-size: 8;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none
+        }
+
+        pre[class*=language-] {
+            padding: .8em;
+            overflow: auto;
+            border-radius: 3px;
+            background: #f5f5f5
+        }
+
+        :not(pre)>code[class*=language-] {
+            padding: .1em;
+            border-radius: .3em;
+            white-space: normal;
+            background: #f5f5f5
+        }
+
+        .token.blockquote,
+        .token.comment {
+            color: #969896
+        }
+
+        .token.cdata {
+            color: #183691
+        }
+
+        .token.doctype,
+        .token.macro.property,
+        .token.punctuation,
+        .token.variable {
+            color: #333
+        }
+
+        .token.builtin,
+        .token.important,
+        .token.keyword,
+        .token.operator,
+        .token.rule {
+            color: #a71d5d
+        }
+
+        .token.attr-value,
+        .token.regex,
+        .token.string,
+        .token.url {
+            color: #183691
+        }
+
+        .token.atrule,
+        .token.boolean,
+        .token.code,
+        .token.command,
+        .token.constant,
+        .token.entity,
+        .token.number,
+        .token.property,
+        .token.symbol {
+            color: #0086b3
+        }
+
+        .token.prolog,
+        .token.selector,
+        .token.tag {
+            color: #63a35c
+        }
+
+        .token.attr-name,
+        .token.class,
+        .token.class-name,
+        .token.function,
+        .token.id,
+        .token.namespace,
+        .token.pseudo-class,
+        .token.pseudo-element,
+        .token.url-reference .token.variable {
+            color: #795da3
+        }
+
+        .token.entity {
+            cursor: help
+        }
+
+        .token.title,
+        .token.title .token.punctuation {
+            font-weight: 700;
+            color: #1d3e81
+        }
+
+        .token.list {
+            color: #ed6a43
+        }
+
+        .token.inserted {
+            background-color: #eaffea;
+            color: #55a532
+        }
+
+        .token.deleted {
+            background-color: #ffecec;
+            color: #bd2c00
+        }
+
+        .token.bold {
+            font-weight: 700
+        }
+
+        .token.italic {
+            font-style: italic
+        }
+
+        .language-json .token.property {
+            color: #183691
+        }
+
+        .language-markup .token.tag .token.punctuation {
+            color: #333
+        }
+
+        .language-css .token.function,
+        code.language-css {
+            color: #0086b3
+        }
+
+        .language-yaml .token.atrule {
+            color: #63a35c
+        }
+
+        code.language-yaml {
+            color: #183691
+        }
+
+        .language-ruby .token.function {
+            color: #333
+        }
+
+        .language-markdown .token.url {
+            color: #795da3
+        }
+
+        .language-makefile .token.symbol {
+            color: #795da3
+        }
+
+        .language-makefile .token.variable {
+            color: #183691
+        }
+
+        .language-makefile .token.builtin {
+            color: #0086b3
+        }
+
+        .language-bash .token.keyword {
+            color: #0086b3
+        }
+
+        pre[data-line] {
+            position: relative;
+            padding: 1em 0 1em 3em
+        }
+
+        pre[data-line] .line-highlight-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            display: block;
+            width: 100%
+        }
+
+        pre[data-line] .line-highlight {
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: inherit 0;
+            margin-top: 1em;
+            background: hsla(24, 20%, 50%, .08);
+            background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+            pointer-events: none;
+            line-height: inherit;
+            white-space: pre
+        }
+
+        pre[data-line] .line-highlight:before,
+        pre[data-line] .line-highlight[data-end]:after {
+            content: attr(data-start);
+            position: absolute;
+            top: .4em;
+            left: .6em;
+            min-width: 1em;
+            padding: 0 .5em;
+            background-color: hsla(24, 20%, 50%, .4);
+            color: #f4f1ef;
+            font: bold 65%/1.5 sans-serif;
+            text-align: center;
+            vertical-align: .3em;
+            border-radius: 999px;
+            text-shadow: none;
+            box-shadow: 0 1px #fff
+        }
+
+        pre[data-line] .line-highlight[data-end]:after {
+            content: attr(data-end);
+            top: auto;
+            bottom: .4em
+        }
+
+        html body {
+            font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            overflow: initial;
+            box-sizing: border-box;
+            word-wrap: break-word
+        }
+
+        html body>:first-child {
+            margin-top: 0
+        }
+
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5,
+        html body h6 {
+            line-height: 1.2;
+            margin-top: 1em;
+            margin-bottom: 16px;
+            color: #000
+        }
+
+        html body h1 {
+            font-size: 2.25em;
+            font-weight: 300;
+            padding-bottom: .3em
+        }
+
+        html body h2 {
+            font-size: 1.75em;
+            font-weight: 400;
+            padding-bottom: .3em
+        }
+
+        html body h3 {
+            font-size: 1.5em;
+            font-weight: 500
+        }
+
+        html body h4 {
+            font-size: 1.25em;
+            font-weight: 600
+        }
+
+        html body h5 {
+            font-size: 1.1em;
+            font-weight: 600
+        }
+
+        html body h6 {
+            font-size: 1em;
+            font-weight: 600
+        }
+
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5 {
+            font-weight: 600
+        }
+
+        html body h5 {
+            font-size: 1em
+        }
+
+        html body h6 {
+            color: #5c5c5c
+        }
+
+        html body strong {
+            color: #000
+        }
+
+        html body del {
+            color: #5c5c5c
+        }
+
+        html body a:not([href]) {
+            color: inherit;
+            text-decoration: none
+        }
+
+        html body a {
+            color: #08c;
+            text-decoration: none
+        }
+
+        html body a:hover {
+            color: #00a3f5;
+            text-decoration: none
+        }
+
+        html body img {
+            max-width: 100%
+        }
+
+        html body>p {
+            margin-top: 0;
+            margin-bottom: 16px;
+            word-wrap: break-word
+        }
+
+        html body>ol,
+        html body>ul {
+            margin-bottom: 16px
+        }
+
+        html body ol,
+        html body ul {
+            padding-left: 2em
+        }
+
+        html body ol.no-list,
+        html body ul.no-list {
+            padding: 0;
+            list-style-type: none
+        }
+
+        html body ol ol,
+        html body ol ul,
+        html body ul ol,
+        html body ul ul {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        html body li {
+            margin-bottom: 0
+        }
+
+        html body li.task-list-item {
+            list-style: none
+        }
+
+        html body li>p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        html body .task-list-item-checkbox {
+            margin: 0 .2em .25em -1.8em;
+            vertical-align: middle
+        }
+
+        html body .task-list-item-checkbox:hover {
+            cursor: pointer
+        }
+
+        html body blockquote {
+            margin: 16px 0;
+            font-size: inherit;
+            padding: 0 15px;
+            color: #5c5c5c;
+            background-color: #f0f0f0;
+            border-left: 4px solid #d6d6d6
+        }
+
+        html body blockquote>:first-child {
+            margin-top: 0
+        }
+
+        html body blockquote>:last-child {
+            margin-bottom: 0
+        }
+
+        html body hr {
+            height: 4px;
+            margin: 32px 0;
+            background-color: #d6d6d6;
+            border: 0 none
+        }
+
+        html body table {
+            margin: 10px 0 15px 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            display: block;
+            width: 100%;
+            overflow: auto;
+            word-break: normal;
+            word-break: keep-all
+        }
+
+        html body table th {
+            font-weight: 700;
+            color: #000
+        }
+
+        html body table td,
+        html body table th {
+            border: 1px solid #d6d6d6;
+            padding: 6px 13px
+        }
+
+        html body dl {
+            padding: 0
+        }
+
+        html body dl dt {
+            padding: 0;
+            margin-top: 16px;
+            font-size: 1em;
+            font-style: italic;
+            font-weight: 700
+        }
+
+        html body dl dd {
+            padding: 0 16px;
+            margin-bottom: 16px
+        }
+
+        html body code {
+            font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+            font-size: .85em;
+            color: #000;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            padding: .2em 0
+        }
+
+        html body code::after,
+        html body code::before {
+            letter-spacing: -.2em;
+            content: '\00a0'
+        }
+
+        html body pre>code {
+            padding: 0;
+            margin: 0;
+            word-break: normal;
+            white-space: pre;
+            background: 0 0;
+            border: 0
+        }
+
+        html body .highlight {
+            margin-bottom: 16px
+        }
+
+        html body .highlight pre,
+        html body pre {
+            padding: 1em;
+            overflow: auto;
+            line-height: 1.45;
+            border: #d6d6d6;
+            border-radius: 3px
+        }
+
+        html body .highlight pre {
+            margin-bottom: 0;
+            word-break: normal
+        }
+
+        html body pre code,
+        html body pre tt {
+            display: inline;
+            max-width: initial;
+            padding: 0;
+            margin: 0;
+            overflow: initial;
+            line-height: inherit;
+            word-wrap: normal;
+            background-color: transparent;
+            border: 0
+        }
+
+        html body pre code:after,
+        html body pre code:before,
+        html body pre tt:after,
+        html body pre tt:before {
+            content: normal
+        }
+
+        html body blockquote,
+        html body dl,
+        html body ol,
+        html body p,
+        html body pre,
+        html body ul {
+            margin-top: 0;
+            margin-bottom: 16px
+        }
+
+        html body kbd {
+            color: #000;
+            border: 1px solid #d6d6d6;
+            border-bottom: 2px solid #c7c7c7;
+            padding: 2px 4px;
+            background-color: #f0f0f0;
+            border-radius: 3px
+        }
+
+        @media print {
+            html body {
+                background-color: #fff
+            }
+
+            html body h1,
+            html body h2,
+            html body h3,
+            html body h4,
+            html body h5,
+            html body h6 {
+                color: #000;
+                page-break-after: avoid
+            }
+
+            html body blockquote {
+                color: #5c5c5c
+            }
+
+            html body pre {
+                page-break-inside: avoid
+            }
+
+            html body table {
+                display: table
+            }
+
+            html body img {
+                display: block;
+                max-width: 100%;
+                max-height: 100%
+            }
+
+            html body code,
+            html body pre {
+                word-wrap: break-word;
+                white-space: pre
+            }
+        }
+
+        .markdown-preview {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box
+        }
+
+        .markdown-preview ul {
+            list-style: disc
+        }
+
+        .markdown-preview ul ul {
+            list-style: circle
+        }
+
+        .markdown-preview ul ul ul {
+            list-style: square
+        }
+
+        .markdown-preview ol {
+            list-style: decimal
+        }
+
+        .markdown-preview ol ol,
+        .markdown-preview ul ol {
+            list-style-type: lower-roman
+        }
+
+        .markdown-preview ol ol ol,
+        .markdown-preview ol ul ol,
+        .markdown-preview ul ol ol,
+        .markdown-preview ul ul ol {
+            list-style-type: lower-alpha
+        }
+
+        .markdown-preview .newpage,
+        .markdown-preview .pagebreak {
+            page-break-before: always
+        }
+
+        .markdown-preview pre.line-numbers {
+            position: relative;
+            padding-left: 3.8em;
+            counter-reset: linenumber
+        }
+
+        .markdown-preview pre.line-numbers>code {
+            position: relative
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows {
+            position: absolute;
+            pointer-events: none;
+            top: 1em;
+            font-size: 100%;
+            left: 0;
+            width: 3em;
+            letter-spacing: -1px;
+            border-right: 1px solid #999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows>span {
+            pointer-events: none;
+            display: block;
+            counter-increment: linenumber
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: .8em;
+            text-align: right
+        }
+
+        .markdown-preview .mathjax-exps .MathJax_Display {
+            text-align: center !important
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+            display: none
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .status {
+            display: none
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+            margin-bottom: 16px
+        }
+
+        .markdown-preview .md-toc {
+            padding: 0
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+            display: inline;
+            padding: .25rem 0
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+            display: inline
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+            font-weight: 800
+        }
+
+        .scrollbar-style::-webkit-scrollbar {
+            width: 8px
+        }
+
+        .scrollbar-style::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent
+        }
+
+        .scrollbar-style::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: rgba(150, 150, 150, .66);
+            border: 4px solid rgba(150, 150, 150, .66);
+            background-clip: content-box
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            overflow: auto
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+            position: relative;
+            top: 0;
+            min-height: 100vh
+        }
+
+        @media screen and (min-width:914px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                padding: 2em calc(50% - 457px + 2em)
+            }
+        }
+
+        @media screen and (max-width:914px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                padding: 2em
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                font-size: 14px !important;
+                padding: 1em
+            }
+        }
+
+        @media print {
+            html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+                display: none
+            }
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+            position: fixed;
+            bottom: 8px;
+            left: 8px;
+            font-size: 28px;
+            cursor: pointer;
+            color: inherit;
+            z-index: 99;
+            width: 32px;
+            text-align: center;
+            opacity: .4
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+            opacity: 1
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100%;
+            padding: 32px 0 48px 0;
+            font-size: 14px;
+            box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+            box-sizing: border-box;
+            overflow: auto;
+            background-color: inherit
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+            width: 8px
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: rgba(150, 150, 150, .66);
+            border: 4px solid rgba(150, 150, 150, .66);
+            background-clip: content-box
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+            text-decoration: none
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+            padding: 0 16px
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+            display: inline;
+            padding: .25rem 0
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+            display: inline
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+            font-weight: 800
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+            left: 300px;
+            width: calc(100% - 300px);
+            padding: 2em calc(50% - 457px - 300px / 2);
+            margin: 0;
+            box-sizing: border-box
+        }
+
+        @media screen and (max-width:1274px) {
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                padding: 2em
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                width: 100%
+            }
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+            display: none
+        }
+
+        /* Please visit the URL below for more information: */
+        /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+        /* Please visit the URL below for more information: */
+        /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+        .markdown-preview.markdown-preview p,
+        .markdown-preview.markdown-preview li,
+        .markdown-preview.markdown-preview dd {
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .markdown-preview.markdown-preview body {
+            counter-reset: figures;
+            counter-reset: tables;
+        }
+
+        .markdown-preview.markdown-preview figure {
+            counter-increment: figures;
+            text-align: center;
+        }
+
+        .markdown-preview.markdown-preview figcaption {
+            font-style: normal;
+            font-weight: bold;
+            display: inherit;
+            text-align: center;
+            font-size: 90%;
+        }
+
+        .markdown-preview.markdown-preview figcaption:before {
+            content: 'Figura ' counter(figures) ' - ';
+        }
+
+        .markdown-preview.markdown-preview table {
+            counter-increment: tables;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .markdown-preview.markdown-preview table>caption {
+            font-style: normal;
+            font-weight: bold;
+            caption-side: top;
+            text-align: center;
+            font-size: 90%;
+            background: none;
+            border-bottom: none;
+            color: #172b4d;
+        }
+
+        .markdown-preview.markdown-preview table>caption:before {
+            content: 'Tabela ' counter(tables) ' - ';
+        }
+    </style>
+    <!-- The content below will be included at the end of the <head> element. -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            // your code here
+        });
+    </script>
+</head>
+
+<body for="html-export">
+
+
+    <div class="crossnote markdown-preview  ">
+
+        <h1 id="teste-de-componentes---tarefascontrollerteste">Teste de Componentes - TarefasControllerTeste </h1>
+        <h2 id="sumário">Sumário </h2>
+        <ul>
+            <li><a href="#teste-de-componentes---tarefascontrollerteste">Teste de Componentes -
+                    TarefasControllerTeste</a>
+                <ul>
+                    <li><a href="#sum%C3%A1rio">Sumário</a></li>
+                    <li><a href="#considera%C3%A7%C3%B5es-t%C3%A9cnicas">Considerações Técnicas</a></li>
+                    <li><a href="#pre-condi%C3%A7%C3%B5es-para-a-execu%C3%A7%C3%A3o-dos-testes">Pre-Condições para a
+                            execução dos testes</a></li>
+                    <li><a href="#casos-de-teste">Casos de Teste</a>
+                        <ul>
+                            <li><a href="#ct1---teste-de-cadastro-de-tarefas-com-sucesso-testposttarefa">CT1 - Teste de
+                                    Cadastro de tarefas com sucesso <code>(testPostTarefa())</code></a></li>
+                            <li><a href="#ct2---teste-de-cadastro-de-tarefa-inv%C3%A1lida-testposttarefafalha">CT2 -
+                                    Teste de Cadastro de tarefa inválida <code>testPostTarefaFalha()</code></a></li>
+                            <li><a href="#ct3---teste-de-conclus%C3%A3o-de-uma-tarefa-testconcluirtarefa">CT3 - Teste de
+                                    conclusão de uma tarefa <code>testConcluirTarefa()</code></a></li>
+                            <li><a href="#ct4---teste-de-listagem-de-tarefas-testgettarefas">CT4 - Teste de listagem de
+                                    tarefas <code>testGetTarefas()</code></a></li>
+                            <li><a href="#ct5---teste-de-busca-de-tarefa-por-id-testgettarefabyid">CT5 - Teste de busca
+                                    de tarefa por ID <code>testGetTarefaById()</code></a></li>
+                            <li><a
+                                    href="#ct6---teste-de-busca-de-tarefa-por-id-inv%C3%A1lido-testgettarefabyidinvalido">CT6
+                                    - Teste de busca de tarefa por ID inválido
+                                    <code>testGetTarefaByIdInvalido()</code></a></li>
+                            <li><a href="#ct7---teste-de-remo%C3%A7%C3%A3o-de-tarefa-v%C3%A1lida-testremovertarefa">CT7
+                                    - Teste de remoção de tarefa válida <code>testRemoverTarefa()</code></a></li>
+                            <li><a
+                                    href="#ct8---teste-de-remo%C3%A7%C3%A3o-de-tarefa-inexistente-testremovertarefainvalida">CT8
+                                    - Teste de remoção de tarefa inexistente
+                                    <code>testRemoverTarefaInvalida()</code></a></li>
+                            <li><a
+                                    href="#ct9---teste-de-atualiza%C3%A7%C3%A3o-de-tarefa-v%C3%A1lida-testatualizartarefa">CT9
+                                    - Teste de atualização de tarefa válida <code>testAtualizarTarefa()</code></a></li>
+                            <li><a
+                                    href="#ct10---teste-de-atualiza%C3%A7%C3%A3o-de-tarefa-inexistente-testatualizartarefainvalida">CT10
+                                    - Teste de atualização de tarefa inexistente
+                                    <code>testAtualizarTarefaInvalida()</code></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#c%C3%B3digos-dos-testes">Códigos dos testes:</a></li>
+                </ul>
+            </li>
+        </ul>
+        <h2 id="considerações-técnicas">Considerações Técnicas </h2>
+        <p>Este documento explicita os casos de testes executados no componente <strong>TarefasController</strong> o
+            qual simula a porta de entrada das requisições das aplicações web, nesse sentido, os Testes Unitários
+            automatizados foram elaborados em concordância aos endpoints da classe.</p>
+        <p>Vale a pena ressaltar que, para a execução dos testes no geral, é necessário configurar minimamente o projeto
+            para a execução dos testes, o qual pode ser feitas de várias estratégias:</p>
+        <ol>
+            <li>
+                <p>Baixar a Lib do Junit .jar (no site oficial) e configurar as paths de Teste e de desenvolvimento do
+                    código para que o Java e a IDE (caso atual - VScode) estejam em harmonia e executar os testes
+                    manualmente, utilizando a biblioteca JUnit previamente adicionada ao repositório local.</p>
+            </li>
+            <li>
+                <p>Configurar o Projeto via Maven - estratégia aplicada no contexto atual, que consiste em:</p>
+                <ol>
+                    <li>
+                        <p>Instalar o Maven na máquina</p>
+                    </li>
+                    <li>
+                        <p>Criar o <code>pom.xml</code> com toda a configuração do projeto e, além disso, as
+                            dependências <strong>JUnit 4.13.2 e Hamcrest 1.3</strong> para realizar os testes, demais
+                            configurações inerentes ao projeto (compilação e etc). Com isso, teremos algo semelhante a
+                            isso:<br>
+                        </p>
+                        <pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 http://www.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">&gt;</span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>Sistema_de_Gerenciamento_de_Tarefas<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- JUnit para testes --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>junit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>junit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>4.13.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token comment">&lt;!-- Hamcrest para asserções --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.hamcrest<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>hamcrest-core<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sourceDirectory</span><span class="token punctuation">&gt;</span></span>src/main/java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sourceDirectory</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>testSourceDirectory</span><span class="token punctuation">&gt;</span></span>src/test/java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>testSourceDirectory</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!-- Plugin para compilar o código --&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.maven.plugins<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>maven-compiler-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>3.8.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">&gt;</span></span>11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">&gt;</span></span>11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+                        <p></p>
+                    </li>
+                    <li>
+                        <p>Configuração do patch ambiente do projeto no Vscode, se não houverão erros de estruturação de
+                            Repositório e identificação de bibliotecas. Isso é feito criando a pasta
+                            <code>.vscode</code> na raiz do projeto contendo o
+                            <strong><code>settings.json</code></strong> com as seguintes descrições:<br>
+                        </p>
+                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+    <span class="token property">"java.home"</span><span class="token operator">:</span> <span class="token string">"/usr/lib/jvm/jdk-23.0.1-oracle-x64"</span><span class="token punctuation">,</span> <span class="token comment">// Ajuste para o caminho do seu JDK</span>
+    <span class="token property">"java.project.sourcePaths"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/main/java"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Diretório de código-fonte principal no padrão Maven</span>
+    <span class="token property">"java.project.test.sourcePaths"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/test/java"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// Diretório de código-fonte de testes no padrão Maven</span>
+    <span class="token property">"java.project.outputPath"</span><span class="token operator">:</span> <span class="token string">"target/classes"</span><span class="token punctuation">,</span> <span class="token comment">// Diretório de saída padrão do Maven</span>
+    <span class="token property">"java.project.referencedLibraries"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"target/dependency/*.jar"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"java.testClass"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"controller.TarefasControllerTest"</span> <span class="token comment">// Classe de teste a ser executada</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"java.testMethod"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"controller.TarefasControllerTest#testPostTarefa"</span><span class="token punctuation">,</span> <span class="token comment">// Método de teste específico</span>
+        <span class="token string">"controller.TarefasControllerTest#testConcluirTarefa"</span> <span class="token comment">// Outro método de teste</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                        <p></p>
+                    </li>
+                    <li>
+                        <p>Após essas configurações iniciais, só executar uma compilação inicial executando o comando
+                            <code>mvnw compile</code> no terminal para garantir o download das libs, configuração dos
+                            targets com as versões binárias dos códigos, e toda a configuração do projeto explícita no
+                            <code>pom.xml</code>.</p>
+                    </li>
+                    <li>
+                        <p>Com tudo configurado e compilado, e as libs em pleno funcionamento, é só modelar os casos de
+                            testes.</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <h2 id="pre-condições-para-a-execução-dos-testes">Pre-Condições para a execução dos testes </h2>
+        <p>Para a execução de cada teste, é necessário instanciar o controller de tarefas para a realização de cada
+            teste, uma vez que, antes da execução, o Junit precisa saber sob qual componente será efetuado as
+            validações. Sendo assim, o seguinte método será executado antes dos testes para instanciar o controller:</p>
+        <p><img src="../../out/BeforeTest.png" alt="Before"></p>
+        <h2 id="casos-de-teste">Casos de Teste </h2>
+        <h3 id="ct1---teste-de-cadastro-de-tarefas-com-sucesso-testposttarefa">CT1 - Teste de Cadastro de tarefas com
+            sucesso <code>(testPostTarefa())</code> </h3>
+        <p><strong>Identificação Única</strong>: CT1.</p>
+        <p><strong>Objetivo do Teste</strong>: Validar se o cadastro de tarefa foi executado corretamente.</p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Instanciar a tarefa.</li>
+            <li>Chamar o controller executando o método <code>postTarefa</code>.</li>
+            <li>Conferir o resultado da comparação através do título usando o método <code>findbyId(...)</code> do
+                controller.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação:</strong> A Tarefa deve ser cadastrada com sucesso, com todos os atributos
+            válidos.</p>
+        <h3 id="ct2---teste-de-cadastro-de-tarefa-inválida-testposttarefafalha">CT2 - Teste de Cadastro de tarefa
+            inválida <code>testPostTarefaFalha()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT2.<br>
+            <strong>Objetivo do Teste</strong>: Verificar se o sistema lança exceção ao tentar cadastrar uma tarefa com
+            título e descrição inválidos.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Instanciar uma tarefa com campos vazios.</li>
+            <li>Chamar o controller executando o método <code>postTarefa</code>.</li>
+            <li>Verificar se é lançada uma <code>IllegalArgumentException</code>.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            O sistema deve lançar uma exceção com <strong>"O título da tarefa não pode ser nulo ou vazio."</strong>
+            impedindo o cadastro da tarefa inválida.</p>
+        <hr>
+        <h3 id="ct3---teste-de-conclusão-de-uma-tarefa-testconcluirtarefa">CT3 - Teste de conclusão de uma tarefa
+            <code>testConcluirTarefa()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT3.<br>
+            <strong>Objetivo do Teste</strong>: Validar se uma tarefa é marcada como concluída com sucesso.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Instanciar uma tarefa.</li>
+            <li>Cadastrar a tarefa usando o método <code>postTarefa</code>.</li>
+            <li>Executar o método <code>concluirTarefa</code>.</li>
+            <li>Conferir o estado da tarefa com <code>isConcluida()</code>.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            A tarefa deve estar com status de concluída.</p>
+        <hr>
+        <h3 id="ct4---teste-de-listagem-de-tarefas-testgettarefas">CT4 - Teste de listagem de tarefas
+            <code>testGetTarefas()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT4.<br>
+            <strong>Objetivo do Teste</strong>: Validar se a listagem de tarefas está funcionando corretamente,
+            retornando todas as cadastradas.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Cadastrar duas tarefas distintas.</li>
+            <li>Executar o método <code>getlistTarefas</code>.</li>
+            <li>Verificar se os títulos das tarefas aparecem na lista retornada.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            Os títulos das tarefas cadastradas devem estar presentes na string de retorno.</p>
+        <hr>
+        <h3 id="ct5---teste-de-busca-de-tarefa-por-id-testgettarefabyid">CT5 - Teste de busca de tarefa por ID
+            <code>testGetTarefaById()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT5.<br>
+            <strong>Objetivo do Teste</strong>: Confirmar se a tarefa cadastrada pode ser localizada corretamente pelo
+            ID.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Cadastrar uma nova tarefa.</li>
+            <li>Obter o ID da tarefa usando <code>getIdlocal()</code>.</li>
+            <li>Executar o método <code>findById</code> com esse ID.</li>
+            <li>Comparar se o objeto retornado é igual ao original.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            A tarefa retornada deve ser equivalente à tarefa cadastrada.</p>
+        <hr>
+        <h3 id="ct6---teste-de-busca-de-tarefa-por-id-inválido-testgettarefabyidinvalido">CT6 - Teste de busca de tarefa
+            por ID inválido <code>testGetTarefaByIdInvalido()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT6.<br>
+            <strong>Objetivo do Teste</strong>: Validar se o sistema reage corretamente ao tentar buscar uma tarefa com
+            ID inexistente.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Executar o método <code>findById</code> com um ID inexistente (ex: <code>999</code>).</li>
+            <li>Observar o lançamento de uma exceção.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            O sistema deve lançar uma exceção do tipo <code>IllegalArgumentException</code> com <strong>"Tarefa não
+                encontrada com o ID 999"</strong>.</p>
+        <hr>
+        <h3 id="ct7---teste-de-remoção-de-tarefa-válida-testremovertarefa">CT7 - Teste de remoção de tarefa válida
+            <code>testRemoverTarefa()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT7.<br>
+            <strong>Objetivo do Teste</strong>: Validar se uma tarefa pode ser removida corretamente após ser
+            cadastrada.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Instanciar uma tarefa.</li>
+            <li>Cadastrar a tarefa com <code>postTarefa</code>.</li>
+            <li>Executar <code>deleteTarefa</code> passando a tarefa como parâmetro.</li>
+            <li>Tentar buscar a tarefa removida usando <code>findById</code>.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            A tarefa deve ser removida com sucesso e não pode ser localizada posteriormente indicando que,
+            <strong>"Tarefa não encontrada com o ID 1"</strong>.</p>
+        <hr>
+        <h3 id="ct8---teste-de-remoção-de-tarefa-inexistente-testremovertarefainvalida">CT8 - Teste de remoção de tarefa
+            inexistente <code>testRemoverTarefaInvalida()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT8.<br>
+            <strong>Objetivo do Teste</strong>: Verificar se o sistema reage corretamente ao tentar remover uma tarefa
+            que nunca foi cadastrada.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Instanciar uma tarefa (sem cadastrá-la).</li>
+            <li>Executar <code>deleteTarefa</code> com essa instância.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            O sistema deve lançar uma exceção <code>IllegalArgumentException</code> indicando que, <strong>"A tarefa com
+                o ID 1 não existe."</strong>.</p>
+        <hr>
+        <h3 id="ct9---teste-de-atualização-de-tarefa-válida-testatualizartarefa">CT9 - Teste de atualização de tarefa
+            válida <code>testAtualizarTarefa()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT9.<br>
+            <strong>Objetivo do Teste</strong>: Validar se os dados de uma tarefa existente podem ser atualizados
+            corretamente.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Instanciar e cadastrar uma tarefa.</li>
+            <li>Alterar atributos da tarefa (ex: <code>titulo</code>).</li>
+            <li>Executar <code>putTarefa</code>.</li>
+            <li>Validar se os dados foram atualizados com sucesso via <code>findById</code>.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            A tarefa deve refletir os novos dados após a atualização.</p>
+        <hr>
+        <h3 id="ct10---teste-de-atualização-de-tarefa-inexistente-testatualizartarefainvalida">CT10 - Teste de
+            atualização de tarefa inexistente <code>testAtualizarTarefaInvalida()</code> </h3>
+        <p><strong>Identificação Única</strong>: CT10.<br>
+            <strong>Objetivo do Teste</strong>: Verificar se o sistema lança exceção ao tentar atualizar uma tarefa que
+            não foi previamente cadastrada.
+        </p>
+        <p><strong>Passos para Execução</strong>:</p>
+        <ol>
+            <li>Instanciar uma tarefa (sem cadastrá-la).</li>
+            <li>Executar o método <code>putTarefa</code>.</li>
+        </ol>
+        <p><strong>Critérios de Aceitação</strong>:<br>
+            O sistema deve lançar uma exceção <code>IllegalArgumentException</code> indicando que, <strong>"A tarefa com
+                o ID 1 não está cadastrada."</strong>.</p>
+        <h2 id="códigos-dos-testes">Códigos dos testes: </h2>
+        <p></p>
+        <pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-import">import</span> <span class="token keyword keyword-static">static</span> <span class="token import static"><span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span></span><span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">controller<span class="token punctuation">.</span></span><span class="token class-name">TarefasController</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">model<span class="token punctuation">.</span></span><span class="token class-name">Prioridade</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">model<span class="token punctuation">.</span></span><span class="token class-name">Tarefa</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span></span><span class="token class-name">Before</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span></span><span class="token class-name">Test</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">TarefasControllerTest</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword keyword-private">private</span> <span class="token class-name">TarefasController</span> controller<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Before</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">setUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        controller <span class="token operator">=</span> <span class="token class-name">TarefasController</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testPostTarefa</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Tarefa</span> tarefa <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">,</span> <span class="token string">"Teste"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> resultado <span class="token operator">=</span> controller<span class="token punctuation">.</span><span class="token function">postTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Verifica se a saída do método contém a tarefa recém cadastrada</span>
+        <span class="token function">assertTrue</span><span class="token punctuation">(</span>resultado<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Busca pela tarefa e verifica se ela foi armazenada corretamente</span>
+        <span class="token class-name">Tarefa</span> tarefaSalva <span class="token operator">=</span> controller<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">.</span><span class="token function">getIdlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">assertNotNull</span><span class="token punctuation">(</span>tarefaSalva<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Verifica se a tarefa existe</span>
+        <span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">,</span> tarefaSalva<span class="token punctuation">.</span><span class="token function">getTitulo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Verifica se o título corresponde</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span><span class="token punctuation">(</span>expected <span class="token operator">=</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testPostTarefaFalha</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Tenta criar uma tarefa com título e descrição inválidos</span>
+        <span class="token class-name">Tarefa</span> tarefa <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">postTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Espera-se que uma IllegalArgumentException seja lançada</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testConcluirTarefa</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Tarefa</span> tarefa <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa"</span><span class="token punctuation">,</span> <span class="token string">"Teste"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">postTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">concluirTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">assertTrue</span><span class="token punctuation">(</span>controller<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">.</span><span class="token function">getIdlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isConcluida</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testGetTarefas</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Tarefa</span> tarefa1 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">,</span> <span class="token string">"Descrição1"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Tarefa</span> tarefa2 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa2"</span><span class="token punctuation">,</span> <span class="token string">"Descrição2"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">BAIXA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        controller<span class="token punctuation">.</span><span class="token function">postTarefa</span><span class="token punctuation">(</span>tarefa1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">postTarefa</span><span class="token punctuation">(</span>tarefa2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Verifica o tamanho da lista de tarefas</span>
+        <span class="token class-name">String</span> listaTarefas <span class="token operator">=</span> controller<span class="token punctuation">.</span><span class="token function">getlistTarefas</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">assertTrue</span><span class="token punctuation">(</span>listaTarefas<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">assertTrue</span><span class="token punctuation">(</span>listaTarefas<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"Tarefa2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testGetTarefaById</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Tarefa</span> tarefa <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">,</span> <span class="token string">"Teste"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">postTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">assertEquals</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">,</span> controller<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">.</span><span class="token function">getIdlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span><span class="token punctuation">(</span>expected <span class="token operator">=</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testGetTarefaByIdInvalido</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        controller<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span><span class="token number">999</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Espera-se que a tarefa com ID 999 não exista</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span><span class="token punctuation">(</span>expected <span class="token operator">=</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testRemoverTarefa</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Tarefa</span> tarefa <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">,</span> <span class="token string">"Teste"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">postTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">deleteTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">assertNull</span><span class="token punctuation">(</span>controller<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">.</span><span class="token function">getIdlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Verifica se a tarefa foi removida</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span><span class="token punctuation">(</span>expected <span class="token operator">=</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testRemoverTarefaInvalida</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Tarefa</span> tarefa <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">,</span> <span class="token string">"Teste"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">deleteTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Tenta deletar uma tarefa que não foi cadastrada</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testAtualizarTarefa</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Tarefa</span> tarefa <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">,</span> <span class="token string">"Teste"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">postTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tarefa<span class="token punctuation">.</span><span class="token function">setTitulo</span><span class="token punctuation">(</span><span class="token string">"Tarefa Atualizada"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">putTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">"Tarefa Atualizada"</span><span class="token punctuation">,</span> controller<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">.</span><span class="token function">getIdlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTitulo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span><span class="token punctuation">(</span>expected <span class="token operator">=</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">testAtualizarTarefaInvalida</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Tarefa</span> tarefa <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Tarefa1"</span><span class="token punctuation">,</span> <span class="token string">"Teste"</span><span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span><span class="token function">putTarefa</span><span class="token punctuation">(</span>tarefa<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Tenta atualizar uma tarefa que não foi cadastrada</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+        <p></p>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
