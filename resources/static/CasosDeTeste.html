@@ -1053,7 +1053,8 @@
                         <p>Após essas configurações iniciais, só executar uma compilação inicial executando o comando
                             <code>mvnw compile</code> no terminal para garantir o download das libs, configuração dos
                             targets com as versões binárias dos códigos, e toda a configuração do projeto explícita no
-                            <code>pom.xml</code>.</p>
+                            <code>pom.xml</code>.
+                        </p>
                     </li>
                     <li>
                         <p>Com tudo configurado e compilado, e as libs em pleno funcionamento, é só modelar os casos de
@@ -1066,7 +1067,7 @@
         <p>Para a execução de cada teste, é necessário instanciar o controller de tarefas para a realização de cada
             teste, uma vez que, antes da execução, o Junit precisa saber sob qual componente será efetuado as
             validações. Sendo assim, o seguinte método será executado antes dos testes para instanciar o controller:</p>
-        <p><img src="../../out/BeforeTest.png" alt="Before"></p>
+        <p><img src="/out/casosDeTeste/BeforeTest.png" alt="Before"></p>
         <h2 id="casos-de-teste">Casos de Teste </h2>
         <h3 id="ct1---teste-de-cadastro-de-tarefas-com-sucesso-testposttarefa">CT1 - Teste de Cadastro de tarefas com
             sucesso <code>(testPostTarefa())</code> </h3>
@@ -1098,7 +1099,8 @@
             impedindo o cadastro da tarefa inválida.</p>
         <hr>
         <h3 id="ct3---teste-de-conclusão-de-uma-tarefa-testconcluirtarefa">CT3 - Teste de conclusão de uma tarefa
-            <code>testConcluirTarefa()</code> </h3>
+            <code>testConcluirTarefa()</code>
+        </h3>
         <p><strong>Identificação Única</strong>: CT3.<br>
             <strong>Objetivo do Teste</strong>: Validar se uma tarefa é marcada como concluída com sucesso.
         </p>
@@ -1113,7 +1115,8 @@
             A tarefa deve estar com status de concluída.</p>
         <hr>
         <h3 id="ct4---teste-de-listagem-de-tarefas-testgettarefas">CT4 - Teste de listagem de tarefas
-            <code>testGetTarefas()</code> </h3>
+            <code>testGetTarefas()</code>
+        </h3>
         <p><strong>Identificação Única</strong>: CT4.<br>
             <strong>Objetivo do Teste</strong>: Validar se a listagem de tarefas está funcionando corretamente,
             retornando todas as cadastradas.
@@ -1128,7 +1131,8 @@
             Os títulos das tarefas cadastradas devem estar presentes na string de retorno.</p>
         <hr>
         <h3 id="ct5---teste-de-busca-de-tarefa-por-id-testgettarefabyid">CT5 - Teste de busca de tarefa por ID
-            <code>testGetTarefaById()</code> </h3>
+            <code>testGetTarefaById()</code>
+        </h3>
         <p><strong>Identificação Única</strong>: CT5.<br>
             <strong>Objetivo do Teste</strong>: Confirmar se a tarefa cadastrada pode ser localizada corretamente pelo
             ID.
@@ -1159,7 +1163,8 @@
                 encontrada com o ID 999"</strong>.</p>
         <hr>
         <h3 id="ct7---teste-de-remoção-de-tarefa-válida-testremovertarefa">CT7 - Teste de remoção de tarefa válida
-            <code>testRemoverTarefa()</code> </h3>
+            <code>testRemoverTarefa()</code>
+        </h3>
         <p><strong>Identificação Única</strong>: CT7.<br>
             <strong>Objetivo do Teste</strong>: Validar se uma tarefa pode ser removida corretamente após ser
             cadastrada.
@@ -1173,7 +1178,8 @@
         </ol>
         <p><strong>Critérios de Aceitação</strong>:<br>
             A tarefa deve ser removida com sucesso e não pode ser localizada posteriormente indicando que,
-            <strong>"Tarefa não encontrada com o ID 1"</strong>.</p>
+            <strong>"Tarefa não encontrada com o ID 1"</strong>.
+        </p>
         <hr>
         <h3 id="ct8---teste-de-remoção-de-tarefa-inexistente-testremovertarefainvalida">CT8 - Teste de remoção de tarefa
             inexistente <code>testRemoverTarefaInvalida()</code> </h3>
@@ -1325,7 +1331,8 @@
 <span class="token punctuation">}</span>
 
 </code></pre>
-        <p></p>
+        <p><a href="../../index.html">Voltar Principal</a></p>
+
 
     </div>
 
