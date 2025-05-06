@@ -31,7 +31,7 @@ No cenário atual — ao simular essa visualização arquitetural — o padrão 
 
 ### Código:
 
-[CodigoTarefaService](../src/main/java/service/TarefasService.java)
+[CodigoTarefaService](../../src/main/java/service/TarefasService.java)
 
 ---
 
