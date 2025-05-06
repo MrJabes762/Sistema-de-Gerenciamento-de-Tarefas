@@ -45,7 +45,7 @@ No cenário atual — ao simular essa visualização arquitetural — o padrão 
 
 O padrão Singleton, quando bem empregado, não apenas evita instâncias redundantes como estrutura a comunicação entre camadas com previsibilidade e economia de recursos. Em sistemas onde o controle de instância é vital — como em arquiteturas em camadas — o Singleton atua como guardião da unicidade e da ordem.
 
-[Voltar Principal](index.md)
+[Voltar Principal](../../index.md)
 
 ## Referências:
 
