@@ -25,11 +25,11 @@ Nesse sentido, extraindo a essência dessa implementação para o contexto do Ge
 
 ## Estrutura
 
-![EstruturaProxy](/out/estruturasUmls/padrões/proxy/proxy/proxy.png)
+![EstruturaProxy](../../out/estruturasUmls/padrões/proxy/proxy/proxy.png)
 
 ### Código
 
-![CódigoProxy](/src/main/java/service/TarefaProxySecurityValidationService.java)
+[CódigoProxy](../../src/main/java/service/TarefaProxySecurityValidationService.java)
 
 ---
 
@@ -65,4 +65,4 @@ Portanto, mesmo que a implementação fuja do rigor estrutural do GoF — substi
 
 [^GAMMA]: GAMMA, Erich. et al. Padrões de projetos: Soluções reutilizáveis de software orientados a objetos Bookman editora, 2009.
 
-[Voltar Principal](index.md)
+[Voltar Principal](../../README.md)

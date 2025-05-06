@@ -22,11 +22,11 @@ Nesse sentido, em aplicações web, a fachada principal por onde o sistema receb
 
 ## Estrutura
 
-![EstruturaFacade](/out/estruturasUmls/padrões/façade/facade/facade.png)
+![EstruturaFacade](../../out/estruturasUmls/padrões/façade/facade/facade.png)
 
 ### Código
 
-![CodigoTarefaController](/src/main/java/controller/TarefasController.java)
+![CodigoTarefaController](../../src/main/java/controller/TarefasController.java)
 
 ---
 
@@ -53,7 +53,7 @@ Ao delegar responsabilidades específicas para serviços e repositórios especia
 
 A Implementação reforça o princípio de encapsulamento arquitetural, onde cada camada exerce seu papel com mínima dependência contextual. Isso torna o sistema escalável, testável.
 
-[Voltar Principal](index.md)
+[Voltar Principal](../../README.md)
 
 ---
 

@@ -45,7 +45,7 @@
 
 ### Evidências:
 
-![EvidenciasPost](/out/relatorioDeTeste/ResultadoPostTarefa.png)
+![EvidenciasPost](../../out/relatorioDeTeste/ResultadoPostTarefa.png)
 
 
 ### Barema:
@@ -68,7 +68,7 @@
 
 ### Evidências:
 
-![EvidenciasPostFalha](/out/relatorioDeTeste/ResultadoPostTarefaFalha.png)
+![EvidenciasPostFalha](../../out/relatorioDeTeste/ResultadoPostTarefaFalha.png)
 
 ### Barema:
 
@@ -90,7 +90,7 @@
 
 ### Evidências:
 
-![EvidenciasConcluirTarefa](/out/relatorioDeTeste/ResultadoConcluirTarefa.png)
+![EvidenciasConcluirTarefa](../../out/relatorioDeTeste/ResultadoConcluirTarefa.png)
 
 ### Barema:
 
@@ -112,7 +112,7 @@
 
 ### Evidências:
 
-![EvidenciasGetTarefas](/out/relatorioDeTeste/ResultadoGetTarefas.png)
+![EvidenciasGetTarefas](../../out/relatorioDeTeste/ResultadoGetTarefas.png)
 
 ### Barema:
 
@@ -134,7 +134,7 @@
 
 ### Evidências:
 
-![EvidenciasGetTarefaById](/out/relatorioDeTeste/ResultadoGetTarefaById.png)
+![EvidenciasGetTarefaById](../../out/relatorioDeTeste/ResultadoGetTarefaById.png)
 
 ### Barema:
 
@@ -156,7 +156,7 @@
 
 ### Evidências:
 
-![EvidenciasGetTarefaByIdInvalido](/out/relatorioDeTeste/ResultadoGetTarefaByIdInvalido.png)
+![EvidenciasGetTarefaByIdInvalido](../../out/relatorioDeTeste/ResultadoGetTarefaByIdInvalido.png)
 
 ### Barema:
 
@@ -178,7 +178,7 @@
 
 ### Evidências:
 
-![EvidenciasRemoverTarefa](/out/relatorioDeTeste/ResultadoRemoverTarefa.png)
+![EvidenciasRemoverTarefa](../../out/relatorioDeTeste/ResultadoRemoverTarefa.png)
 
 ### Barema:
 
@@ -200,7 +200,7 @@
 
 ### Evidências:
 
-![EvidenciasRemoverTarefaInvalida](/out/relatorioDeTeste/ResultadoRemoverTarefaInvalida.png)
+![EvidenciasRemoverTarefaInvalida](../../out/relatorioDeTeste/ResultadoRemoverTarefaInvalida.png)
 
 ### Barema:
 
@@ -222,7 +222,7 @@
 
 ### Evidências:
 
-![EvidenciasAtualizarTarefa](/out/relatorioDeTeste/ResultadoAtualizarTarefa.png)
+![EvidenciasAtualizarTarefa](../../out/relatorioDeTeste/ResultadoAtualizarTarefa.png)
 
 ### Barema:
 
@@ -244,7 +244,7 @@
 
 ### Evidências:
 
-![EvidenciasAtualizarTarefaInvalida](/out/relatorioDeTeste/ResultadoAtualizarTarefaInvalida.png)
+![EvidenciasAtualizarTarefaInvalida](../../out/relatorioDeTeste/ResultadoAtualizarTarefaInvalida.png)
 
 ### Barema:
 
@@ -266,7 +266,7 @@
 
 ### Evidências:
 
-![EvidenciasTarefasController](/out/relatorioDeTeste/ResultadoTarefasController.png)
+![EvidenciasTarefasController](../../out/relatorioDeTeste/ResultadoTarefasController.png)
 
 ### Barema:
 

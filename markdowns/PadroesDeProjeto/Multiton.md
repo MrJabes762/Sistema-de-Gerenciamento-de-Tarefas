@@ -16,13 +16,13 @@ Tendo em vista que, o Multiton é uma variação do Singleton e que o Enum do Ja
 
 ## Estrutura
 
-![EstruturaMultiton](/out/estruturasUmls/padrões/multiton/multiton/multiton.png)
+![EstruturaMultiton](../../out/estruturasUmls/padrões/multiton/multiton/multiton.png)
 
 ---
 
 ### Código
 
-![CodigoMultiton](/src/main/java/model/Prioridade.java)
+![CodigoMultiton](../../src/main/java/model/Prioridade.java)
 
 ---
 
@@ -42,7 +42,7 @@ Ao utilizá-lo no domínio do sistema, transformamos o que seria uma simples enu
 
 Assim, o Multiton se estabelece como uma variação prática do Singleton, alinhado ao espírito da engenharia de software moderna: preciso, reutilizável e semanticamente expressivo.
 
-[Voltar Principal](index.md)
+[Voltar Principal](../../README.md)
 
 --- 
 

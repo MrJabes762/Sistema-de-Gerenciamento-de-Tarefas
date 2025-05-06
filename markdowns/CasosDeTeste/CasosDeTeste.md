@@ -46,7 +46,7 @@ Vale a pena ressaltar que, para a execução dos testes no geral, é necessário
 
 Para a execução de cada teste, é necessário instanciar o controller de tarefas para a realização de cada teste, uma vez que, antes da execução, o Junit precisa saber sob qual componente será efetuado as validações. Sendo assim, o seguinte método será executado antes dos testes para instanciar o controller:
 
-![Before](/out/BeforeTest.png)
+![Before](../../out/BeforeTest.png)
 
 ## Casos de Teste
 
@@ -200,4 +200,6 @@ O sistema deve lançar uma exceção `IllegalArgumentException` indicando que, *
 
 ## Códigos dos testes:
 
-![CódigosTest](/src/test/java/TarefasControllerTest.java)
+[CódigosTest](../../src/test/java/TarefasControllerTest.java)
+
+[Voltar Principal](../../README.md)
