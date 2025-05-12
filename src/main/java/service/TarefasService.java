@@ -1,6 +1,7 @@
 package service;
 
 import data.TarefasRepository;
+import model.EstadoTarefa;
 import model.Tarefa;
 
 /**
@@ -57,7 +58,7 @@ public class TarefasService implements Service<Tarefa> {
     public String concluirTarefa(Tarefa tarefa) throws IllegalArgumentException {
         getTarefaProxySecurityValidationService().concluirTarefa(tarefa);
         Tarefa tarefaExistente = getInstanceRepository().getTarefaPorId(tarefa.getIdlocal());
-        tarefaExistente.setConcluida(true);
+        tarefaExistente.setEstadoTarefa(EstadoTarefa.CONCLUIDA);
         return atualizarTarefa(tarefaExistente);
     }
     private static TarefasRepository getInstanceRepository() {
