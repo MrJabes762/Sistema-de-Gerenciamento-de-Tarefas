@@ -1,4 +1,3 @@
-
 # Proxy
 
 ## Intenção

@@ -66,7 +66,11 @@ Para a execução de cada teste, é necessário instanciar o controller de taref
 
 ### CT2 - Teste de Cadastro de tarefa inválida `testPostTarefaFalha()`
 
-**Identificação Única**: CT2.  
+
+**Identificação Única**: CT2.
+
+**V 1.10**
+  
 **Objetivo do Teste**: Verificar se o sistema lança exceção ao tentar cadastrar uma tarefa com título e descrição inválidos.  
 
 **Passos para Execução**:
@@ -76,12 +80,29 @@ Para a execução de cada teste, é necessário instanciar o controller de taref
 
 **Critérios de Aceitação**:  
 O sistema deve lançar uma exceção com **"O título da tarefa não pode ser nulo ou vazio."** impedindo o cadastro da tarefa inválida.
+
+**V 2.0**
+
+**Objetivo do Teste**: Verificar se o sistema impede o cadastro de tarefas com dados inválidos, lançando a exceção apropriada.
+
+**Passos para Execução**:
+1. Criar uma instância de `Tarefa` com título e descrição vazios (`""`).
+2. Executar o método `postTarefa(tarefa)` via `TarefasController`.
+3. Avaliar se a resposta contém a mensagem de erro esperada.
+
+**Critérios de Aceitação**:
+- O sistema deve impedir a criação da tarefa.
+- Deve lançar uma `IllegalArgumentException` com a mensagem:
+  > "O título da tarefa não pode ser nulo ou vazio."
   
 ---
 
 ### CT3 - Teste de conclusão de uma tarefa `testConcluirTarefa()`
 
-**Identificação Única**: CT3.  
+**Identificação Única**: CT3. 
+
+**V 1.10**
+ 
 **Objetivo do Teste**: Validar se uma tarefa é marcada como concluída com sucesso.  
 
 **Passos para Execução**:
@@ -92,6 +113,21 @@ O sistema deve lançar uma exceção com **"O título da tarefa não pode ser nu
 
 **Critérios de Aceitação**:  
 A tarefa deve estar com status de concluída.
+
+**V 2.0**
+
+**Objetivo do Teste**: Garantir que o sistema atualize corretamente o estado de uma tarefa para "CONCLUÍDA" após a execução da operação de conclusão.
+
+**Passos para Execução**:
+1. Criar uma instância de `Tarefa` com título, descrição e prioridade válidos.
+2. Persistir a tarefa utilizando o método `postTarefa(tarefa)`.
+3. Invocar `concluirTarefa(tarefa)` para alterar seu estado.
+4. Recuperar a tarefa pelo método `findById(tarefa.getIdlocal())`.
+5. Verificar se o estado da tarefa foi alterado para `EstadoTarefa.CONCLUIDA`.
+
+**Critérios de Aceitação**:
+- A tarefa deve ter seu estado atualizado para `CONCLUIDA`.
+- A transição de estado deve ser persistente e verificável.
 
 ---
 
@@ -128,7 +164,11 @@ A tarefa retornada deve ser equivalente à tarefa cadastrada.
 
 ### CT6 - Teste de busca de tarefa por ID inválido `testGetTarefaByIdInvalido()`
 
-**Identificação Única**: CT6.  
+**Identificação Única**: CT6. 
+
+**V 1.10**
+
+
 **Objetivo do Teste**: Validar se o sistema reage corretamente ao tentar buscar uma tarefa com ID inexistente.  
 
 **Passos para Execução**:
@@ -138,11 +178,28 @@ A tarefa retornada deve ser equivalente à tarefa cadastrada.
 **Critérios de Aceitação**:  
 O sistema deve lançar uma exceção do tipo `IllegalArgumentException` com **"Tarefa não encontrada com o ID 999"**.
 
+**V 2.0**
+
+**Objetivo do Teste**: Garantir que o sistema lance a exceção correta ao tentar buscar uma tarefa com um ID que não está presente no repositório.
+
+**Passos para Execução**:
+1. Chamar o método `findById` com um valor de ID inexistente (`999`).
+2. Verificar se o método lança uma `IllegalArgumentException`.
+3. Confirmar que a mensagem da exceção contenha exatamente: `"Tarefa não encontrada com o ID 999"`.
+
+
+**Critérios de Aceitação**:
+- Deve ser lançada uma exceção do tipo `IllegalArgumentException`.
+- A mensagem da exceção deve ser precisa e informativa: `"Tarefa não encontrada com o ID 999"`.
+
 ---
 
 ### CT7 - Teste de remoção de tarefa válida `testRemoverTarefa()`
 
 **Identificação Única**: CT7.  
+
+**V 1.10**
+
 **Objetivo do Teste**: Validar se uma tarefa pode ser removida corretamente após ser cadastrada.  
 
 **Passos para Execução**:
@@ -154,11 +211,31 @@ O sistema deve lançar uma exceção do tipo `IllegalArgumentException` com **"T
 **Critérios de Aceitação**:  
 A tarefa deve ser removida com sucesso e não pode ser localizada posteriormente indicando que, **"Tarefa não encontrada com o ID 1"**.
 
+**V 2.0**
+
+**Objetivo do Teste**: Verificar se o sistema remove corretamente uma tarefa previamente cadastrada, e se essa remoção impede seu acesso posterior.
+
+**Passos para Execução**:
+1. Criar uma nova tarefa com dados válidos.
+2. Cadastrar essa tarefa por meio do método `postTarefa`.
+3. Remover a tarefa utilizando `deleteTarefa`.
+4. Tentar recuperar a tarefa pelo seu ID com `findById`.
+5. Verificar se o sistema lança uma exceção com a mensagem apropriada.
+
+**Critérios de Aceitação**:
+- Deve ser lançada uma exceção do tipo `IllegalArgumentException`.
+- A mensagem da exceção deve conter exatamente:  
+  `"Tarefa não encontrada com o ID <id_da_tarefa>"`, refletindo o ID da tarefa removida.
+
+
 ---
 
 ### CT8 - Teste de remoção de tarefa inexistente `testRemoverTarefaInvalida()`
 
-**Identificação Única**: CT8.  
+**Identificação Única**: CT8.
+
+**V 1.10**
+  
 **Objetivo do Teste**: Verificar se o sistema reage corretamente ao tentar remover uma tarefa que nunca foi cadastrada.  
 
 **Passos para Execução**:
@@ -167,6 +244,20 @@ A tarefa deve ser removida com sucesso e não pode ser localizada posteriormente
 
 **Critérios de Aceitação**:  
 O sistema deve lançar uma exceção `IllegalArgumentException` indicando que, **"A tarefa com o ID 1 não existe."**.
+
+**V 2.0**
+
+**Objetivo do Teste**: Garantir que o sistema retorne a mensagem apropriada ao tentar remover uma tarefa que não foi previamente cadastrada.
+
+**Passos para Execução**:
+1. Instanciar uma tarefa sem realizar seu cadastro.
+2. Chamar o método `deleteTarefa` com essa instância.
+3. Verificar se a mensagem retornada contém a indicação de que a tarefa não existe.
+
+**Critérios de Aceitação**:
+- A resposta do método deve conter a mensagem:  
+  **"A tarefa com o ID `<id>` não existe."**
+- Não deve ser lançada exceção: a falha é tratada como mensagem retornada.
 
 ---
 
@@ -188,7 +279,10 @@ A tarefa deve refletir os novos dados após a atualização.
 
 ### CT10 - Teste de atualização de tarefa inexistente `testAtualizarTarefaInvalida()`
 
-**Identificação Única**: CT10.  
+**Identificação Única**: CT10. 
+
+**V 1.10**
+ 
 **Objetivo do Teste**: Verificar se o sistema lança exceção ao tentar atualizar uma tarefa que não foi previamente cadastrada.  
 
 **Passos para Execução**:
@@ -197,6 +291,22 @@ A tarefa deve refletir os novos dados após a atualização.
 
 **Critérios de Aceitação**:  
 O sistema deve lançar uma exceção `IllegalArgumentException` indicando que, **"A tarefa com o ID 1 não está cadastrada."**.
+
+**V 2.0**
+
+**Objetivo do Teste**: Verificar se o sistema responde adequadamente ao tentar atualizar uma tarefa que nunca foi cadastrada.
+
+**Passos para Execução**:
+1. Instanciar uma tarefa com dados válidos.
+2. Não cadastrá-la previamente no sistema.
+3. Executar `putTarefa` com essa tarefa.
+4. Verificar se a resposta textual indica a inexistência da tarefa.
+
+**Critérios de Aceitação**:
+- O método deve retornar uma mensagem contendo:  
+  **"A tarefa com o ID `<id>` não está cadastrada."**
+- A operação não deve alterar o estado do sistema.
+
 
 ## Códigos dos testes:
 

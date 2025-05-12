@@ -26,7 +26,7 @@ Nesse sentido, em aplicações web, a fachada principal por onde o sistema receb
 
 ### Código
 
-![CodigoTarefaController](../../src/main/java/controller/TarefasController.java)
+[CodigoTarefaController](../../src/main/java/controller/TarefasController.java)
 
 ---
 

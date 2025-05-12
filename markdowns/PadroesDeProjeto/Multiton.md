@@ -10,37 +10,49 @@ Permitir a criação de uma quantidade limitada de instâncias de determinada cl
 
 ## Motivação 
 
-Tendo em vista que, o Multiton é uma variação do Singleton e que o Enum do Java se comporta como um Multiton, no contexto do sistema, ele ainda possui uma relação fraca com o mesmo, no sentido de que, é aplicável, porém a razão atribuída a ele é a representação de instâncias únicas da classe Prioridade (Alta, Média, Baixa e Urgente) o que justifica, mas é possível fundamentar um pouco mais a aplicabilidade, de modo a conferir, exatidão da implementação. O acesso é centralizado e consistente, evitando duplicidade e facilitando a manutenção.
+Tendo em vista que, o Multiton é uma variação do Singleton e que o Enum do Java se comporta como um Multiton, no contexto do sistema, o padrão adquiriu uma aplicabilidade considerável , no sentido de que, além da representação de instâncias únicas da classe Prioridade (Alta, Média, Baixa e Urgente), ele também é usado em paralelo ao padrão State visando a atribuição de objetos para cada estado (EMANDAMENTO, ATRASADA, CONCLUIDA, PENDENTE) e o state define um comportamento para cada instancia. Os acessos são centralizados e consistentes, evitando duplicidade e facilitando a manutenção.
 
 ---
 
-## Estrutura
+## Estruturas
 
+**Uso na Prioridade**
 ![EstruturaMultiton](../../out/estruturasUmls/padrões/multiton/multiton/multiton.png)
+
+**Uso no Estado Da Tarefa**
+
+![EstruturaState](../../out/estruturasUmls/padrões/state/state/state.png)
 
 ---
 
 ### Código
 
-![CodigoMultiton](../../src/main/java/model/Prioridade.java)
+**Código Prioridade**
+
+[CodigoMultiton](../../src/main/java/model/Prioridade.java)
+
+**Código EstadoTarefa**
+
+[CodigoState](../../src/main/java/model/EstadoTarefa.java)
 
 ---
 
 ## Participantes
 
-1. **Multiton:** `(Prioridade)` -> mantém instâncias únicas para cada Prioridade das Tarefas;
-2. **Client:** `(Roteiro)`
-    - O Roteiro chama as instâncias em tempo de execução para atribuir as tarefas.
+1. **Multiton:** `(Prioridade e Estado Tarefa)` -> mantém instâncias únicas para cada Prioridade e Estado das Tarefas;
+2. **Client:** `(Roteiro e TarefaService)`
+    - O Roteiro chama as instâncias em tempo de execução para atribuir as tarefas. A prioridade é mais dinâmica na criação da tarefa e o estado por natureza é EMANDAMENTO, sendo alterado pelo Tarefa Service efetivando a conclusão.
 
 ---
 
 ## Conclusão
 
-O padrão Multiton, embora não seja formalmente descrito pelo GoF, surge como uma solução eficaz quando é necessário controlar e centralizar múltiplas instâncias únicas, representando conceitos fixos, porém distintos — como no caso das prioridades de tarefas. Sua aplicação por meio de enum no Java é elegante, concisa e semanticamente forte, trazendo legibilidade, segurança e garantia de unicidade.
+Embora o Multiton não figure entre os padrões clássicos da Gang of Four, sua aplicação se revela extremamente valiosa em sistemas que demandam instâncias únicas, porém múltiplas e semanticamente distintas — como as prioridades de uma tarefa ou os estados comportamentais de seu ciclo de vida.
 
-Ao utilizá-lo no domínio do sistema, transformamos o que seria uma simples enumeração em um repositório conceitual imutável, onde cada instância carrega não só um valor, mas um significado funcional dentro do fluxo de tarefas. Essa prática reforça o controle sobre a criação de objetos, garantindo consistência, clareza arquitetural e uma lógica de acesso compartilhada e segura.
+No contexto deste sistema, o uso de enum no Java como implementação natural do Multiton demonstra-se não apenas eficiente, mas também elegante: encapsula valores constantes com comportamento e identidade funcional, reduzindo acoplamento, eliminando redundância e conferindo à modelagem uma clareza conceitual rara. 
 
-Assim, o Multiton se estabelece como uma variação prática do Singleton, alinhado ao espírito da engenharia de software moderna: preciso, reutilizável e semanticamente expressivo.
+Essa abordagem favorece um design mais limpo, previsível e fácil de manter. Além disso, ao operar em harmonia com o padrão State, o Multiton reforça a coesão entre estado e comportamento, promovendo polimorfismo controlado e evitando condicionais desnecessárias que enfraqueceriam a robustez do domínio.
+
 
 [Voltar Principal](../../README.md)
 
