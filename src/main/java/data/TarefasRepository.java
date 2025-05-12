@@ -37,14 +37,14 @@ public class TarefasRepository implements Repository<Tarefa>{
     
     @Override
     public String getTarefasCadastradas() {
-        StringBuilder sb = new StringBuilder("Tarefas cadastradas:\n");
+        StringBuilder sb = new StringBuilder("\n");
         for (Tarefa tarefa : getTarefas().values()) {
             sb.append("ID: ").append(tarefa.getIdlocal())
                     .append(", Data de Criação: ").append(tarefa.getDataCriacao())
                     .append(", Título: ").append(tarefa.getTitulo())
                     .append(", Descrição: ").append(tarefa.getDescricao())
                     .append(", Prioridade: ").append(tarefa.getPrioridade().toString())
-                    .append(", Concluída: ").append(tarefa.isConcluida())
+                    .append(", Estado da Tarefa: ").append(tarefa.getEstadoTarefa().toString())
                     .append("\n");
         }
         return sb.toString();
