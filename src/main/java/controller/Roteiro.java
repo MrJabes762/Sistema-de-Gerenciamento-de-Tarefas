@@ -1,5 +1,4 @@
 package controller;
-import model.Prioridade;
 import model.Tarefa;
 
 public class Roteiro {
@@ -13,11 +12,11 @@ public class Roteiro {
         // com o mesmo tipo de tarefa
         try {
             String tipoPessoal = "Pessoal";
-            Tarefa tarefa1 = new Tarefa("Andar de Bike", tipoPessoal, Prioridade.URGENTE);
-            Tarefa tarefa2 = new Tarefa("Limpar a Casa", tipoPessoal, Prioridade.ALTA);
-            Tarefa tarefa3 = new Tarefa("Estudar Java", tipoPessoal, Prioridade.BAIXA);
-            Tarefa tarefa4 = new Tarefa("Fazer Análise de Dados em Mysql", tipoPessoal, Prioridade.MEDIA);
-            Tarefa tarefa5 = new Tarefa("", tipoPessoal, Prioridade.URGENTE);
+            Tarefa tarefa1 = new Tarefa("Andar de Bike", tipoPessoal);
+            Tarefa tarefa2 = new Tarefa("Limpar a Casa", tipoPessoal);
+            Tarefa tarefa3 = new Tarefa("Estudar Java", tipoPessoal);
+            Tarefa tarefa4 = new Tarefa("Fazer Análise de Dados em Mysql", tipoPessoal);
+            Tarefa tarefa5 = new Tarefa("", tipoPessoal);
             
             // Requisiçao ao frontController do tipo POST
             // para adicionar tarefas
