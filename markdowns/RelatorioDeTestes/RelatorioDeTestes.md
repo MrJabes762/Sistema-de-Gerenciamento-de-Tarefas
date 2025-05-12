@@ -1,4 +1,3 @@
-
 # Relatório de Testes
 
 ## Índice de Relatórios
@@ -9,36 +8,63 @@
     - [Evidências:](#evidências)
     - [Barema:](#barema)
   - [CT2 - Teste de Cadastro de tarefa inválida `(testPostTarefaFalha())`](#ct2---teste-de-cadastro-de-tarefa-inválida-testposttarefafalha)
-    - [Evidências:](#evidências-1)
-    - [Barema:](#barema-1)
+    - [V 1.10](#v-110)
+      - [Evidências:](#evidências-1)
+      - [Barema:](#barema-1)
+    - [V 2.0](#v-20)
+      - [Evidências:](#evidências-2)
+      - [Barema:](#barema-2)
   - [CT3 - Teste de Conclusão de Tarefa `(testConcluirTarefa())`](#ct3---teste-de-conclusão-de-tarefa-testconcluirtarefa)
-    - [Evidências:](#evidências-2)
-    - [Barema:](#barema-2)
+    - [V 1.10](#v-110-1)
+      - [Evidências:](#evidências-3)
+      - [Barema:](#barema-3)
+    - [V 2.0](#v-20-1)
+      - [Evidências:](#evidências-4)
+      - [Barema:](#barema-4)
   - [CT4 - Teste de Listagem de Tarefas `(testGetTarefas())`](#ct4---teste-de-listagem-de-tarefas-testgettarefas)
-    - [Evidências:](#evidências-3)
-    - [Barema:](#barema-3)
-  - [CT5 - Teste de Busca de Tarefa por ID `(testGetTarefaById())`](#ct5---teste-de-busca-de-tarefa-por-id-testgettarefabyid)
-    - [Evidências:](#evidências-4)
-    - [Barema:](#barema-4)
-  - [CT6 - Teste de Busca por ID inválido `(testGetTarefaByIdInvalido())`](#ct6---teste-de-busca-por-id-inválido-testgettarefabyidinvalido)
     - [Evidências:](#evidências-5)
     - [Barema:](#barema-5)
-  - [CT7 - Teste de Remoção de Tarefa `(testRemoverTarefa())`](#ct7---teste-de-remoção-de-tarefa-testremovertarefa)
+  - [CT5 - Teste de Busca de Tarefa por ID `(testGetTarefaById())`](#ct5---teste-de-busca-de-tarefa-por-id-testgettarefabyid)
     - [Evidências:](#evidências-6)
     - [Barema:](#barema-6)
+  - [CT6 - Teste de Busca por ID inválido `(testGetTarefaByIdInvalido())`](#ct6---teste-de-busca-por-id-inválido-testgettarefabyidinvalido)
+    - [V 1.10](#v-110-2)
+      - [Evidências:](#evidências-7)
+      - [Barema:](#barema-7)
+    - [V 2.0](#v-20-2)
+      - [Evidências:](#evidências-8)
+      - [Barema:](#barema-8)
+  - [CT7 - Teste de Remoção de Tarefa `(testRemoverTarefa())`](#ct7---teste-de-remoção-de-tarefa-testremovertarefa)
+    - [V 1.10](#v-110-3)
+      - [Evidências:](#evidências-9)
+      - [Barema:](#barema-9)
+    - [V 2.0](#v-20-3)
+      - [Evidências:](#evidências-10)
+      - [Barema:](#barema-10)
   - [CT8 - Teste de Remoção de Tarefa Inválida `(testRemoverTarefaInvalida())`](#ct8---teste-de-remoção-de-tarefa-inválida-testremovertarefainvalida)
-    - [Evidências:](#evidências-7)
-    - [Barema:](#barema-7)
+    - [V 1.10](#v-110-4)
+      - [Evidências:](#evidências-11)
+      - [Barema:](#barema-11)
+    - [V 2.0](#v-20-4)
+      - [Evidências:](#evidências-12)
+      - [Barema:](#barema-12)
   - [CT9 - Teste de Atualização de Tarefa `(testAtualizarTarefa())`](#ct9---teste-de-atualização-de-tarefa-testatualizartarefa)
-    - [Evidências:](#evidências-8)
-    - [Barema:](#barema-8)
+    - [Evidências:](#evidências-13)
+    - [Barema:](#barema-13)
   - [CT10 - Teste de Atualização de Tarefa Inválida `(testAtualizarTarefaInvalida())`](#ct10---teste-de-atualização-de-tarefa-inválida-testatualizartarefainvalida)
-    - [Evidências:](#evidências-9)
-    - [Barema:](#barema-9)
+    - [V 1.10](#v-110-5)
+      - [Evidências:](#evidências-14)
+      - [Barema:](#barema-14)
+    - [V 2.0](#v-20-5)
+      - [Evidências:](#evidências-15)
+      - [Barema:](#barema-15)
   - [CT11 - Conjunto de Testes para o Controller de Tarefas `(TarefasControllerTest)`](#ct11---conjunto-de-testes-para-o-controller-de-tarefas-tarefascontrollertest)
-    - [Evidências:](#evidências-10)
-    - [Barema:](#barema-10)
-  - [Voltar Principal](#voltar-principal)
+    - [V 1.10](#v-110-6)
+      - [Evidências:](#evidências-16)
+      - [Barema:](#barema-16)
+    - [V 2.0](#v-20-6)
+      - [Evidências:](#evidências-17)
+      - [Barema:](#barema-17)
 
 ---
 
@@ -67,11 +93,13 @@
 
 ## CT2 - Teste de Cadastro de tarefa inválida `(testPostTarefaFalha())`
 
-### Evidências:
+### V 1.10
+
+#### Evidências:
 
 ![EvidenciasPostFalha](../../out/relatorioDeTeste/ResultadoPostTarefaFalha.png)
 
-### Barema:
+#### Barema:
 
 | Elemento                  | Valor                                                                 |
 |---------------------------|-----------------------------------------------------------------------|
@@ -85,15 +113,38 @@
 | **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
 | **Sugestão de Melhorias** | `Em caso de visualização, as mensagens de erro, devem mais descritivas ao usuário final.`         |
 
+### V 2.0
+
+#### Evidências:
+
+![EvidenciasPostFalha2.0](../../out/relatorioDeTeste/ResultadoPostTarefaFalha2.0.png)
+
+#### Barema:
+
+| Elemento                  | Valor                                                                 |
+|---------------------------|-----------------------------------------------------------------------|
+| **Identificador do Teste**| `2`                                                                   |
+| **Descrição**             | `Verifica se o sistema rejeita tarefa com título e descrição vazios.`|
+| **Status**                | `✅ Passou`                                                            |
+| **Ignorado**              | `Não`                                                                 |
+| **Tempo de Execução**     | `352ms`                                                               |
+| **Exceções Lançadas**     | `IllegalArgumentException`                                            |
+| **Comentário**            | `O sistema lançou a exceção esperada ao receber dados inválidos, validando corretamente a regra de negócio.` |
+| **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
+| **Sugestão de Melhorias** | `Nenhuma melhoria sugerida` |
+
+
 ---
 
 ## CT3 - Teste de Conclusão de Tarefa `(testConcluirTarefa())`
 
-### Evidências:
+### V 1.10
+
+#### Evidências:
 
 ![EvidenciasConcluirTarefa](../../out/relatorioDeTeste/ResultadoConcluirTarefa.png)
 
-### Barema:
+#### Barema:
 
 | Elemento                  | Valor                                                                 |
 |---------------------------|-----------------------------------------------------------------------|
@@ -106,6 +157,27 @@
 | **Comentário**            | `A tarefa foi criada, concluída e o status foi atualizado com sucesso.` |
 | **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
 | **Sugestão de Melhorias** | `Nenhuma.`                                                            |
+
+
+### V 2.0
+
+#### Evidências:
+
+![EvidenciasConcluirTarefa](../../out/relatorioDeTeste/ResultadoConcluirTarefa2.0.png)
+
+#### Barema:
+
+| Elemento                  | Valor                                                                 |
+|---------------------------|-----------------------------------------------------------------------|
+| **Identificador do Teste**| `3`                                                                   |
+| **Descrição**             | `Verifica se uma tarefa é corretamente marcada como concluída.`      |
+| **Status**                | `✅ Passou`                                                            |
+| **Ignorado**              | `Não`                                                                 |
+| **Tempo de Execução**     | `250ms`                                                               |
+| **Exceções Lançadas**     | `Nenhuma`                                                             |
+| **Comentário**            | `A tarefa foi criada, concluída e o status atualizado com sucesso.`  |
+| **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
+| **Sugestão de Melhorias** | `Nenhuma.` |
 
 ---
 
@@ -155,11 +227,13 @@
 
 ## CT6 - Teste de Busca por ID inválido `(testGetTarefaByIdInvalido())`
 
-### Evidências:
+### V 1.10
+
+#### Evidências:
 
 ![EvidenciasGetTarefaByIdInvalido](../../out/relatorioDeTeste/ResultadoGetTarefaByIdInvalido.png)
 
-### Barema:
+#### Barema:
 
 | Elemento                  | Valor                                                                 |
 |---------------------------|-----------------------------------------------------------------------|
@@ -173,15 +247,37 @@
 | **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
 | **Sugestão de Melhorias** | `Em caso de visualização, as mensagens de erro, devem mais descritivas ao usuário final.` |
 
+### V 2.0
+
+#### Evidências:
+
+![EvidenciasGetTarefaByIdInvalido](../../out/relatorioDeTeste/ResultadoGetTarefaByIdInvalido2.0.png)
+
+#### Barema:
+
+| Elemento                  | Valor                                                                 |
+|---------------------------|-----------------------------------------------------------------------|
+| **Identificador do Teste**| `6`                                                                   |
+| **Descrição**             | `Verifica o tratamento da tentativa de recuperar uma tarefa com ID inexistente.` |
+| **Status**                | `✅ Passou`                                                            |
+| **Ignorado**              | `Não`                                                                 |
+| **Tempo de Execução**     | `127ms`                                                               |
+| **Exceções Lançadas**     | `IllegalArgumentException: Tarefa com ID 999 não encontrada.`         |
+| **Comentário**            | `O sistema lançou corretamente a exceção esperada ao buscar uma tarefa inexistente.` |
+| **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
+| **Sugestão de Melhorias** | `Nenhuma sugerida` |
+
 ---
 
 ## CT7 - Teste de Remoção de Tarefa `(testRemoverTarefa())`
 
-### Evidências:
+### V 1.10
+
+#### Evidências:
 
 ![EvidenciasRemoverTarefa](../../out/relatorioDeTeste/ResultadoRemoverTarefa.png)
 
-### Barema:
+#### Barema:
 
 | Elemento                  | Valor                                                                 |
 |---------------------------|-----------------------------------------------------------------------|
@@ -195,15 +291,37 @@
 | **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
 | **Sugestão de Melhorias** | `Nenhuma.`                                                            |
 
+### V 2.0
+
+#### Evidências:
+
+![EvidenciasRemoverTarefa](../../out/relatorioDeTeste/ResultadoRemoverTarefa2.0.png)
+
+#### Barema:
+
+| Elemento                  | Valor                                                                 |
+|---------------------------|-----------------------------------------------------------------------|
+| **Identificador do Teste**| `7`                                                                   |
+| **Descrição**             | `Verifica se uma tarefa é removida com sucesso e validada após remoção.` |
+| **Status**                | `✅ Passou`                                                           |
+| **Ignorado**              | `Não`                                                                 |
+| **Tempo de Execução**     | `205ms`                                                               |
+| **Exceções Lançadas**     | `Nenhuma`                                                             |
+| **Comentário**            | `A tarefa foi removida corretamente e não foi mais encontrada.`       |
+| **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
+| **Sugestão de Melhorias** | `Nenhuma.`                                                            |
+
 ---
 
 ## CT8 - Teste de Remoção de Tarefa Inválida `(testRemoverTarefaInvalida())`
 
-### Evidências:
+### V 1.10
+
+#### Evidências:
 
 ![EvidenciasRemoverTarefaInvalida](../../out/relatorioDeTeste/ResultadoRemoverTarefaInvalida.png)
 
-### Barema:
+#### Barema:
 
 | Elemento                  | Valor                                                                 |
 |---------------------------|-----------------------------------------------------------------------|
@@ -216,6 +334,26 @@
 | **Comentário**            | `A exceção foi corretamente lançada, indicando que não é possível remover uma tarefa não cadastrada.` |
 | **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
 | **Sugestão de Melhorias** | `Nenhuma.`                                                            |
+
+### V 2.0
+
+#### Evidências:
+
+![EvidenciasRemoverTarefaInvalida](../../out/relatorioDeTeste/ResultadoRemoverTarefaInvalida2.0.png)
+
+#### Barema:
+
+| Elemento                  | Valor                                                                 |
+|---------------------------|-----------------------------------------------------------------------|
+| **Identificador do Teste**| `8`                                                                   |
+| **Descrição**             | `Verifica se ao tentar remover uma tarefa que não foi cadastrada, a exceção esperada é lançada.` |
+| **Status**                | `✅ Passou`                                                           |
+| **Ignorado**              | `Não`                                                                 |
+| **Tempo de Execução**     | `385ms`                                                               |
+| **Exceções Lançadas**     | `IllegalArgumentException`                                            |
+| **Comentário**            | `A exceção foi corretamente lançada, indicando que não é possível remover uma tarefa não cadastrada.` |
+| **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
+| **Sugestão de Melhorias** | `Nenhuma.` |
 
 ---
 
@@ -243,11 +381,13 @@
 
 ## CT10 - Teste de Atualização de Tarefa Inválida `(testAtualizarTarefaInvalida())`
 
-### Evidências:
+### V 1.10
+
+#### Evidências:
 
 ![EvidenciasAtualizarTarefaInvalida](../../out/relatorioDeTeste/ResultadoAtualizarTarefaInvalida.png)
 
-### Barema:
+#### Barema:
 
 | Elemento                  | Valor                                                                 |
 |---------------------------|-----------------------------------------------------------------------|
@@ -261,15 +401,38 @@
 | **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
 | **Sugestão de Melhorias** | `Nenhuma.`                                                            |
 
+### V 2.0
+
+#### Evidências:
+
+![EvidenciasAtualizarTarefaInvalida](../../out/relatorioDeTeste/ResultadoAtualizarTarefaInvalida2.0.png)
+
+#### Barema:
+
+| Elemento                  | Valor                                                                 |
+|---------------------------|-----------------------------------------------------------------------|
+| **Identificador do Teste**| `10`                                                                  |
+| **Descrição**             | `Verifica o comportamento do sistema ao tentar atualizar uma tarefa não cadastrada.` |
+| **Status**                | `✅ Passou`                                                           |
+| **Ignorado**              | `Não`                                                                 |
+| **Tempo de Execução**     | `225ms`                                                               |
+| **Exceções Lançadas**     | `IllegalArgumentException`                                            |
+| **Comentário**            | `O sistema se comportou conforme esperado, lançando a exceção de argumento inválido.` |
+| **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
+| **Sugestão de Melhorias** | `Nenhuma.`  |
+
+
 ---
 
 ## CT11 - Conjunto de Testes para o Controller de Tarefas `(TarefasControllerTest)`
 
-### Evidências:
+### V 1.10
+
+#### Evidências:
 
 ![EvidenciasTarefasController](../../out/relatorioDeTeste/ResultadoTarefasController.png)
 
-### Barema:
+#### Barema:
 
 | Elemento                  | Valor                                                                 |
 |---------------------------|-----------------------------------------------------------------------|
@@ -282,5 +445,27 @@
 | **Comentário**            | `O conjunto de testes executou com sucesso todas as funcionalidades do controlador de tarefas, verificando desde a criação, atualização e remoção até o tratamento de falhas.` |
 | **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
 | **Sugestão de Melhorias** | `Nenhuma.`                                                            |
+
+### V 2.0
+
+#### Evidências:
+
+![EvidenciasTarefasController](../../out/relatorioDeTeste/ResultadoTarefasController2.0.png)
+
+#### Barema:
+
+| Elemento                  | Valor                                                                 |
+|---------------------------|-----------------------------------------------------------------------|
+| **Identificador do Teste**| `11`                                                                  |
+| **Descrição**             | `Execução de um conjunto de testes no controlador de tarefas para verificar as funcionalidades de CRUD e de gerenciamento de tarefas.` |
+| **Status**                | `✅ Passaram todos os testes`                                         |
+| **Ignorado**              | `Não`                                                                 |
+| **Tempo de Execução**     | `367ms`                                                               |
+| **Exceções Lançadas**     | `Nenhuma` (Todos os testes passaram, incluindo os que lançam exceções esperadas) |
+| **Comentário**            | `O conjunto de testes executou com sucesso todas as funcionalidades do controlador de tarefas, cobrindo operações válidas e inválidas de criação, recuperação, atualização, remoção e conclusão de tarefas.` |
+| **Descrição de Falhas**   | `Nenhuma falha identificada.`                                         |
+| **Sugestão de Melhorias** | `Nenhuma Sugerida` |
+
 [Voltar Principal](../../README.md)
+
 ---
