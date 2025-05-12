@@ -55,7 +55,7 @@ Acessivel em: https://mrjabes762.github.io/Sistema-de-Gerenciamento-de-Tarefas/i
 | **01/05/2025** | 09 | `- Revisão da Documentação / Arquitetura `| Jabes Cajazeira
 |**06/05/2025**| 10|`- Revisão da Documentação principal; Revisão de Código; Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes;` | Jabes Cajazeira |
 |------------|2|-----------|---------|
-|**10/05/2025**| **0** | `- Implementação: do Padrão Comportamental State, de Melhorias na Camada de Controller sugeridas nos resultados de testes; Documentação do Padrão State; Revisão de Arquitetura com as Melhorias e a adição do Padrão; Revisão dos casos de testes com adaptações a tais atualizações; Adição de novos resultados ao relatório; Revisão da documentação geral` | Jabes Cajazeira |
+|**12/05/2025**| **0** | `- Implementação: do Padrão Comportamental State, de Melhorias na Camada de Controller sugeridas nos resultados de testes; Documentação do Padrão State; Revisão de Arquitetura com as Melhorias e a adição do Padrão; Revisão dos casos de testes com adaptações a tais atualizações; Adição de novos resultados ao relatório; Revisão da documentação geral` | Jabes Cajazeira |
 
 
 
