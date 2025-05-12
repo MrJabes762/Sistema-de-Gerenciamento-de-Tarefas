@@ -1,4 +1,5 @@
 package model;
+
 import java.time.LocalDate;
 
 public class Tarefa {
@@ -9,16 +10,24 @@ public class Tarefa {
     private String descricao;
     private String dataCriacao;
     private Prioridade prioridade;
-    private boolean concluida;
+    private EstadoTarefa estadoTarefa;
 
-    public Tarefa(String titulo, String descricao, Prioridade prioridade) {
+    public Tarefa(String titulo, String descricao) {
         setTitulo(titulo);
         setDescricao(descricao);
-        setPrioridade(prioridade);
         setData();
-        idGlobal ++;
+        idGlobal++;
         setIdlocal(idGlobal);
-        setConcluida(false);
+        setEstadoTarefa(EstadoTarefa.EMANDAMENTO);
+    }
+
+    public EstadoTarefa getEstadoTarefa() {
+        return estadoTarefa;
+    }
+
+    public void setEstadoTarefa(EstadoTarefa estadoTarefa) {
+        this.estadoTarefa = estadoTarefa;
+        estadoTarefa.estadoAtual(this);
     }
 
     public String getData() {
@@ -53,19 +62,15 @@ public class Tarefa {
         this.idlocal = idlocal;
     }
 
-    public boolean isConcluida() {
-        return concluida;
-    }
-
     public static int getIdGlobal() {
         return idGlobal;
     }
-    public void setConcluida(boolean concluida) {
-        this.concluida = concluida;
-    }
+
     public String getDataCriacao() {
         return dataCriacao;
     }
+
+
     @Override
     public String toString() {
         return "{" +
@@ -73,9 +78,11 @@ public class Tarefa {
             ", titulo='" + getTitulo() + "'" +
             ", descricao='" + getDescricao() + "'" +
             ", dataCriacao='" + getDataCriacao() + "'" +
-            ", concluida='" + isConcluida() + "'" +
+            ", prioridade='" + getPrioridade() + "'" +
+            ", estadoTarefa='" + getEstadoTarefa() + "'" +
             "}";
     }
+   
 
     public Prioridade getPrioridade() {
         return prioridade;
