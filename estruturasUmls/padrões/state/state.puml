@@ -1,0 +1,15 @@
+@startuml
+
+skinparam line ortho
+
+!include ./estruturasUmls/java/model/estruturaEstadoTarefa.puml
+!include ./estruturasUmls/java/model/estruturaInterfaceEstadoTarefa.puml
+!include ./estruturasUmls/java/service/estruturaTarefaService.puml
+!include ./estruturasUmls/java/model/estruturaTarefa.puml
+
+InterfaceEstadoTarefa <|.. EstadoTarefa
+Tarefa *-- EstadoTarefa
+TarefasService o-- EstadoTarefa
+
+
+@enduml

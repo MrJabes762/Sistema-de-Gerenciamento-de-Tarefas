@@ -9,7 +9,7 @@ class Tarefa {
     - descricao: String
     - dataCriacao: String
     - prioridade: Prioridade
-    - concluida: boolean
+    - estadoTarefa: EstadoTarefa
     --
     + Tarefa(titulo: String, descricao: String, prioridade: Prioridade)
     + getData(): String
@@ -20,12 +20,12 @@ class Tarefa {
     + setTitulo(titulo: String): void
     + getIdlocal(): int
     - setIdlocal(idlocal: int): void
-    + isConcluida(): boolean
-    + setConcluida(concluida: boolean): void
     + getDataCriacao(): String
     + toString(): String
     + getPrioridade(): Prioridade
     + setPrioridade(prioridade: Prioridade): void
+    + getEstadoTarefa(): EstadoTarefa
+    + setEstadoTarefa(estado: EstadoTarefa): void
     + getIdGlobal(): int <<static>>
 }
 

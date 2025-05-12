@@ -1,0 +1,15 @@
+@startuml
+
+skinparam line ortho
+skinparam classAttributeIconSize 0
+
+enum EstadoTarefa {
+    +CONCLUIDA
+    +PENDENTE
+    +ATRASADA
+    +EMANDAMENTO
+    --
+    +toString() : String
+}
+
+@enduml

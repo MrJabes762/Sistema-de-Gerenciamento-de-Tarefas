@@ -7,9 +7,14 @@ skinparam line ortho
 !include estruturasUmls/java/data/estruturaRepositry.puml
 !include estruturasUmls/java/model/estruturaPrioridade.puml
 !include estruturasUmls/java/service/estruturaService.puml
+!include estruturasUmls/java/model/estruturaEstadoTarefa.puml
+!include estruturasUmls/java/model/estruturaInterfaceEstadoTarefa.puml
 
 Prioridade --* Tarefa
 TarefasService ..|> Service
 TarefasController ..|> Controller
 TarefasRepository ..|> Repository
+EstadoTarefa --* Tarefa
+EstadoTarefa ..|> InterfaceEstadoTarefa
+
 @enduml

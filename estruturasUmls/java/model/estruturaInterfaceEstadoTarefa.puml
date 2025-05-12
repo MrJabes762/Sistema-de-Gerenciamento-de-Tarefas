@@ -1,0 +1,10 @@
+@startuml
+
+skinparam line ortho
+skinparam classAttributeIconSize 0
+
+interface InterfaceEstadoTarefa {
+    +estadoAtual() : String
+}
+
+@enduml
