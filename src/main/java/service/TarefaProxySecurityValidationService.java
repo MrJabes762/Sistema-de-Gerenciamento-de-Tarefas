@@ -3,6 +3,9 @@ package service;
 import data.TarefasRepository;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.Objects;
+
+import model.EstadoTarefa;
 import model.Tarefa;
 
 /**
@@ -87,8 +90,8 @@ class TarefaProxySecurityValidationService {
         if (tarefaExistente == null) {
             throw new IllegalArgumentException("A tarefa com o ID " + tarefa.getIdlocal() + " não existe.");
         }
-        if (tarefaExistente.isConcluida()) {
-            throw new IllegalArgumentException("A tarefa com o ID " + tarefa.getIdlocal() + " já está concluída.");
+        if (Objects.equals(tarefaExistente.getEstadoTarefa(), EstadoTarefa.CONCLUIDA)) {
+            throw new IllegalArgumentException("A tarefa com o ID " + tarefa.getIdlocal() + " já está "+ tarefaExistente.getEstadoTarefa().toString() + ".");
         }
     }
 
