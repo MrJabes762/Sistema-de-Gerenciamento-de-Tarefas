@@ -1,5 +1,4 @@
-
-# Sistema de Gerenciamento de Tarefas (V 1.10)
+# Sistema de Gerenciamento de Tarefas (V 2.0)
 
 Acessivel em: https://mrjabes762.github.io/Sistema-de-Gerenciamento-de-Tarefas/index.html
 
@@ -7,10 +6,9 @@ Acessivel em: https://mrjabes762.github.io/Sistema-de-Gerenciamento-de-Tarefas/i
 
 ## Índice
 
-- [Sistema de Gerenciamento de Tarefas (V 1.10)](#sistema-de-gerenciamento-de-tarefas-v-110)
+- [Sistema de Gerenciamento de Tarefas (V 2.0)](#sistema-de-gerenciamento-de-tarefas-v-20)
   - [Índice](#índice)
   - [Quadro de Versionamento](#quadro-de-versionamento)
-  - [|**06/05/2025**| **10**|`- Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes` | Jabes Cajazeira |](#06052025-10--revisão-da-documentação-principal-revisão-de-código-documentação-dos-padrões-documentação-dos-casos-de-teste-documentação-do-relatório-de-testes--jabes-cajazeira-)
   - [Descrição](#descrição)
   - [Objetivo](#objetivo)
   - [Funcionalidades](#funcionalidades)
@@ -23,6 +21,7 @@ Acessivel em: https://mrjabes762.github.io/Sistema-de-Gerenciamento-de-Tarefas/i
   - [Padrões de Projetos](#padrões-de-projetos)
     - [Criacionais](#criacionais)
     - [Estruturais](#estruturais)
+    - [Comportamentais](#comportamentais)
     - [Considerações Técnicas](#considerações-técnicas)
       - [Código de Evidencia:](#código-de-evidencia)
   - [Praticas Aplicadas](#praticas-aplicadas)
@@ -44,6 +43,7 @@ Acessivel em: https://mrjabes762.github.io/Sistema-de-Gerenciamento-de-Tarefas/i
 
 | Data       | Versão   | Alteração | Autor / Revisor
 |------------|----------|-----------|---------|
+|------------|1|-----------|---------|
 |**25/10/2024**  |    01    | `- Idealização do Exercício` |  Jabes Cajazeira  
 |**01/04/2025**  |    02    | `- Definição e Aplicação de Padrões de Arquitetura` |  Jabes Cajazeira
 |**06/04/2025**  |    03    | `- Aplicação de Padrões De Projeto ás regras de Negócio` | Jabes Cajazeira 
@@ -53,7 +53,12 @@ Acessivel em: https://mrjabes762.github.io/Sistema-de-Gerenciamento-de-Tarefas/i
 | **24/04/2025** |  07 | `-  Revisão da documentação, execução dos testes ` | Jabes Cajazeira
 | **29/04/2025** |  08 | `- Revisão da documentação, Revisão de Arquitetura` | Jabes Cajazeira
 | **01/05/2025** | 09 | `- Revisão da Documentação / Arquitetura `| Jabes Cajazeira
-|**06/05/2025**| **10**|`- Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes` | Jabes Cajazeira |
+|**06/05/2025**| 10|`- Revisão da Documentação principal; Revisão de Código; Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes;` | Jabes Cajazeira |
+|------------|2|-----------|---------|
+|**10/05/2025**| **0** | `- Implementação: do Padrão Comportamental State, de Melhorias na Camada de Controller sugeridas nos resultados de testes; Documentação do Padrão State; Revisão de Arquitetura com as Melhorias e a adição do Padrão; Revisão dos casos de testes com adaptações a tais atualizações; Adição de novos resultados ao relatório; Revisão da documentação geral` | Jabes Cajazeira |
+
+
+
 ---
 
 [Voltar ao Índice](#índice)
@@ -83,15 +88,17 @@ Para tal estudo, usaremos como referência, Spring Boot e Quarkus - Frameworks W
 
 ## Funcionalidades
 
-
-Podemos inferir com base nas funcionalidades descritas que, a modelagem em sua essência é um CRUD (Create, Read, Update, Delete) básico, o qual esses frameworks,
-implementam de forma atômica e verbosa técnicas que se integram e gerenciam recursos computacionais. Além as funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tais implementações podem ser aplicáveis de forma mais enxuta (em Código Bruto), o objetivo é visualizar formas de aplica-los (quando justificáveis) de modo a conferir: Robustez, Eficiência, Otimização de recursos, Maestria no domínio á essência do Padrão orientado ao problema e aderência aos princípios SOLID - evidenciando principalmente o Principio da Responsabilidade Única (SRP) em que cada classe possui apenas uma razão para existir . Nesse cenário, é requisito do sistema, gerir tarefas a partir das seguintes funcionalidades:
+Na condição de um exercício inicial, aplicando apenas código bruto orientado a objetos, isto é, orientado para ser funcional e solucionar problemas utilizando uma lógica improvisada com conhecimentos superficiais. Nesse cenário, é requisito do sistema, gerir tarefas a partir das seguintes funcionalidades:
 
 - Adicionar Tarefas.
 - Listar tarefas.
 - Concluir Tarefas.
 - Atualizar tarefas.
 - Deletar Tarefas.
+
+Podemos inferir com base nelas que, a modelagem em sua essência é um CRUD (Create, Read, Update, Delete) básico, o qual esses frameworks, implementam de forma atômica e verbosa técnicas orientadas a esta modelagem, que se integram e gerenciam recursos computacionais. 
+
+Além as funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tais implementações podem ser aplicáveis de forma mais enxuta (em Código Bruto),o objetivo é visualizar formas de aplica-los (quando justificáveis) de modo a conferir: Robustez, Eficiência, Otimização de recursos, Maestria no domínio á essência do Padrão orientado ao problema e aderência aos princípios SOLID - evidenciando principalmente o Principio da Responsabilidade Única (SRP) em que cada classe possui apenas uma razão para existir . 
 
 [Voltar ao Índice](#índice)
 
@@ -105,7 +112,7 @@ implementam de forma atômica e verbosa técnicas que se integram e gerenciam re
 | Diretório   | Descrição   |
 |----------|----------|
 | `src/main/java/controller`  |   **Contem Controllers Responsáveis Centralizar as Requisições do Sistema**    |
-| `src/main/java/data`  |   **Contem Repository's Repensáveis pela Gerencia dos Dados**    | 
+| `src/main/java/data`  |   **Contem Repository's Responsáveis pela Gerência dos Dados**    | 
 | `src/main/java/model`  |   **Contem Entidades que representam Abstrações de Objetos do Mundo Real**    | 
 | `src/main/java/service`  |    **Contem Serviços com Regras de Negócio Aplicadas ao Cenário**    |
 | `src/test/java`  | **Contem Testes Unitários realizados com os componentes do sistema**  |
@@ -166,7 +173,11 @@ A interação entre as camadas segue os princípios do **MVC** e do **Layered Ar
 
 ## Padrões de Projetos  
 
-Conforme as funcionalidades, a nível granular, podemos enxergar um CRUD Simples o qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto. 
+Em concordância com as funcionalidades, de fato, implementar elas no formato de um código bruto, usando pouca orientação a objetos e mais artifícios da linguagem deste paradigma é ineficiente. Isto seria semelhante a ter uma casa funcional com apenas um cômodo (que reúne quarto, cozinha, banheiro e dentre outros), imagine que há uma lógica e é funcional porem, é uma bagunça, não há uma otimização de espaço, definição de áreas, um comodo faz tudo ao mesmo tempo, tem uma cama do lado da geladeira que está do lado do fogão no centro tem mesas e o banheiro fica de frente pra area de serviço, o varal de roupas esta dentro do banheiro porque está de frente pra uma janela. 
+
+Nesse sentido, aplicar Padrões de Projetos é como fazer uma reforma na casa redefinindo perímetro do terreno, projetando a arquitetura com cada comodo tendo uma única função e seu espaço otimizado, reorganizando toda a infraestrutura levando em consideração todo o ambiente reaproveitando e reutilizando os espaços colocando cada eletrodoméstico no local mais adequado. 
+
+Dado o contexto inicial e recapitulando o estudo, conforme as funcionalidades, a nível granular, podemos enxergar um CRUD Simples o qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador que tais passos podem ser executados nos bastidores. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao exercício proposto, podemos visualizar os seguintes padrões de projeto:
 
 ### Criacionais 
 
@@ -178,13 +189,17 @@ Conforme as funcionalidades, a nível granular, podemos enxergar um CRUD Simples
    1. [Façade](markdowns/PadroesDeProjeto/Façade.md)
    2. [Proxy](markdowns/PadroesDeProjeto/Proxy.md)
 
+### Comportamentais 
+
+   1. [State](markdowns/PadroesDeProjeto/State.md)
+
 ### Considerações Técnicas 
 
 Em suma, o sistema em questão implementa de forma incisiva os padrões citados, entretanto, a menção ao flyweight no Client (Roteiro) é meramente simbólica, uma vez que, a simulação contempla parcialmente os seus princípios, evidenciando a pratica de otimização de memoria ao compartilhar a `String tipopessoal: "Pessoal"` (na representatividade de uma característica intrínseca que é comum a vários objetos) com as tarefas instanciadas, mas, para ser considerada uma implementação mais eficaz, é preciso também estabelecer os participantes, assim como, o corpo da técnica. Sendo assim, há justificativa para tanto, é possível que em futuras versões seja acrescentada uma fundamentação adequada.
 
 #### Código de Evidencia:
 
-[CodigoRoteiro](/src/main/java/controller/Roteiro.java)
+![CodigoRoteiro](/src/main/java/controller/Roteiro.java)
 
 [Voltar ao Indice](#índice)
 
@@ -193,10 +208,11 @@ Em suma, o sistema em questão implementa de forma incisiva os padrões citados,
 ## Praticas Aplicadas 
 
 -  SOLID 
-   - Responsabilidade Única (SRP)
-   - Principio Aberto Fechado (OCP)
-   - Principio de Segregação de Interfaces (ISP)
-   - Principio de Inversão de Dependência (DIP)
+   - Responsabilidade Única (SRP).
+   - Principio Aberto Fechado (OCP).
+   - Principio de Segregação de Interfaces (ISP).
+   - Principio de Inversão de Dependência (DIP).
+   - Principio da Substituição de Liskov (LSP).
 -  DRY
    -  Modularização e Reutilização.
    -  Sustentabilidade do Código.
@@ -234,7 +250,7 @@ mvn clean compile
 
 ### Executar 
 
-Pode criar mum classe que interaja com a aplicação ou interagir pelo Client Roteiro
+Pode criar uma classe que interaja com a aplicação ou interagir pelo Client Roteiro.
  
 ### Rodar Testes
 
@@ -257,9 +273,9 @@ mvn test
 
 ## Considerações Técnicas Finais  
 
-A Abstração desenvolvida neste projeto contem os estudos arquiteturais e de padrões de projetos aplicados as regras de negócio das mais variadas aplicações web, RestAPIS, APIS e dentre outras modalidades.
+Tendo em vista a definição do escopo das funcionalidades, as Abstrações desenvolvidas neste projeto, contemplam seus requisitos, assim como, contem os estudos de arquitetura e de padrões de projetos aplicados as regras de negócio das mais variadas aplicações web, RestAPIS, APIS e dentre outras modalidades.
 
-Vale a pena ressaltar que, trata-se de uma visualização deste cenário, que corrobora maestria no domínio básico da essência destas aplicações. 
+Vale a pena ressaltar que, trata-se de uma interpretação distinta deste cenário, que corrobora maestria no domínio básico da essência destas aplicações. 
 
 Tais implementações podem ser aplicadas em complacência ao funcionamento dos frameworks, sendo úteis em caso de:
 

@@ -910,18 +910,17 @@
 
   <div class="crossnote markdown-preview  ">
 
-    <h1 id="sistema-de-gerenciamento-de-tarefas-v-110">Sistema de Gerenciamento de Tarefas (V 1.10) </h1>
+    <h1 id="sistema-de-gerenciamento-de-tarefas-v-20">Sistema de Gerenciamento de Tarefas (V 2.0) </h1>
+    <p>Acessivel em: <a
+        href="https://mrjabes762.github.io/Sistema-de-Gerenciamento-de-Tarefas/index.html">https://mrjabes762.github.io/Sistema-de-Gerenciamento-de-Tarefas/index.html</a>
+    </p>
     <hr>
     <h2 id="índice">Índice </h2>
     <ul>
-      <li><a href="#sistema-de-gerenciamento-de-tarefas-v-110">Sistema de Gerenciamento de Tarefas (V 1.10)</a>
+      <li><a href="#sistema-de-gerenciamento-de-tarefas-v-20">Sistema de Gerenciamento de Tarefas (V 2.0)</a>
         <ul>
           <li><a href="#%C3%ADndice">Índice</a></li>
           <li><a href="#quadro-de-versionamento">Quadro de Versionamento</a></li>
-          <li><a
-              href="#06052025-10--revis%C3%A3o-da-documenta%C3%A7%C3%A3o-principal-revis%C3%A3o-de-c%C3%B3digo-documenta%C3%A7%C3%A3o-dos-padr%C3%B5es-documenta%C3%A7%C3%A3o-dos-casos-de-teste-documenta%C3%A7%C3%A3o-do-relat%C3%B3rio-de-testes--jabes-cajazeira-">|<strong>06/05/2025</strong>|
-              <strong>10</strong>|<code>- Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes</code>
-              | Jabes Cajazeira |</a></li>
           <li><a href="#descri%C3%A7%C3%A3o">Descrição</a></li>
           <li><a href="#objetivo">Objetivo</a></li>
           <li><a href="#funcionalidades">Funcionalidades</a></li>
@@ -949,6 +948,7 @@
             <ul>
               <li><a href="#criacionais">Criacionais</a></li>
               <li><a href="#estruturais">Estruturais</a></li>
+              <li><a href="#comportamentais">Comportamentais</a></li>
               <li><a href="#considera%C3%A7%C3%B5es-t%C3%A9cnicas">Considerações Técnicas</a>
                 <ul>
                   <li><a href="#c%C3%B3digo-de-evidencia">Código de Evidencia:</a></li>
@@ -985,6 +985,12 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>------------</td>
+          <td>1</td>
+          <td>-----------</td>
+          <td>---------</td>
+        </tr>
         <tr>
           <td><strong>25/10/2024</strong></td>
           <td>01</td>
@@ -1043,9 +1049,23 @@
         </tr>
         <tr>
           <td><strong>06/05/2025</strong></td>
-          <td><strong>10</strong></td>
+          <td>10</td>
           <td>
-            <code>- Revisão da Documentação principal, Revisão de Código, Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes</code>
+            <code>- Revisão da Documentação principal; Revisão de Código; Documentação dos Padrões, Documentação dos casos de teste, Documentação do Relatório De Testes;</code>
+          </td>
+          <td>Jabes Cajazeira</td>
+        </tr>
+        <tr>
+          <td>------------</td>
+          <td>2</td>
+          <td>-----------</td>
+          <td>---------</td>
+        </tr>
+        <tr>
+          <td><strong>10/05/2025</strong></td>
+          <td><strong>0</strong></td>
+          <td>
+            <code>- Implementação: do Padrão Comportamental State, de Melhorias na Camada de Controller sugeridas nos resultados de testes; Documentação do Padrão State; Revisão de Arquitetura com as Melhorias e a adição do Padrão; Revisão dos casos de testes com adaptações a tais atualizações; Adição de novos resultados ao relatório; Revisão da documentação geral</code>
           </td>
           <td>Jabes Cajazeira</td>
         </tr>
@@ -1075,15 +1095,9 @@
     <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
     <hr>
     <h2 id="funcionalidades">Funcionalidades </h2>
-    <p>Podemos inferir com base nas funcionalidades descritas que, a modelagem em sua essência é um CRUD (Create, Read,
-      Update, Delete) básico, o qual esses frameworks,<br>
-      implementam de forma atômica e verbosa técnicas que se integram e gerenciam recursos computacionais. Além as
-      funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tais implementações podem ser
-      aplicáveis de forma mais enxuta (em Código Bruto), o objetivo é visualizar formas de aplica-los (quando
-      justificáveis) de modo a conferir: Robustez, Eficiência, Otimização de recursos, Maestria no domínio á essência do
-      Padrão orientado ao problema e aderência aos princípios SOLID - evidenciando principalmente o Principio da
-      Responsabilidade Única (SRP) em que cada classe possui apenas uma razão para existir . Nesse cenário, é requisito
-      do sistema, gerir tarefas a partir das seguintes funcionalidades:</p>
+    <p>Na condição de um exercício inicial, aplicando apenas código bruto orientado a objetos, isto é, orientado para
+      ser funcional e solucionar problemas utilizando uma lógica improvisada com conhecimentos superficiais. Nesse
+      cenário, é requisito do sistema, gerir tarefas a partir das seguintes funcionalidades:</p>
     <ul>
       <li>Adicionar Tarefas.</li>
       <li>Listar tarefas.</li>
@@ -1091,6 +1105,14 @@
       <li>Atualizar tarefas.</li>
       <li>Deletar Tarefas.</li>
     </ul>
+    <p>Podemos inferir com base nelas que, a modelagem em sua essência é um CRUD (Create, Read, Update, Delete) básico,
+      o qual esses frameworks, implementam de forma atômica e verbosa técnicas orientadas a esta modelagem, que se
+      integram e gerenciam recursos computacionais.</p>
+    <p>Além as funcionalidades descritas induzirem a modelagem imperativa dos padrões, e mesmo que, tais implementações
+      podem ser aplicáveis de forma mais enxuta (em Código Bruto),o objetivo é visualizar formas de aplica-los (quando
+      justificáveis) de modo a conferir: Robustez, Eficiência, Otimização de recursos, Maestria no domínio á essência do
+      Padrão orientado ao problema e aderência aos princípios SOLID - evidenciando principalmente o Principio da
+      Responsabilidade Única (SRP) em que cada classe possui apenas uma razão para existir .</p>
     <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
     <hr>
     <h2 id="descrição-do-processo">Descrição do Processo </h2>
@@ -1109,7 +1131,7 @@
         </tr>
         <tr>
           <td><code>src/main/java/data</code></td>
-          <td><strong>Contem Repository's Repensáveis pela Gerencia dos Dados</strong></td>
+          <td><strong>Contem Repository's Responsáveis pela Gerência dos Dados</strong></td>
         </tr>
         <tr>
           <td><code>src/main/java/model</code></td>
@@ -1197,11 +1219,21 @@
     <p><img src="out/estruturasUmls/arquitetura/arquitetura/arquitetura.png" alt="Arquitetura"></p>
     <p><a href="#%C3%ADndice">Voltar ao Índice</a></p>
     <h2 id="padrões-de-projetos">Padrões de Projetos </h2>
-    <p>Conforme as funcionalidades, a nível granular, podemos enxergar um CRUD Simples o qual a maioria dos frameworks
-      como Quarkus, Spring Boot e demais, deixam de forma declarativa - ou seja, sem deixar transparente ao programador
-      que tais passos podem ser executados. Sendo assim, de modo a abstrair de forma sucinta o funcionamento dos
-      frameworks e aplica-los ao cenário, podemos visualizar os seguintes padrões de projeto.
-      </p>
+    <p>Em concordância com as funcionalidades, de fato, implementar elas no formato de um código bruto, usando pouca
+      orientação a objetos e mais artifícios da linguagem deste paradigma é ineficiente. Isto seria semelhante a ter uma
+      casa funcional com apenas um cômodo (que reúne quarto, cozinha, banheiro e dentre outros), imagine que há uma
+      lógica e é funcional porem, é uma bagunça, não há uma otimização de espaço, definição de áreas, um comodo faz tudo
+      ao mesmo tempo, tem uma cama do lado da geladeira que está do lado do fogão no centro tem mesas e o banheiro fica
+      de frente pra area de serviço, o varal de roupas esta dentro do banheiro porque está de frente pra uma janela.</p>
+    <p>Nesse sentido, aplicar Padrões de Projetos é como fazer uma reforma na casa redefinindo perímetro do terreno,
+      projetando a arquitetura com cada comodo tendo uma única função e seu espaço otimizado, reorganizando toda a
+      infraestrutura levando em consideração todo o ambiente reaproveitando e reutilizando os espaços colocando cada
+      eletrodoméstico no local mais adequado.</p>
+    <p>Dado o contexto inicial e recapitulando o estudo, conforme as funcionalidades, a nível granular, podemos enxergar
+      um CRUD Simples o qual a maioria dos frameworks como Quarkus, Spring Boot e demais, deixam de forma declarativa -
+      ou seja, sem deixar transparente ao programador que tais passos podem ser executados nos bastidores. Sendo assim,
+      de modo a abstrair de forma sucinta o funcionamento dos frameworks e aplica-los ao exercício proposto, podemos
+      visualizar os seguintes padrões de projeto:</p>
     <h3 id="criacionais">Criacionais </h3>
     <ol>
       <li><a href="resources/static/Singleton.html">Singleton</a></li>
@@ -1211,6 +1243,10 @@
     <ol>
       <li><a href="resources/static/Façade.html">Façade</a></li>
       <li><a href="resources/static/Proxy.html">Proxy</a></li>
+    </ol>
+    <h3 id="comportamentais">Comportamentais </h3>
+    <ol>
+      <li><a href="resources/static/State.html">State</a></li>
     </ol>
     <h3 id="considerações-técnicas">Considerações Técnicas </h3>
     <p>Em suma, o sistema em questão implementa de forma incisiva os padrões citados, entretanto, a menção ao flyweight
@@ -1223,7 +1259,6 @@
     <h4 id="código-de-evidencia">Código de Evidencia: </h4>
     <p></p>
     <pre data-role="codeBlock" data-info="java" class="language-java java"><code><span class="token keyword keyword-package">package</span> <span class="token namespace">controller</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">model<span class="token punctuation">.</span></span><span class="token class-name">Prioridade</span></span><span class="token punctuation">;</span>
 <span class="token keyword keyword-import">import</span> <span class="token import"><span class="token namespace">model<span class="token punctuation">.</span></span><span class="token class-name">Tarefa</span></span><span class="token punctuation">;</span>
 
 <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">Roteiro</span> <span class="token punctuation">{</span>
@@ -1237,11 +1272,11 @@
         <span class="token comment">// com o mesmo tipo de tarefa</span>
         <span class="token keyword keyword-try">try</span> <span class="token punctuation">{</span>
             <span class="token class-name">String</span> tipoPessoal <span class="token operator">=</span> <span class="token string">"Pessoal"</span><span class="token punctuation">;</span>
-            <span class="token class-name">Tarefa</span> tarefa1 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Andar de Bike"</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">URGENTE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">Tarefa</span> tarefa2 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Limpar a Casa"</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">Tarefa</span> tarefa3 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Estudar Java"</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">BAIXA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">Tarefa</span> tarefa4 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Fazer Análise de Dados em Mysql"</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">MEDIA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token class-name">Tarefa</span> tarefa5 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">,</span> <span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">URGENTE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Tarefa</span> tarefa1 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Andar de Bike"</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Tarefa</span> tarefa2 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Limpar a Casa"</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Tarefa</span> tarefa3 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Estudar Java"</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Tarefa</span> tarefa4 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">"Fazer Análise de Dados em Mysql"</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Tarefa</span> tarefa5 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Tarefa</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> tipoPessoal<span class="token punctuation">)</span><span class="token punctuation">;</span>
             
             <span class="token comment">// Requisiçao ao frontController do tipo POST</span>
             <span class="token comment">// para adicionar tarefas</span>
@@ -1280,10 +1315,11 @@
     <ul>
       <li>SOLID
         <ul>
-          <li>Responsabilidade Única (SRP)</li>
-          <li>Principio Aberto Fechado (OCP)</li>
-          <li>Principio de Segregação de Interfaces (ISP)</li>
-          <li>Principio de Inversão de Dependência (DIP)</li>
+          <li>Responsabilidade Única (SRP).</li>
+          <li>Principio Aberto Fechado (OCP).</li>
+          <li>Principio de Segregação de Interfaces (ISP).</li>
+          <li>Principio de Inversão de Dependência (DIP).</li>
+          <li>Principio da Substituição de Liskov (LSP).</li>
         </ul>
       </li>
       <li>DRY
@@ -1318,7 +1354,7 @@
     <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>mvn clean compile
 </code></pre>
     <h3 id="executar">Executar </h3>
-    <p>Pode criar mum classe que interaja com a aplicação ou interagir pelo Client Roteiro</p>
+    <p>Pode criar uma classe que interaja com a aplicação ou interagir pelo Client Roteiro.</p>
     <h3 id="rodar-testes">Rodar Testes </h3>
     <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>mvn <span class="token builtin class-name">test</span>
 </code></pre>
@@ -1334,16 +1370,18 @@
     </ul>
     <hr>
     <h2 id="considerações-técnicas-finais">Considerações Técnicas Finais </h2>
-    <p>A Abstração desenvolvida neste projeto contem os estudos arquiteturais e de padrões de projetos aplicados as
-      regras de negócio das mais variadas aplicações web, RestAPIS, APIS e dentre outras modalidades.</p>
-    <p>Vale a pena ressaltar que, trata-se de uma visualização deste cenário, que corrobora maestria no domínio básico
-      da essência destas aplicações.</p>
+    <p>Tendo em vista a definição do escopo das funcionalidades, as Abstrações desenvolvidas neste projeto, contemplam
+      seus requisitos, assim como, contem os estudos de arquitetura e de padrões de projetos aplicados as regras de
+      negócio das mais variadas aplicações web, RestAPIS, APIS e dentre outras modalidades.</p>
+    <p>Vale a pena ressaltar que, trata-se de uma interpretação distinta deste cenário, que corrobora maestria no
+      domínio básico da essência destas aplicações.</p>
     <p>Tais implementações podem ser aplicadas em complacência ao funcionamento dos frameworks, sendo úteis em caso de:
     </p>
     <ul>
       <li>Maior controle da aplicação;</li>
       <li>Implementações e Adaptações em que, a regra de negócio não dependa de especificidade das bibliotecas dos
-        frameworks, visto que, são implementações orgânicas e a qualidade delas são evidenciadas nos Casos, bem como, Relatório de Testes.</li>
+        frameworks, visto que, são implementações orgânicas e a qualidade delas são evidenciadas nos Casos, bem como,
+        Relatório de Testes.</li>
       <li>Clareza (Coesão e Coerência) Arquitetural.</li>
     </ul>
     <hr>
