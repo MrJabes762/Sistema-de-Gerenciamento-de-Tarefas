@@ -968,32 +968,36 @@
 <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-enum">enum</span> <span class="token class-name">EstadoTarefa</span> <span class="token keyword keyword-implements">implements</span> <span class="token class-name">InterfaceEstadoTarefa</span> <span class="token punctuation">{</span>
     <span class="token constant">CONCLUIDA</span> <span class="token punctuation">{</span>
         <span class="token annotation punctuation">@Override</span>
-        <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword keyword-return">return</span> <span class="token string">"Concluída"</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token class-name">Tarefa</span> tarefa<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tarefa<span class="token punctuation">.</span><span class="token function">setPrioridade</span><span class="token punctuation">(</span><span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">BAIXA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-return">return</span> tarefa<span class="token punctuation">.</span><span class="token function">getTitulo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" - Concluída"</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     <span class="token punctuation">,</span> <span class="token constant">PENDENTE</span> <span class="token punctuation">{</span>
         <span class="token annotation punctuation">@Override</span>
-        <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword keyword-return">return</span> <span class="token string">"Pendente"</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token class-name">Tarefa</span> tarefa<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tarefa<span class="token punctuation">.</span><span class="token function">setPrioridade</span><span class="token punctuation">(</span><span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-return">return</span> tarefa<span class="token punctuation">.</span><span class="token function">getTitulo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" - Pendente"</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     <span class="token punctuation">,</span> <span class="token constant">ATRASADA</span> <span class="token punctuation">{</span>
         <span class="token annotation punctuation">@Override</span>
-        <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword keyword-return">return</span> <span class="token string">"Atrasada"</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token class-name">Tarefa</span> tarefa<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tarefa<span class="token punctuation">.</span><span class="token function">setPrioridade</span><span class="token punctuation">(</span><span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">ALTA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-return">return</span> tarefa<span class="token punctuation">.</span><span class="token function">getTitulo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" - Atrasada"</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     <span class="token punctuation">,</span> <span class="token constant">EMANDAMENTO</span> <span class="token punctuation">{</span>
         <span class="token annotation punctuation">@Override</span>
-        <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword keyword-return">return</span> <span class="token string">"Em Andamento"</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token class-name">Tarefa</span> tarefa<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            tarefa<span class="token punctuation">.</span><span class="token function">setPrioridade</span><span class="token punctuation">(</span><span class="token class-name">Prioridade</span><span class="token punctuation">.</span><span class="token constant">MEDIA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-return">return</span> tarefa<span class="token punctuation">.</span><span class="token function">getTitulo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" - Em Andamento"</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword keyword-public">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword keyword-return">return</span> <span class="token function">estadoAtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 

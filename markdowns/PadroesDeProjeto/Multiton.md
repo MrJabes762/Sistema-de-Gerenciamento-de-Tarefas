@@ -1,4 +1,3 @@
-
 # Multiton (Não GOF)
 
 ## Intenção
